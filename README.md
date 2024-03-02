@@ -13,7 +13,38 @@ Aplikacja jest projektowana z myślą o osobach początkujących w analizie dany
 - Import danych z plików CSV i Excel.
 - Tworzenie podstawowych wykresów: liniowych, słupkowych, kołowych.
 - Proste filtry do interaktywnej analizy danych.
-- (Dodatkowa funkcjonalność jeżeli czas pozwoli) Tłumaczenie terminologii analitycznych i okna użytkownika.
+
+Podstawowy zakres MVP aplikacji Easy Free Dashboard App
+
+### **1. Podstawowa Integracja Źródeł Danych**
+
+- **Obsługa Prostych Plików Danych**: Aplikacja powinna umożliwiać importowanie danych z plików CSV i Excel, co pozwoli użytkownikom na łatwe wgranie i analizowanie ich danych.
+
+### **2. Prosta Wizualizacja Danych**
+
+- **Ograniczony Zestaw Typów Wykresów**: Aplikacja powinna oferować kilka podstawowych typów wykresów, takich jak wykresy liniowe, słupkowe i kołowe, które mogą być używane do większości podstawowych analiz danych.
+- **Interaktywne Elementy**: Aplikacja powinna umożliwiać użytkownikom interakcję z danymi poprzez proste filtry, np. wybór zakresu dat lub kategorii do wyświetlenia.
+
+### **3. Intuicyjny Interfejs Użytkownika i Nawigacja**
+
+- **Prosty i Intuicyjny UI**: Aplikacja powinna posiadać prosty i intuicyjny interfejs użytkownika, który umożliwi łatwe tworzenie i przeglądanie dashboardów.
+- **Prosta Nawigacja**: Aplikacja powinna zawierać podstawową nawigację, umożliwiającą użytkownikom przełączanie się między różnymi dashboardami oraz łatwy dostęp do opcji importowania danych.
+
+### **4. Dokumentacja i Przewodniki**
+
+- **Podstawowa Dokumentacja**: Aplikacja powinna zawierać prostą dokumentację i przewodniki użytkownika, które pomogą nowym użytkownikom zrozumieć, jak korzystać z aplikacji.
+Dodatkowa opcja nagranie materiału wideo z tłumaczeniem krok po kroku funkcjonalności aplikacji od uruchomienia po użytkowanie w postaci krótkiego kursu wideo.
+
+### **Dodatkowe Funkcje (Opcjonalnie)**
+
+- Pojawi się wkrótce - rozważam pomysły, zależy mi na atrakcyjności aplikacji i jej użyteczności przy jednoczesnym realnym zrealizowaniu założeń w określonym czasie realizacji projektu oraz moich umiejętności, które będę budować wraz z rozwijaniem projektu.
+
+### **Implementacja MVP**
+
+- **Faza 1**: Skonfigurowanie środowiska projektowego i nauka potrzebnych technologii.
+- **Faza 2**: Implementacja funkcjonalności importowania danych i podstawowej wizualizacji danych.
+- **Faza 3**: Opracowanie interfejsu użytkownika i nawigacji.
+- **Faza 4**: Przygotowanie podstawowej dokumentacji i przewodników użytkownika.
 
 ## Technologie
 
