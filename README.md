@@ -1,3 +1,5 @@
+![alt text](images/logo.png)
+
 # easy-free-dashboard-app
 A web application designed for the creation of interactive dashboards.
 
