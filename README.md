@@ -21,6 +21,10 @@ Aplikacja jest projektowana z myślą o osobach początkujących w analizie dany
 https://clickup.com 
 https://www.tinybird.co
 
+Benchmarking, pomysły, inspiracje
+link do notatek w Notion
+https://ionized-show-a2f.notion.site/Benchmarking-pomys-y-inspiracje-e8b08fc6e0e940ad940d3952bee9ecd8?pvs=4 
+
 ### Podstawowy zakres MVP aplikacji Easy Free Dashboard App
 
 **1. Podstawowa Integracja Źródeł Danych**
