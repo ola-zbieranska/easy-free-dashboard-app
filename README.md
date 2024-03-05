@@ -25,6 +25,10 @@ Benchmarking, pomysły, inspiracje
 link do notatek w Notion
 https://ionized-show-a2f.notion.site/Benchmarking-pomys-y-inspiracje-e8b08fc6e0e940ad940d3952bee9ecd8?pvs=4 
 
+## Dziennik prac nad projektem
+link do dokumentu w Notion
+https://ionized-show-a2f.notion.site/Dziennik-prac-nad-aplikacj-Easy-Dashboard-e129cf22864649af9a471c4670bbac42?pvs=4 
+
 ### Podstawowy zakres MVP aplikacji Easy Free Dashboard App
 
 **1. Podstawowa Integracja Źródeł Danych**
