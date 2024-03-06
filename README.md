@@ -58,12 +58,17 @@ Dodatkowa opcja nagranie materiału wideo z tłumaczeniem krok po kroku funkcjon
 - **Faza 3**: Opracowanie interfejsu użytkownika i nawigacji.
 - **Faza 4**: Przygotowanie podstawowej dokumentacji i przewodników użytkownika.
 
-## Technologie
+## Technologie, narzędzia
+Lista może ulegać zmianie, aplikacja jest na etapie pracy koncepcyjnej. 
 
 - Python
-- Dash
-- Pandas dla przetwarzania danych
-- Plotly dla wizualizacji danych
+- Dash / Streamlit
+- Pandas
+- Plotly
+- Figma (projektowanie UI/UX)
+- HTML, CSS (?)
+- SQLite
+- SQLAlchemy
 
 ## Jak Uruchomić
 
@@ -106,6 +111,35 @@ W pierwszych 30 dniach realizacji projektu zakres będzie ulegać zmianie wraz z
     - Optymalizacja i debugowanie aplikacji.
     - Przygotowanie aplikacji do wdrożenia.
     - Finalizacja dokumentacji i przygotowanie repozytorium GitHub.
+
+## To Do Lista w Formie Tabeli 
+(harmonogram zostanie ostatecznie podzielony na 14 bloków po 7 dni)
+
+| Tydzień | Zadania |
+| --- | --- |
+| 1-2 | Definicja zakresu projektu
+Wybór technologii 
+Przygotowanie środowiska pracy
+Praca koncepcyjna |
+| 3 | Doszlifowanie wiedzy z Python |
+| 4 | Przepracowanie tutoriali Flask i Dash
+Stworzenie prostej aplikacji webowej |
+| 5 | Nauka podstaw SQLite i SQLAlchemy
+Projektowanie schematu bazy danych |
+| 6-7 | Nauka Pandas i Plotly
+Tworzenie wizualizacji danych |
+| 8 | Projektowanie UI/UX w Figma dla aplikacji |
+| 9 | Rozwój backendu aplikacji
+Integracja z bazą danych |
+| 10 | Połączenie UI z logiką aplikacji
+Pierwsze testy integracyjne |
+| 11 | Implementacja testów jednostkowych
+Refaktoryzacja kodu |
+| 12 | Optymalizacja wydajności aplikacji
+Testy użyteczności |
+| 13 | Tworzenie dokumentacji dla użytkowników i developerów |
+| 14 | Wdrożenie aplikacji
+Zbieranie i implementacja feedbacku |
 
 ## **Kontakt**
 
