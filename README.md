@@ -112,34 +112,23 @@ W pierwszych 30 dniach realizacji projektu zakres będzie ulegać zmianie wraz z
     - Przygotowanie aplikacji do wdrożenia.
     - Finalizacja dokumentacji i przygotowanie repozytorium GitHub.
 
-## To Do Lista w Formie Tabeli 
+## TO DO lista zadań w projekcie
 (harmonogram zostanie ostatecznie podzielony na 14 bloków po 7 dni)
 
 | Tydzień | Zadania |
 | --- | --- |
-| 1-2 | Definicja zakresu projektu
-Wybór technologii 
-Przygotowanie środowiska pracy
-Praca koncepcyjna |
+| 1-2 | Definicja zakresu projektu<br>Wybór technologii<br>Przygotowanie środowiska pracy<br>Praca koncepcyjna |
 | 3 | Doszlifowanie wiedzy z Python |
-| 4 | Przepracowanie tutoriali Flask i Dash
-Stworzenie prostej aplikacji webowej |
-| 5 | Nauka podstaw SQLite i SQLAlchemy
-Projektowanie schematu bazy danych |
-| 6-7 | Nauka Pandas i Plotly
-Tworzenie wizualizacji danych |
+| 4 | Przepracowanie tutoriali Flask i Dash<br>Stworzenie prostej aplikacji webowej |
+| 5 | Nauka podstaw SQLite i SQLAlchemy<br>Projektowanie schematu bazy danych |
+| 6-7 | Nauka Pandas i Plotly<br>Tworzenie wizualizacji danych |
 | 8 | Projektowanie UI/UX w Figma dla aplikacji |
-| 9 | Rozwój backendu aplikacji
-Integracja z bazą danych |
-| 10 | Połączenie UI z logiką aplikacji
-Pierwsze testy integracyjne |
-| 11 | Implementacja testów jednostkowych
-Refaktoryzacja kodu |
-| 12 | Optymalizacja wydajności aplikacji
-Testy użyteczności |
+| 9 | Rozwój backendu aplikacji<br>Integracja z bazą danych |
+| 10 | Połączenie UI z logiką aplikacji<br>Pierwsze testy integracyjne |
+| 11 | Implementacja testów jednostkowych<br>Refaktoryzacja kodu |
+| 12 | Optymalizacja wydajności aplikacji<br>Testy użyteczności |
 | 13 | Tworzenie dokumentacji dla użytkowników i developerów |
-| 14 | Wdrożenie aplikacji
-Zbieranie i implementacja feedbacku |
+| 14 | Wdrożenie aplikacji<br>Zbieranie i implementacja feedbacku |
 
 ## **Kontakt**
 
