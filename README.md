@@ -70,6 +70,20 @@ Lista może ulegać zmianie, aplikacja jest na etapie pracy koncepcyjnej.
 - SQLite
 - SQLAlchemy
 
+## Linki do materiałów pomocniczych i dokumentacji
+Dokumentacja Dash
+https://docs.dash.org/projects/platform/en/stable/docs/intro/what-is-dash.html
+
+kanały na YouTube
+https://www.youtube.com/@CharmingData
+https://www.youtube.com/@DataProfessor
+https://www.youtube.com/@AlexTheAnalyst
+
+
+książki pomocnicze
+"Jak analizować dane z biblioteką Pandas. Praktyczne wprowadzenie." Daniel Y.Chen wyd. Helion
+"SQL dla Analityków Danych." J.Shan, M.Goldwasser, U.Malik, B.Johnston wyd. Helion
+
 ## Jak Uruchomić
 
 Instrukcje krok po kroku dotyczące konfiguracji środowiska, instalacji zależności i uruchamiania aplikacji. 
