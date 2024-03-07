@@ -80,9 +80,9 @@ https://www.youtube.com/@DataProfessor<br>
 https://www.youtube.com/@AlexTheAnalyst<br>
 
 
-książki pomocnicze
-"Jak analizować dane z biblioteką Pandas. Praktyczne wprowadzenie." Daniel Y.Chen wyd. Helion
-"SQL dla Analityków Danych." J.Shan, M.Goldwasser, U.Malik, B.Johnston wyd. Helion
+książki pomocnicze<br>
+"Jak analizować dane z biblioteką Pandas. Praktyczne wprowadzenie." Daniel Y.Chen wyd. Helion<br>
+"SQL dla Analityków Danych." J.Shan, M.Goldwasser, U.Malik, B.Johnston wyd. Helion<br>
 
 ## Jak Uruchomić
 
