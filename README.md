@@ -71,10 +71,10 @@ Lista może ulegać zmianie, aplikacja jest na etapie pracy koncepcyjnej.
 - SQLAlchemy
 
 ## Linki do materiałów pomocniczych i dokumentacji
-Dokumentacja Dash
+Dokumentacja Dash<br>
 https://docs.dash.org/projects/platform/en/stable/docs/intro/what-is-dash.html<br>
 
-kanały na YouTube
+kanały na YouTube<br>
 https://www.youtube.com/@CharmingData<br>
 https://www.youtube.com/@DataProfessor<br>
 https://www.youtube.com/@AlexTheAnalyst<br>
