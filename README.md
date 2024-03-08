@@ -78,7 +78,7 @@ kanały na YouTube<br>
 https://www.youtube.com/@CharmingData<br>
 https://www.youtube.com/@DataProfessor<br>
 https://www.youtube.com/@AlexTheAnalyst<br>
-
+https://www.youtube.com/@Thuvu5<br>
 
 książki pomocnicze<br>
 "Jak analizować dane z biblioteką Pandas. Praktyczne wprowadzenie." Daniel Y.Chen wyd. Helion<br>
