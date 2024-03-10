@@ -81,8 +81,9 @@ https://www.youtube.com/@AlexTheAnalyst<br>
 https://www.youtube.com/@Thuvu5<br>
 https://www.youtube.com/@SophiaYangDS<br>
 
-tutoriale: 
+tutoriale:<br> 
 https://youtu.be/wQmyT5fzruE?feature=shared<br>
+https://www.youtube.com/watch?v=wmQ6_GZ0zSk<br>
 
 książki pomocnicze<br>
 "Jak analizować dane z biblioteką Pandas. Praktyczne wprowadzenie." Daniel Y.Chen wyd. Helion<br>
