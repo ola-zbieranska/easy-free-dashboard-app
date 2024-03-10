@@ -62,7 +62,7 @@ Dodatkowa opcja nagranie materiału wideo z tłumaczeniem krok po kroku funkcjon
 Lista może ulegać zmianie, aplikacja jest na etapie pracy koncepcyjnej. 
 
 - Python
-- Dash / Streamlit
+- Dash / Streamlit / Vizro
 - Pandas
 - Plotly
 - Figma (projektowanie UI/UX)
@@ -71,8 +71,9 @@ Lista może ulegać zmianie, aplikacja jest na etapie pracy koncepcyjnej.
 - SQLAlchemy
 
 ## Linki do materiałów pomocniczych i dokumentacji
-Dokumentacja Dash<br>
+Dokumentacja <br>
 https://docs.dash.org/projects/platform/en/stable/docs/intro/what-is-dash.html<br>
+https://vizro.readthedocs.io/en/stable/<br>
 
 kanały na YouTube<br>
 https://www.youtube.com/@CharmingData<br>
