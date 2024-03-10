@@ -79,6 +79,7 @@ https://www.youtube.com/@CharmingData<br>
 https://www.youtube.com/@DataProfessor<br>
 https://www.youtube.com/@AlexTheAnalyst<br>
 https://www.youtube.com/@Thuvu5<br>
+https://www.youtube.com/@SophiaYangDS<br>
 
 tutoriale: 
 https://youtu.be/wQmyT5fzruE?feature=shared<br>
