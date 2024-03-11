@@ -90,12 +90,15 @@ książki pomocnicze<br>
 "Jak analizować dane z biblioteką Pandas. Praktyczne wprowadzenie." Daniel Y.Chen wyd. Helion<br>
 "SQL dla Analityków Danych." J.Shan, M.Goldwasser, U.Malik, B.Johnston wyd. Helion<br>
 
+## Nauka / praktyka
+11.03.2024 - Vizro, praca z tutorialem https://www.youtube.com/watch?v=wmQ6_GZ0zSk
+
 ## Jak Uruchomić
 
 Instrukcje krok po kroku dotyczące konfiguracji środowiska, instalacji zależności i uruchamiania aplikacji. 
 Instrukcje będą dostępne wkrótce.
 
-## Dokumentacja
+## Dokumentacja aplikacji
 
 Szczegółowe przewodniki i dokumentacja pomagające użytkownikom w korzystaniu z aplikacji.
 
