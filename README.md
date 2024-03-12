@@ -92,6 +92,7 @@ książki pomocnicze<br>
 
 ## Nauka / praktyka
 11.03.2024 - Vizro, praca z tutorialem https://www.youtube.com/watch?v=wmQ6_GZ0zSk
+12.03.2024 - Vizro, praca z tutorialem https://www.youtube.com/watch?v=wmQ6_GZ0zSk
 
 ## Jak Uruchomić
 
