@@ -96,6 +96,7 @@ książki pomocnicze<br>
 13.03.2024 - czytanie dokumentacji Dash <br>
 14.03.2024 - książka, dokumentacja Vizro <br>
 15.03.2024 - książka "Jak analizować dane z biblioteką Pandas. Praktyczne wprowadzenie. Wyd II" wyd. Helion Daniel Y.Chen <br>
+16.03.2024 - nauka z książką j.w.
 
 ## Jak Uruchomić
 
