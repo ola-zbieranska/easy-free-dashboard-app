@@ -96,9 +96,10 @@ książki pomocnicze<br>
 13.03.2024 - czytanie dokumentacji Dash <br>
 14.03.2024 - książka, dokumentacja Vizro <br>
 15.03.2024 - książka "Jak analizować dane z biblioteką Pandas. Praktyczne wprowadzenie. Wyd II" wyd. Helion Daniel Y.Chen <br>
-16.03.2024 - nauka z książką j.w.
-17.03.2024 - nauka biblioteka pandas i dash, książka i dokumentacja
-18.03.2024 - nauka z dokumentają Dash od Plotly, wstępny szablon kodu
+16.03.2024 - nauka z książką j.w. <br>
+17.03.2024 - nauka biblioteka pandas i dash, książka i dokumentacja <br>
+18.03.2024 - nauka z dokumentają Dash od Plotly, wstępny szablon kodu <br>
+19.03.2024 - praca nad kodem aplikacji
 
 ## Jak Uruchomić
 
