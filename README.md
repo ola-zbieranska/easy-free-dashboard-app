@@ -15,6 +15,7 @@ Aplikacja jest projektowana z myślą o osobach początkujących w analizie dany
 - Import danych z plików CSV i Excel.
 - Tworzenie podstawowych wykresów: liniowych, słupkowych, kołowych.
 - Proste filtry do interaktywnej analizy danych.
+- Generowanie dashbordów na podstawie szablonów / wybieralnych komponentów
 
 ## Benchmarking, pomysły, inspiracje
 
@@ -62,7 +63,7 @@ Dodatkowa opcja nagranie materiału wideo z tłumaczeniem krok po kroku funkcjon
 Lista może ulegać zmianie, aplikacja jest na etapie pracy koncepcyjnej. 
 
 - Python
-- Dash / Streamlit / Vizro
+- Dash
 - Pandas
 - Plotly
 - Figma (projektowanie UI/UX)
