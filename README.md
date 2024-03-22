@@ -103,6 +103,7 @@ książki pomocnicze<br>
 19.03.2024 - praca nad kodem aplikacji: możliwość dodania pliku przez przeciągnij i opuść, format csv - do poprawy jutro
 20.03.2024 - nauka z dokumentacją
 21.03.2024 - nauka python
+22.03.2024 - nauka python
 
 ## Jak Uruchomić
 
