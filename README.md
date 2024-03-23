@@ -104,6 +104,7 @@ książki pomocnicze<br>
 20.03.2024 - nauka z dokumentacją
 21.03.2024 - nauka python
 22.03.2024 - nauka python
+23.03.2024 - nauka python i Dash
 
 ## Jak Uruchomić
 
