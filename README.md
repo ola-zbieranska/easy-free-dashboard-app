@@ -105,6 +105,7 @@ książki pomocnicze<br>
 21.03.2024 - nauka python
 22.03.2024 - nauka python
 23.03.2024 - nauka python i Dash
+24.03.2024 - zapoznanie się dokumentacją Dash Bootstrap Components
 
 ## Jak Uruchomić
 
