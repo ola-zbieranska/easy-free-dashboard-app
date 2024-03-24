@@ -100,12 +100,12 @@ książki pomocnicze<br>
 16.03.2024 - nauka z książką j.w. <br>
 17.03.2024 - nauka biblioteka pandas i dash, książka i dokumentacja <br>
 18.03.2024 - nauka z dokumentają Dash od Plotly, wstępny szablon kodu <br>
-19.03.2024 - praca nad kodem aplikacji: możliwość dodania pliku przez przeciągnij i opuść, format csv - do poprawy jutro
-20.03.2024 - nauka z dokumentacją
-21.03.2024 - nauka python
-22.03.2024 - nauka python
-23.03.2024 - nauka python i Dash
-24.03.2024 - zapoznanie się dokumentacją Dash Bootstrap Components
+19.03.2024 - praca nad kodem aplikacji: możliwość dodania pliku przez przeciągnij i opuść, format csv<br>
+20.03.2024 - nauka z dokumentacją<br>
+21.03.2024 - nauka python<br>
+22.03.2024 - nauka python<br>
+23.03.2024 - nauka python i Dash<br>
+24.03.2024 - zapoznanie się dokumentacją Dash Bootstrap Components<br>
 
 ## Jak Uruchomić
 
