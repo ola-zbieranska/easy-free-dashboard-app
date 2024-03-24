@@ -105,7 +105,7 @@ książki pomocnicze<br>
 21.03.2024 - nauka python<br>
 22.03.2024 - nauka python<br>
 23.03.2024 - nauka python i Dash<br>
-24.03.2024 - zapoznanie się dokumentacją Dash Bootstrap Components<br>
+24.03.2024 - zapoznanie się dokumentacją Dash Bootstrap Components, dodanie do kodu aplikacji sidebar z filtrami testowymi i nagłówek<br>
 
 ## Jak Uruchomić
 
