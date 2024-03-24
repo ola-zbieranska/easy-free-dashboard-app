@@ -18,14 +18,10 @@ Aplikacja jest projektowana z myślą o osobach początkujących w analizie dany
 - Generowanie dashbordów na podstawie szablonów / wybieralnych komponentów
 
 ## Benchmarking, pomysły, inspiracje
+Aktualizacja na koniec marca
 
 link do notatek w Notion<br>
-https://ionized-show-a2f.notion.site/Benchmarking-pomys-y-inspiracje-e8b08fc6e0e940ad940d3952bee9ecd8?pvs=4 
-
-## Dziennik prac nad projektem
-
-link do dokumentu w Notion<br>
-https://ionized-show-a2f.notion.site/Dziennik-prac-nad-aplikacj-Easy-Dashboard-e129cf22864649af9a471c4670bbac42?pvs=4 
+https://ionized-show-a2f.notion.site/Benchmarking-pomys-y-inspiracje-e8b08fc6e0e940ad940d3952bee9ecd8?pvs=4  
 
 ### Podstawowy zakres MVP aplikacji Easy Free Dashboard App
 
@@ -91,7 +87,10 @@ książki pomocnicze<br>
 "Jak analizować dane z biblioteką Pandas. Praktyczne wprowadzenie." Daniel Y.Chen wyd. Helion <br>
 "SQL dla Analityków Danych." J.Shan, M.Goldwasser, U.Malik, B.Johnston wyd. Helion <br>
 
-## Nauka / praktyka
+## Dziennik nauki i praktyki
+link do dokumentu w Notion<br>
+https://ionized-show-a2f.notion.site/Dziennik-prac-nad-aplikacj-Easy-Dashboard-e129cf22864649af9a471c4670bbac42?pvs=4 
+
 11.03.2024 - Vizro, praca z tutorialem https://www.youtube.com/watch?v=wmQ6_GZ0zSk <br>
 12.03.2024 - Vizro, praca z tutorialem https://www.youtube.com/watch?v=wmQ6_GZ0zSk <br>
 13.03.2024 - czytanie dokumentacji Dash <br>
@@ -151,6 +150,7 @@ W pierwszych 30 dniach realizacji projektu zakres będzie ulegać zmianie wraz z
 
 ## TO DO lista zadań w projekcie
 (harmonogram zostanie ostatecznie podzielony na 14 bloków po 7 dni)
+aktualizacja na koniec marca
 
 | Tydzień | Zadania |
 | --- | --- |
