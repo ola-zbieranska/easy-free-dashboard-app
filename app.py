@@ -1,47 +1,100 @@
-# Import packages
-
 import pandas as pd
+import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
-
 import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output, State
+
+import dash_bootstrap_components as dbc
+from dash_bootstrap_templates import load_figure_template
+
 import base64
 import io
 import datetime
 
 #-------------------------------------------------------------------------
+#Load chart templates for all available Bootstrap themes
+load_figure_template('LUX')
+
 # Initialize the app
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
 
 #-------------------------------------------------------------------------
-# User interface for uploading files with specific style settings. Users can transfer single files
+#Components
+
+#Style
+
+# Definicja stylu dla paska bocznego (sidebar)
+
+SIDEBAR_STYLE = {
+    # Usunięto position: fixed, aby pozwolić na normalny przepływ dokumentu
+    "top": "60px",
+    "left": 0,  # Lewa granica
+    "bottom": 0,  # Dolna granica
+    "width": "24rem",  # Szerokość paska bocznego
+    "padding": "2rem 1rem",  # Wewnętrzne odstępy
+    "background-color": "#f8f9fa",  # Kolor tła
+}
+
+# Styl dla boxa na przesyłanie plików
+UPLOAD_STYLE = {
+    'width': '24rem',
+    'height': '60px',
+    'lineHeight': '60px',
+    'borderWidth': '1px',
+    'borderStyle': 'dashed',
+    'borderRadius': '5px',
+    'textAlign': 'center',
+    'margin-bottom': '2rem',  # Dodaj odstęp od dolnego komponentu
+}
+
+#-------------------------------------------------------------------------
+#Layout
+
+#User interface for uploading files with specific style settings. Users can transfer single files
+
 app.layout = html.Div([
-    dcc.Upload(
-        id='upload-data',
-        children=html.Div([
-            'Przeciągnij i upuść lub ',
-            html.A('wybierz plik')
-        ]),
-        style={
-            'width': '100%',
-            'height': '60px',
-            'lineHeight': '60px',
-            'borderWidth': '1px',
-            'borderStyle': 'dashed',
-            'borderRadius': '5px',
-            'textAlign': 'center',
-            'margin': '10px'
-        },
-        # Do not allow multiple files to be uploaded
-        multiple=False
-    ),
-    html.Div(id='output-data-upload'),
-])
-
+dbc.Row([
+        dbc.Col(),
+        dbc.Col(html.H1('Welcome to my dash app: EASY DASHBOARD'), width=9, style={'margin-left': '7px', 'margin-top': '7px'})
+    ]),
+    dbc.Container([
+        dcc.Upload(
+            id='upload-data',
+            children=html.Div([
+                'Przeciągnij i upuść lub ',
+                html.A('wybierz plik')
+            ]),
+            style=UPLOAD_STYLE,
+            multiple=False
+        ),
+        html.Div(
+            [
+                html.H2("Filters", style={"padding-top": "2rem"}),
+                html.Hr(),
+                html.P("A simple sidebar layout with filters", className="lead"),
+                dbc.Nav(
+                    [
+                        dcc.Dropdown(id='dropdown-one', options=["test"]),  # Pusty dropdown, wypełnij opcjami
+                        html.Br(),
+                        dcc.Dropdown(id='dropdown-two', options=["test"]),  # Pusty dropdown, wypełnij opcjami
+                        html.Br(),
+                        dcc.Dropdown(id='dropdown-three', options=["test"])  # Pusty dropdown, wypełnij opcjami
+                    ],
+                    vertical=True,
+                    pills=True,
+                ),
+            ],
+            style=SIDEBAR_STYLE
+        ),
+        # Tutaj mogą zostać dodane inne komponenty, które będą wyświetlane obok sidebar
+    ], fluid=True)
+], style={"margin": "0px"})
 
 #-------------------------------------------------------------------------
+#Callback
+
 # Callback for processing the uploaded file
 @app.callback(
     Output('output-data-upload', 'children'),
@@ -94,35 +147,4 @@ def update_output(contents, filename, last_modified):
 # Run the app
 
 if __name__ == '__main__':
-    app.run_server(debug=True)# Import packages
-
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-
-import dash
-from dash import dcc
-from dash import html
-from dash.dependencies import Input
-
-# Initialize the app
-
-app = dash.Dash(__name__)
-
-#-------------------------------------------------------------------------
-# Import and clean data (importing csv into pandas)
-
-#df = pd.read_csv("")
-
-
-#-------------------------------------------------------------------------
-# App layout
-
-app.layout = html.Div([
-    html.Div(children='Hello World')
-])
-
-# Run the app
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    app.run_server(debug=True)
