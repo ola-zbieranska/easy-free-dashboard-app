@@ -105,7 +105,8 @@ https://ionized-show-a2f.notion.site/Dziennik-prac-nad-aplikacj-Easy-Dashboard-e
 22.03.2024 - nauka python<br>
 23.03.2024 - nauka python i Dash<br>
 24.03.2024 - zapoznanie się dokumentacją Dash Bootstrap Components, dodanie do kodu aplikacji sidebar z filtrami testowymi i nagłówek<br>
-25.03.2024 - praca z dash bootstrap components, zdecyowanie się na przerobienie gotowego szablonu open source elementy - html/css/bootstrap na komponenty dash<br> 
+25.03.2024 - praca z dash bootstrap components, zdecyowanie się na przerobienie gotowego szablonu open source elementy - html/css/bootstrap na komponenty dash<br>
+26.03.2024 - wybór gotowego szablonu i próba przerabiania na komponenty dash
 
 ## Jak Uruchomić
 
