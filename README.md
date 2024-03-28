@@ -12,13 +12,13 @@ Aplikacja jest projektowana z myślą o osobach początkujących w analizie dany
 
 ## Funkcjonalności
 
-- Import danych z plików CSV i Excel.
-- Tworzenie podstawowych wykresów: liniowych, słupkowych, kołowych.
+- Import danych z plików m.in. CSV i Excel.
+- Tworzenie podstawowych wykresów np. liniowych, słupkowych, kołowych.
 - Proste filtry do interaktywnej analizy danych.
-- Generowanie dashbordów na podstawie szablonów / wybieralnych komponentów
+- Generowanie dashbordów na podstawie wybieralnych komponentów
 
 ## Benchmarking, pomysły, inspiracje
-Aktualizacja na koniec marca
+Aktualizacja na początku kwietnia
 
 link do notatek w Notion<br>
 https://ionized-show-a2f.notion.site/Benchmarking-pomys-y-inspiracje-e8b08fc6e0e940ad940d3952bee9ecd8?pvs=4  
@@ -62,7 +62,6 @@ Lista może ulegać zmianie, aplikacja jest na etapie pracy koncepcyjnej.
 - Dash
 - Pandas
 - Plotly
-- Figma (projektowanie UI/UX)
 - HTML, CSS (?)
 - SQLite
 - SQLAlchemy
@@ -108,6 +107,7 @@ https://ionized-show-a2f.notion.site/Dziennik-prac-nad-aplikacj-Easy-Dashboard-e
 25.03.2024 - praca z dash bootstrap components, zdecyowanie się na przerobienie gotowego szablonu open source elementy - html/css/bootstrap na komponenty dash<br>
 26.03.2024 - wybór gotowego szablonu i próba przerabiania na komponenty dash<br>
 27.03.2024 - rezygnacja z gotowego szablonu, dokumentacja dash bootstrap components<br>
+28.03.2024 - krótka praca nad projektem, czytanie dokumentacji 
 
 ## Jak Uruchomić
 
@@ -129,7 +129,7 @@ Dostępna wkrótce.
 ## Harmonogram Projektu
 
 Wstępny harmonogram rozpisany na 100 dni realizacji projektu.
-W pierwszych 30 dniach realizacji projektu zakres będzie ulegać zmianie wraz z dynamicznym rozwojem prac nad projektem.
+W pierwszych 40 dniach realizacji projektu zakres będzie ulegać zmianie wraz z dynamicznym rozwojem prac nad projektem.
 
 1. **Dni 1-10: Faza Planowania**
     - Zdefiniowanie dokładnych wymagań MVP.
