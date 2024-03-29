@@ -77,10 +77,6 @@ https://www.youtube.com/@AlexTheAnalyst<br>
 https://www.youtube.com/@Thuvu5<br>
 https://www.youtube.com/@SophiaYangDS<br>
 
-tutoriale:<br> 
-https://youtu.be/wQmyT5fzruE?feature=shared<br>
-https://www.youtube.com/watch?v=wmQ6_GZ0zSk<br>
-
 książki pomocnicze<br>
 "Jak analizować dane z biblioteką Pandas. Praktyczne wprowadzenie." Daniel Y.Chen wyd. Helion <br>
 "SQL dla Analityków Danych." J.Shan, M.Goldwasser, U.Malik, B.Johnston wyd. Helion <br>
@@ -106,7 +102,8 @@ https://ionized-show-a2f.notion.site/Dziennik-prac-nad-aplikacj-Easy-Dashboard-e
 25.03.2024 - praca z dash bootstrap components, zdecyowanie się na przerobienie gotowego szablonu open source elementy - html/css/bootstrap na komponenty dash<br>
 26.03.2024 - wybór gotowego szablonu i próba przerabiania na komponenty dash<br>
 27.03.2024 - rezygnacja z gotowego szablonu, dokumentacja dash bootstrap components<br>
-28.03.2024 - krótka praca nad projektem, czytanie dokumentacji 
+28.03.2024 - krótka praca nad projektem, czytanie dokumentacji<br>
+29.03.2024 - dropdown https://dash.plotly.com/dash-core-components/dropdown<br>
 
 ## Jak Uruchomić
 
