@@ -1,4 +1,4 @@
-![alt text](images/logo.png)
+po![alt text](images/logo.png)
 
 # easy-free-dashboard-app
 A web application designed for the creation of interactive dashboards.
@@ -103,7 +103,7 @@ https://ionized-show-a2f.notion.site/Dziennik-prac-nad-aplikacj-Easy-Dashboard-e
 26.03.2024 - wybór gotowego szablonu i próba przerabiania na komponenty dash<br>
 27.03.2024 - rezygnacja z gotowego szablonu, dokumentacja dash bootstrap components<br>
 28.03.2024 - krótka praca nad projektem, czytanie dokumentacji<br>
-29.03.2024, 30.03.2024 - dropdown https://dash.plotly.com/dash-core-components/dropdown<br>
+29.03.2024, 30.03.2024, 31.03.2024 - dropdown https://dash.plotly.com/dash-core-components/dropdown<br>
 
 ## Jak Uruchomić
 
