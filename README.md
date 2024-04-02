@@ -62,7 +62,7 @@ Lista może ulegać zmianie, aplikacja jest na etapie pracy koncepcyjnej.
 - Dash
 - Pandas
 - Plotly
-- HTML, CSS (?)
+- HTML, CSS
 - SQLite
 - SQLAlchemy
 
