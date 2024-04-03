@@ -104,7 +104,7 @@ https://ionized-show-a2f.notion.site/Dziennik-prac-nad-aplikacj-Easy-Dashboard-e
 27.03.2024 - rezygnacja z gotowego szablonu, dokumentacja dash bootstrap components<br>
 28.03.2024 - krótka praca nad projektem, czytanie dokumentacji<br>
 29.03.2024, 30.03.2024, 31.03.2024 - dropdown https://dash.plotly.com/dash-core-components/dropdown<br>
-
+03.04.2014 - ogarnianie navbar w dash<br>
 ## Jak Uruchomić
 
 Instrukcje krok po kroku dotyczące konfiguracji środowiska, instalacji zależności i uruchamiania aplikacji. 
