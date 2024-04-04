@@ -1,6 +1,7 @@
 ![alt text](images/logo.png)
 
 # easy-free-dashboard-app
+Easy Dashboard App
 A web application designed for the creation of interactive dashboards.
 
 Aplikacja do tworzenia interaktywnych dashboardów umożliwiająca wizualizację i analizę danych z plików CSV i Excel.
