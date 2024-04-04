@@ -14,93 +14,99 @@ import io
 import datetime
 
 #-------------------------------------------------------------------------
-#Load chart templates for all available Bootstrap themes
+# Load chart templates for all available Bootstrap themes
 load_figure_template('LUX')
 
 # Initialize the app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
 
 #-------------------------------------------------------------------------
-#Components
+# Components
 
-#Style
+# Górny pasek nawigacyjny
+navbar = dbc.NavbarSimple(
+    children=[
+        dbc.NavItem(dbc.NavLink("Home", href="#")),
+        # Możesz dodać więcej elementów nawigacyjnych tutaj
+    ],
+    brand="Easy Dashboard App",
+    brand_href="#",
+    color="primary",
+    dark=True,
+)
 
-# Definicja stylu dla paska bocznego (sidebar)
-
+# Styl dla nieruchomego sidebar
 SIDEBAR_STYLE = {
-    # Usunięto position: fixed, aby pozwolić na normalny przepływ dokumentu
-    "top": "60px",
-    "left": 0,  # Lewa granica
-    "bottom": 0,  # Dolna granica
-    "width": "24rem",  # Szerokość paska bocznego
-    "padding": "2rem 1rem",  # Wewnętrzne odstępy
-    "background-color": "#f8f9fa",  # Kolor tła
+    "position": "fixed",
+    "top": 0,
+    "left": 0,
+    "bottom": 0,
+    "width": "24rem",
+    "padding": "2rem 1rem",
+    "background-color": "#f8f9fa",
+    "overflow-y": "auto",
+}
+
+# Styl dla głównego obszaru zawartości
+CONTENT_STYLE = {
+    "margin-left": "26rem",
+    "margin-right": "2rem",
+    "padding": "2rem 1rem",
 }
 
 # Styl dla boxa na przesyłanie plików
 UPLOAD_STYLE = {
-    'width': '24rem',
+    'width': '100%',
     'height': '60px',
     'lineHeight': '60px',
     'borderWidth': '1px',
     'borderStyle': 'dashed',
     'borderRadius': '5px',
     'textAlign': 'center',
-    'margin-bottom': '2rem',  # Dodaj odstęp od dolnego komponentu
+    'margin-bottom': '2rem',
 }
 
 #-------------------------------------------------------------------------
-#Layout
+# Layout
 
-#User interface for uploading files with specific style settings. Users can transfer single files
-
+# Zmieniamy układ, dodając nieruchomy sidebar i obszar zawartości z możliwością przewijania
 app.layout = html.Div([
-dbc.Row([
-        dbc.Col(),
-        dbc.Col(html.H1('Welcome to my dash app: EASY DASHBOARD'), width=9, style={'margin-left': '7px', 'margin-top': '7px'})
+    navbar,
+    html.Div(style=SIDEBAR_STYLE, children=[
+        html.H2("Filters", style={"padding-top": "2rem"}),
+        html.Hr(),
+        html.P("A simple sidebar layout with filters", className="lead"),
+        dbc.Nav(
+            [
+                dcc.Dropdown(id='dropdown-one', options=[{"label": "test", "value": "test"}], placeholder="Select an option"),
+                html.Br(),
+                dcc.Dropdown(id='dropdown-two', options=[{"label": "test", "value": "test"}], placeholder="Select an option"),
+                html.Br(),
+                dcc.Dropdown(id='dropdown-three', options=[{"label": "test", "value": "test"}], placeholder="Select an option")
+            ],
+            vertical=True,
+            pills=True,
+        ),
     ]),
-    dbc.Container([
+    html.Div(id='page-content', style=CONTENT_STYLE, children=[
         dcc.Upload(
             id='upload-data',
-            children=html.Div([
-                'Przeciągnij i upuść lub ',
-                html.A('wybierz plik')
-            ]),
+            children=html.Div(['Drag and Drop or ', html.A('Select Files')]),
             style=UPLOAD_STYLE,
             multiple=False
         ),
-        html.Div(
-            [
-                html.H2("Filters", style={"padding-top": "2rem"}),
-                html.Hr(),
-                html.P("A simple sidebar layout with filters", className="lead"),
-                dbc.Nav(
-                    [
-                        dcc.Dropdown(id='dropdown-one', options=["test"]),  # Pusty dropdown, wypełnij opcjami
-                        html.Br(),
-                        dcc.Dropdown(id='dropdown-two', options=["test"]),  # Pusty dropdown, wypełnij opcjami
-                        html.Br(),
-                        dcc.Dropdown(id='dropdown-three', options=["test"])  # Pusty dropdown, wypełnij opcjami
-                    ],
-                    vertical=True,
-                    pills=True,
-                ),
-            ],
-            style=SIDEBAR_STYLE
-        ),
-        # Tutaj mogą zostać dodane inne komponenty, które będą wyświetlane obok sidebar
-    ], fluid=True)
-], style={"margin": "0px"})
+        html.Div(id='output-data-upload'),
+    ])
+])
 
 #-------------------------------------------------------------------------
-#Callback
+# Callback
 
-# Callback for processing the uploaded file
 @app.callback(
     Output('output-data-upload', 'children'),
-    Input('upload-data', 'contents'),
-    State('upload-data', 'filename'),
-    State('upload-data', 'last_modified')
+    [Input('upload-data', 'contents')],
+    [State('upload-data', 'filename'),
+     State('upload-data', 'last_modified')]
 )
 def update_output(contents, filename, last_modified):
     if contents is not None:
@@ -108,21 +114,19 @@ def update_output(contents, filename, last_modified):
         decoded = base64.b64decode(content_string)
         try:
             if 'csv' in filename:
-                # Przyjmujemy, że użytkownik przesyła plik CSV
+                # Assuming the user uploads a CSV file
                 df = pd.read_csv(io.StringIO(decoded.decode('utf-8')))
                 return html.Div([
                     html.H5(filename),
                     html.H6(datetime.datetime.fromtimestamp(last_modified)),
 
                     dcc.Graph(
-                        figure={
-                            'data': [{'x': df[df.columns[0]], 'y': df[df.columns[1]], 'type': 'bar'}]
-                        }
+                        figure=px.bar(df, x=df.columns[0], y=df.columns[1])
                     ),
 
-                    html.Hr(),  # Linia pozioma
+                    html.Hr(),  # Horizontal line
 
-                    html.Div('Surowe zawartości pliku CSV:'),
+                    html.Div('Raw CSV file contents:'),
                     html.Pre(contents[:200] + '...', style={
                         'whiteSpace': 'pre-wrap',
                         'wordBreak': 'break-all'
@@ -130,18 +134,16 @@ def update_output(contents, filename, last_modified):
                 ])
             else:
                 return html.Div([
-                    'Ten typ pliku nie jest obsługiwany.'
+                    'This file type is not supported.'
                 ])
         except Exception as e:
             print(e)
             return html.Div([
-                'Wystąpił błąd podczas przetwarzania pliku.'
+                'There was an error processing this file.'
             ])
     return html.Div([
-        'Prześlij plik, aby zobaczyć jego zawartość.'
+        'Upload a file to see its content.'
     ])
-
-
 
 #-------------------------------------------------------------------------
 # Run the app
