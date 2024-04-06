@@ -20,8 +20,8 @@ Aplikacja jest projektowana z myślą o osobach początkujących w analizie dany
 
 ## Benchmarking, pomysły, inspiracje
 
-Datawrapper
-Flourish
+Datawrapper<br>
+Flourish<br>
 
 ### Podstawowy zakres MVP aplikacji Easy Free Dashboard App
 
