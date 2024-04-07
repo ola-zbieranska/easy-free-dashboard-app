@@ -69,7 +69,6 @@ Lista może ulegać zmianie, aplikacja jest na etapie pracy koncepcyjnej.
 ## Linki do materiałów pomocniczych i dokumentacji
 Dokumentacja <br>
 https://dash.plotly.com<br>
-
 kanały na YouTube<br>
 https://www.youtube.com/@CharmingData<br>
 https://www.youtube.com/@DataProfessor<br>
