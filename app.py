@@ -35,7 +35,7 @@ navbar = dbc.NavbarSimple(
     dark=True,
 )
 
-# Styl dla nieruchomego sidebar
+# Style sidebar
 SIDEBAR_STYLE = {
     "position": "fixed",
     "top": 0,
@@ -47,14 +47,14 @@ SIDEBAR_STYLE = {
     "overflow-y": "auto",
 }
 
-# Styl dla głównego obszaru zawartości
+# Style content
 CONTENT_STYLE = {
     "margin-left": "26rem",
     "margin-right": "2rem",
     "padding": "2rem 1rem",
 }
 
-# Styl dla boxa na przesyłanie plików
+# Style drop down box
 UPLOAD_STYLE = {
     'width': '100%',
     'height': '60px',
@@ -69,7 +69,6 @@ UPLOAD_STYLE = {
 #-------------------------------------------------------------------------
 # Layout
 
-# Zmieniamy układ, dodając nieruchomy sidebar i obszar zawartości z możliwością przewijania
 app.layout = html.Div([
     navbar,
     html.Div(style=SIDEBAR_STYLE, children=[
