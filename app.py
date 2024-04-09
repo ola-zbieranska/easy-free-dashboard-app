@@ -86,8 +86,48 @@ app.layout = html.Div([
 #-------------------------------------------------------------------------
 # Callback
 
-# ... Tutaj możesz dodać callbacki ...
+@app.callback(
+    Output('output-data-upload', 'children'),
+    [Input('upload-data', 'contents')],
+    [State('upload-data', 'filename'),
+     State('upload-data', 'last_modified')]
+)
+def update_output(contents, filename, last_modified):
+    if contents is not None:
+        content_type, content_string = contents.split(',')
+        decoded = base64.b64decode(content_string)
+        try:
+            if 'csv' in filename:
+                # Assuming the user uploads a CSV file
+                df = pd.read_csv(io.StringIO(decoded.decode('utf-8')))
+                return html.Div([
+                    html.H5(filename),
+                    html.H6(datetime.datetime.fromtimestamp(last_modified)),
 
+                    dcc.Graph(
+                        figure=px.bar(df, x=df.columns[0], y=df.columns[1])
+                    ),
+
+                    html.Hr(),  # Horizontal line
+
+                    html.Div('Raw CSV file contents:'),
+                    html.Pre(contents[:200] + '...', style={
+                        'whiteSpace': 'pre-wrap',
+                        'wordBreak': 'break-all'
+                    })
+                ])
+            else:
+                return html.Div([
+                    'This file type is not supported.'
+                ])
+        except Exception as e:
+            print(e)
+            return html.Div([
+                'There was an error processing this file.'
+            ])
+    return html.Div([
+        'Upload a file to see its content.'
+    ])
 #-------------------------------------------------------------------------
 # Run the app
 
