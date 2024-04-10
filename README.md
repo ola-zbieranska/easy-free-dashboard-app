@@ -22,6 +22,10 @@ Aplikacja jest projektowana z myślą o osobach początkujących w analizie dany
 
 Datawrapper<br>
 Flourish<br>
+Chart.js<br>
+RAWGraphs<br>
+Chartblocks<br>
+Tableau Public<br>
 
 ### Podstawowy zakres MVP aplikacji Easy Free Dashboard App
 
