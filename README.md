@@ -84,30 +84,6 @@ książki pomocnicze<br>
 "Jak analizować dane z biblioteką Pandas. Praktyczne wprowadzenie." Daniel Y.Chen wyd. Helion <br>
 "SQL dla Analityków Danych." J.Shan, M.Goldwasser, U.Malik, B.Johnston wyd. Helion <br>
 
-## Dziennik nauki i praktyki
-link do dokumentu w Notion<br>
-https://ionized-show-a2f.notion.site/Dziennik-prac-nad-aplikacj-Easy-Dashboard-e129cf22864649af9a471c4670bbac42?pvs=4 
-
-11.03.2024 - Vizro, praca z tutorialem https://www.youtube.com/watch?v=wmQ6_GZ0zSk <br>
-12.03.2024 - Vizro, praca z tutorialem https://www.youtube.com/watch?v=wmQ6_GZ0zSk <br>
-13.03.2024 - czytanie dokumentacji Dash <br>
-14.03.2024 - książka, dokumentacja Vizro <br>
-15.03.2024 - książka "Jak analizować dane z biblioteką Pandas. Praktyczne wprowadzenie. Wyd II" wyd. Helion Daniel Y.Chen <br>
-16.03.2024 - nauka z książką j.w. <br>
-17.03.2024 - nauka biblioteka pandas i dash, książka i dokumentacja <br>
-18.03.2024 - nauka z dokumentają Dash od Plotly, wstępny szablon kodu <br>
-19.03.2024 - praca nad kodem aplikacji: możliwość dodania pliku przez przeciągnij i opuść, format csv<br>
-20.03.2024 - nauka z dokumentacją<br>
-21.03.2024 - nauka python<br>
-22.03.2024 - nauka python<br>
-23.03.2024 - nauka python i Dash<br>
-24.03.2024 - zapoznanie się dokumentacją Dash Bootstrap Components, dodanie do kodu aplikacji sidebar z filtrami testowymi i nagłówek<br>
-25.03.2024 - praca z dash bootstrap components, zdecyowanie się na przerobienie gotowego szablonu open source elementy - html/css/bootstrap na komponenty dash<br>
-26.03.2024 - wybór gotowego szablonu i próba przerabiania na komponenty dash<br>
-27.03.2024 - rezygnacja z gotowego szablonu, dokumentacja dash bootstrap components<br>
-28.03.2024 - krótka praca nad projektem, czytanie dokumentacji<br>
-29.03.2024, 30.03.2024, 31.03.2024 - dropdown https://dash.plotly.com/dash-core-components/dropdown<br>
-03.04.2014 - ogarnianie navbar w dash<br>
 ## Jak Uruchomić
 
 Instrukcje krok po kroku dotyczące konfiguracji środowiska, instalacji zależności i uruchamiania aplikacji. 
