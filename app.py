@@ -13,7 +13,10 @@ import datetime
 load_figure_template('LUX')
 
 # Initialize the app
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+app = dash.Dash(__name__)
+
+# Dodanie stylów Bootstrap
+app.external_stylesheets = [dbc.themes.LUX]
 
 #-------------------------------------------------------------------------
 # Components
