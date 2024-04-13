@@ -3,10 +3,9 @@
 # easy-free-dashboard-app
 ## Cel projektu aplikacji Easy Dashboard ##
 
-Darmowa aplikacja webowa Easy Dashboard będzie intuicyjnym narzędziem analitycznym, które umożliwi użytkownikom szybkie tworzenie interaktywnych dashboardów do wizualizacji i analizy danych.
-Aplikacja zainspirowana funkcjonalnością i prostotą aplikacji takich jak Datawwrapper.
-Easy Dashboard umożliwi przekształcane surowych danych w przejrzyste, funkcjonalne i estetycznie atrakcyjne wykresy oraz grafiki.
-Z aplikacją Easy Dashboard w prosty sposób stworzysz swój pierwszy dashboard do portfolio Data Analyst lub wykorzystasz do publikacji online.
+Darmowa aplikacja webowa Easy Dashboard to intuicyjne narzędzie analityczne, które umożliwi użytkownikom szybkie tworzenie interaktywnych dashboardów do wizualizacji i analizy danych.<br>
+Aplikacja, zainspirowana funkcjonalnością i prostotą takich rozwiązań jak Datawrapper, pozwoli na przekształcenie surowych danych w przejrzyste, funkcjonalne i estetycznie atrakcyjne wykresy oraz grafiki.<br> 
+Z aplikacją Easy Dashboard w prosty sposób stworzysz swój pierwszy dashboard, idealny do portfolio Data Analyst lub do publikacji online.
 
 
 ## Funkcjonalności 
@@ -93,7 +92,7 @@ Wstępny harmonogram rozpisany na 100 dni realizacji projektu.
 3. **Dni 71-85: Testowanie i Dokumentacja**
     - Testowanie funkcjonalności i interfejsu użytkownika.
     - Pisanie podstawowej dokumentacji i przewodników użytkownika.
-5. **Dni 86-99: Przygotowanie do Wdrożenia i Finalizacja**
+4. **Dni 86-100: Przygotowanie do Wdrożenia i Finalizacja**
     - Optymalizacja i debugowanie aplikacji.
     - Przygotowanie aplikacji do wdrożenia.
     - Finalizacja dokumentacji i dopięcie repozytorium GitHub.
