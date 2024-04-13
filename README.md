@@ -48,9 +48,6 @@ Tableau Public<br>
 - **Podstawowa Dokumentacja**: Aplikacja powinna zawierać prostą dokumentację i przewodniki użytkownika, które pomogą nowym użytkownikom zrozumieć, jak korzystać z aplikacji.
 Dodatkowa opcja nagranie materiału wideo z tłumaczeniem krok po kroku funkcjonalności aplikacji od uruchomienia po użytkowanie w postaci krótkiego kursu wideo.
 
-** Dodatkowe Funkcje (Opcjonalnie)**
-
-- Pojawi się wkrótce - rozważam pomysły, zależy mi na atrakcyjności aplikacji i jej użyteczności przy jednoczesnym realnym zrealizowaniu założeń w określonym czasie realizacji projektu oraz moich umiejętności, które będę budować wraz z rozwijaniem projektu.
 
 ### **Implementacja MVP**
 
@@ -104,7 +101,6 @@ Dostępna wkrótce.
 ## Harmonogram Projektu
 
 Wstępny harmonogram rozpisany na 100 dni realizacji projektu.
-W pierwszych 40 dniach realizacji projektu zakres będzie ulegać zmianie wraz z dynamicznym rozwojem prac nad projektem.
 
 1. **Dni 1-10: Faza Planowania**
     - Zdefiniowanie dokładnych wymagań MVP.
