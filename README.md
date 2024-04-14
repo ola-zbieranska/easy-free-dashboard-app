@@ -28,16 +28,6 @@ Z aplikacją Easy Dashboard w prosty sposób stworzysz swój pierwszy dashboard,
 - Kompleksowa dokumentacja i interaktywne samouczki wspierające użytkowników w nauce korzystania z aplikacji.
 - Seria filmów wideo z poradami i instrukcjami, jak najefektywniej wykorzystać dostępne narzędzia.
 
-## Benchmarking, pomysły, inspiracje
-
-### Poniżej nazwy aplikacji, z których czerpię inspirację: ###
-
-- Datawrapper
-- Flourish
-- Chart.js
-- RAWGraphs
-- Chartblocks
-
 ## Technologie, narzędzia 
 
 - Python
@@ -48,29 +38,43 @@ Z aplikacją Easy Dashboard w prosty sposób stworzysz swój pierwszy dashboard,
 - SQLite
 - SQLAlchemy
 
+## Benchmarking, pomysły, inspiracje
+
+### Poniżej nazwy aplikacji, z których czerpię inspirację: ###
+
+- Datawrapper<br>
+https://www.datawrapper.de
+- Flourish <br>
+https://flourish.studio
+- Chart.js <br>
+https://www.chartjs.org
+- RAWGraphs<br>
+https://www.rawgraphs.io
+- Chartblocks<br>
+https://www.chartblocks.io
+
+
 ## Linki do materiałów pomocniczych i dokumentacji
-Dokumentacja <br>
+- Dokumentacja <br>
 https://dash.plotly.com<br>
 https://dash-bootstrap-components.opensource.faculty.ai/docs/<br>
 https://bootswatch.com<br>
 https://getbootstrap.com/docs/5.1/layout/grid/<br>
 https://dash-example-index.herokuapp.com<br>
 
-kanały na YouTube<br>
+- kanały na YouTube<br>
 https://www.youtube.com/@CharmingData<br>
 https://www.youtube.com/@DataProfessor<br>
 https://www.youtube.com/@AlexTheAnalyst<br>
 https://www.youtube.com/@Thuvu5<br>
 https://www.youtube.com/@SophiaYangDS<br>
 
-książki pomocnicze<br>
+- książki pomocnicze<br>
 "Jak analizować dane z biblioteką Pandas. Praktyczne wprowadzenie." Daniel Y.Chen wyd. Helion <br>
 
-## Jak Uruchomić, dokumentacja
+## Jak Uruchomić, dokumentacja projektu
 
-Instrukcje krok po kroku dotyczące konfiguracji środowiska, instalacji zależności i uruchamiania aplikacji.<br>
-Instrukcje będą dostępne wkrótce.<br>
-Dokumentacja dostępna wkrótce. 
+Instrukcje i dokumentacja dostępne wkrótce.<br>
 
 ## Licencja
 
@@ -78,18 +82,16 @@ Dostępna wkrótce.
 
 ## Harmonogram Projektu
 
-Wstępny harmonogram rozpisany na 100 dni realizacji projektu.
-
 1. **Dni 1-20: Faza Planowania**
     - Zdefiniowanie dokładnych wymagań MVP.
     - Wybór stosu technologicznego i narzędzi.
     - Uczenie się potrzebnych technologii.
-2. **Dni 21-70: Rozwój Podstawowych Funkcjonalności, interfejsu użytkownika i nawigacji**
+2. **Dni 21-60: Rozwój Podstawowych Funkcjonalności, interfejsu użytkownika i nawigacji**
     - Implementacja obsługi plików CSV i Excel (import danych).
     - Rozwój podstawowych typów wykresów (liniowych, słupkowych, kołowych).
     - Projektowanie i implementacja interfejsu użytkownika.
     - Dodanie filtrów do interakcji z danymi na wykresach.
-3. **Dni 71-85: Testowanie i Dokumentacja**
+3. **Dni 61-85: Testowanie i Dokumentacja**
     - Testowanie funkcjonalności i interfejsu użytkownika.
     - Pisanie podstawowej dokumentacji i przewodników użytkownika.
 4. **Dni 86-100: Przygotowanie do Wdrożenia i Finalizacja**
