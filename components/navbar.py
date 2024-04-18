@@ -17,7 +17,7 @@ def get_navbar():
             ),
         ],
         brand="easy dashboard",
-        brand_href="/",
+        brand_href="/home",
         sticky="top",
         color="primary",
         dark=True,

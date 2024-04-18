@@ -12,6 +12,9 @@ app.layout = dbc.Container([
     # Tutaj możesz dodać więcej layoutów z innych modułów
 ], fluid=True)
 
+# Import callbacków
+from callbacks import *
+
 # Uruchomienie serwera Deweloperskiego
 if __name__ == '__main__':
     app.run_server(debug=True)
