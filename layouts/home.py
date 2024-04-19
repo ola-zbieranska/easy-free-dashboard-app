@@ -32,7 +32,12 @@ def get_layout():
         dbc.Row(
             dbc.Col(html.Div("Easy Dashboard"), width=12)
         ),
-        # Dodanie komponentu uploadu plików do głównej strony
-        upload_component()
+        upload_component(),
+        dbc.Row([
+            dbc.Col(html.Div([html.P("Treść Kwadratu 1", className="square-text"), html.Button("Przycisk 1", id='button-1', className="square-button")], className="square"), width=3),
+            dbc.Col(html.Div([html.P("Treść Kwadratu 2",  className="square-text"), html.Button("Przycisk 2", id='button-2', className="square-button")], className="square"), width=3),
+            dbc.Col(html.Div([html.P("Treść Kwadratu 3",  className="square-text"), html.Button("Przycisk 3", id='button-3', className="square-button")], className="square"), width=3),
+            dbc.Col(html.Div([html.P("Treść Kwadratu 4",  className="square-text"), html.Button("Przycisk 4", id='button-4', className="square-button")], className="square"), width=3)
+        ])
     ], fluid=True)
     return layout
