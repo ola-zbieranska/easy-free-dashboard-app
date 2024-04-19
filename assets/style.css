@@ -25,3 +25,14 @@
     border-radius: 5px; /* Zaokrąglone rogi przycisku */
     cursor: pointer; /* Kursor wskazujący */
 }
+
+.upload-data-container {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border-width: 1px;
+    border-style: dashed;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px;
+}

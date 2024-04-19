@@ -10,18 +10,8 @@ def upload_component():
                 'Drag and Drop or ',
                 html.A('Select Files')
             ]),
-            style={
-                'width': '100%',
-                'height': '60px',
-                'lineHeight': '60px',
-                'borderWidth': '1px',
-                'borderStyle': 'dashed',
-                'borderRadius': '5px',
-                'textAlign': 'center',
-                'margin': '10px'
-            },
-            # Wielokrotne pliki
-            multiple=True
+            className='upload-data-container',
+            multiple=True  # Umożliwia wielokrotny wybór plików
         ),
         html.Div(id='output-data-upload')
     ])
@@ -32,12 +22,26 @@ def get_layout():
         dbc.Row(
             dbc.Col(html.Div("Easy Dashboard"), width=12)
         ),
-        upload_component(),
         dbc.Row([
-            dbc.Col(html.Div([html.P("Treść Kwadratu 1", className="square-text"), html.Button("Przycisk 1", id='button-1', className="square-button")], className="square"), width=3),
-            dbc.Col(html.Div([html.P("Treść Kwadratu 2",  className="square-text"), html.Button("Przycisk 2", id='button-2', className="square-button")], className="square"), width=3),
-            dbc.Col(html.Div([html.P("Treść Kwadratu 3",  className="square-text"), html.Button("Przycisk 3", id='button-3', className="square-button")], className="square"), width=3),
-            dbc.Col(html.Div([html.P("Treść Kwadratu 4",  className="square-text"), html.Button("Przycisk 4", id='button-4', className="square-button")], className="square"), width=3)
+            dbc.Col(html.Div([
+                html.P("Treść Kwadratu 1"),
+                upload_component(),
+                html.Button("Przycisk 1", id='button-1', className="square-button")
+            ], className="square"), width=6),
+            dbc.Col(html.Div([
+                html.P("Treść Kwadratu 2"),
+                html.Button("Przycisk 2", id='button-2', className="square-button")
+            ], className="square"), width=6),
+        ]),  # Dodano przecinek
+        dbc.Row([
+            dbc.Col(html.Div([
+                html.P("Treść Kwadratu 3"),
+                html.Button("Przycisk 3", id='button-3', className="square-button")
+            ], className="square"), width=6),
+            dbc.Col(html.Div([
+                html.P("Treść Kwadratu 4"),
+                html.Button("Przycisk 4", id='button-4', className="square-button")
+            ], className="square"), width=6),
         ])
     ], fluid=True)
     return layout
