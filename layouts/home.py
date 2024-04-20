@@ -20,7 +20,7 @@ def upload_component():
 def get_layout():
     layout = dbc.Container([
         dbc.Row(
-            dbc.Col(html.Div("Easy Dashboard"), width=12)
+            dbc.Col(html.Div(), width=12)
         ),
         dbc.Row([
             dbc.Col(html.Div([

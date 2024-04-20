@@ -36,3 +36,25 @@
     text-align: center;
     margin: 10px;
 }
+
+/* Style dla navbar */
+.navbar {
+  width: 100vw; /* Szerokość na całą szerokość widoku */
+  padding-left: 15px; /* Odstępy od lewej krawędzi */
+  padding-right: 15px; /* Odstępy od prawej krawędzi */
+  background-color: #007bff; /* Kolor tła dla motywu 'primary' */
+  height: 60px; /* Zwiększenie grubości navbara */
+}
+
+/* Usunięcie marginesów i paddingów */
+.navbar, .container-fluid {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Style dla linków w navbar */
+.nav-link {
+  color: white; /* Kolor tekstu */
+  padding: 50px 50px; /* Dodatkowy padding dla linków, zwiększający odstępy */
+}
+
