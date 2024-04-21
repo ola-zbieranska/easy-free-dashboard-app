@@ -1,24 +1,16 @@
 import dash_bootstrap_components as dbc
 from dash import html
 
-# Style for the sidebar
-SIDEBAR_STYLE = {
-    "position": "fixed",
-    "top": 0,
-    "left": 0,
-    "bottom": 0,
-    "width": "16rem",
-    "padding": "2rem 1rem",
-    "background-color": "#f8f9fa",
-    "margin-top": "56px",  # Dodaj odstęp na górze, zgodnie z wysokością navbar
-}
-
 def get_sidebar():
     sidebar = html.Div(
         [
+            html.Div(
+                [dbc.Button("→", id="toggle-sidebar-btn", className="toggle-button")],
+                className="toggle-container"
+            ),
             html.H2("Sidebar", className="display-4"),
             html.Hr(),
-            html.P("A simple sidebar layout with navigation links" , className="lead"),
+            html.P("A simple sidebar layout with navigation links", className="lead"),
             dbc.Nav(
                 [
                     dbc.NavLink("Home", href="/home", active="exact"),
@@ -29,8 +21,10 @@ def get_sidebar():
                 ],
                 vertical=True,
                 pills=True,
+                className="flex-column",
             ),
         ],
-        style=SIDEBAR_STYLE,
+        id="sidebar",
+        className="sidebar"
     )
     return sidebar

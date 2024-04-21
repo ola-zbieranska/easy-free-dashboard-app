@@ -52,9 +52,37 @@
   padding: 0 !important;
 }
 
-/* Style dla linków w navbar */
-.nav-link {
-  color: white; /* Kolor tekstu */
-  padding: 50px 50px; /* Dodatkowy padding dla linków, zwiększający odstępy */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 16rem;
+    padding-top: 2rem;
+    background-color: #f8f9fa;
+    transition: all 0.3s;
+    z-index: 1000;
 }
 
+.sidebar.collapsed {
+    width: 0; /* Zmniejsz szerokość do 0, aby schować sidebar */
+}
+
+.toggle-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%;
+}
+
+.toggle-button {
+    display: block;
+    border: none;
+    background-color: #007bff;
+    color: white;
+}
+
+/* Dopasuj poniższy selektor do rzeczywistego selektora używanego dla linków w sidebar */
+.nav-link {
+    color: #333; /* Ustaw dowolny kolor inny niż biały */
+}

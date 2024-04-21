@@ -1,8 +1,8 @@
 import dash_bootstrap_components as dbc
-from app import app
 from components.navbar import get_navbar
 from components.sidebar import get_sidebar
 from layouts.home import get_layout as home_layout
+from callbacks.callbacks import *
 
 # Ustawienie głównego układu aplikacji
 app.layout = dbc.Container([
@@ -11,9 +11,6 @@ app.layout = dbc.Container([
     home_layout(),
     # Tutaj możesz dodać więcej layoutów z innych modułów
 ], fluid=True)
-
-# Import callbacków
-from callbacks import *
 
 # Uruchomienie serwera Deweloperskiego
 if __name__ == '__main__':
