@@ -1,5 +1,8 @@
 import dash_bootstrap_components as dbc
 
+theme_toggle = dbc.Button(
+    'Toggle Theme', id='theme-toggle', n_clicks=0, className='me-2', color='secondary')
+
 def get_navbar():
     navbar = dbc.NavbarSimple(
         children=[

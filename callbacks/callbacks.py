@@ -17,3 +17,14 @@ def toggle_sidebar(n_clicks, classname):
     elif n_clicks:
         return "sidebar"
     return classname
+
+
+@app.callback(
+    Output('body', 'className'),
+    Input('theme-toggle', 'n_clicks')
+)
+def toggle_theme(n):
+    if n % 2 == 0:  # Jeśli liczba kliknięć jest parzysta, ustaw jasny motyw
+        return 'light'
+    else:  # W przeciwnym razie ustaw ciemny motyw
+        return 'dark'
