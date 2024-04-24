@@ -32,7 +32,7 @@ def get_layout():
                 html.P("Treść Kwadratu 2"),
                 html.Button("Przycisk 2", id='button-2', className="square-button")
             ], className="square"), width=6),
-        ]),  # Dodano przecinek
+        ]),
         dbc.Row([
             dbc.Col(html.Div([
                 html.P("Treść Kwadratu 3"),
