@@ -11,7 +11,7 @@ def upload_component():
                 html.A('Select Files')
             ]),
             className='upload-data-container',
-            multiple=True  # Umożliwia wielokrotny wybór plików
+            multiple=True
         ),
         html.Div(id='output-data-upload')
     ])
@@ -27,21 +27,19 @@ def get_layout():
                 html.P("Treść Kwadratu 1"),
                 upload_component(),
                 html.Button("Przycisk 1", id='button-1', className="square-button")
-            ], className="square"), width=6),
+            ], className="square"), width=3),
             dbc.Col(html.Div([
                 html.P("Treść Kwadratu 2"),
                 html.Button("Przycisk 2", id='button-2', className="square-button")
-            ], className="square"), width=6),
-        ]),
-        dbc.Row([
+            ], className="square"), width=3),
             dbc.Col(html.Div([
                 html.P("Treść Kwadratu 3"),
                 html.Button("Przycisk 3", id='button-3', className="square-button")
-            ], className="square"), width=6),
+            ], className="square"), width=3),
             dbc.Col(html.Div([
                 html.P("Treść Kwadratu 4"),
                 html.Button("Przycisk 4", id='button-4', className="square-button")
-            ], className="square"), width=6),
+            ], className="square"), width=3),
         ])
     ], fluid=True)
     return layout

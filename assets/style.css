@@ -5,25 +5,25 @@
     align-items: center;
     padding: 20px;
     margin: 10px;
-    background-color: #f8f9fa; /* Jasnoszary tło */
-    border: 1px solid #ccc; /* Subtelna obramówka */
-    border-radius: 8px; /* Zaokrąglone rogi */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Delikatny cień */
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .square-text {
-    margin: 0 0 10px 0; /* Usunięcie marginesu na dole paragrafu */
-    font-size: 16px; /* Rozmiar czcionki dla tekstu */
+    margin: 0 0 10px 0;
+    font-size: 16px;
 }
 
 .square-button {
-    width: 100%; /* Pełna szerokość przycisku w kontenerze */
-    padding: 10px; /* Wygodne paddingi */
-    background-color: #007bff; /* Niebieskie tło */
-    color: white; /* Biały tekst */
-    border: none; /* Brak obramówki */
-    border-radius: 5px; /* Zaokrąglone rogi przycisku */
-    cursor: pointer; /* Kursor wskazujący */
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .upload-data-container {
@@ -37,16 +37,14 @@
     margin: 10px;
 }
 
-/* Style dla navbar */
 .navbar {
-  width: 100vw; /* Szerokość na całą szerokość widoku */
-  padding-left: 15px; /* Odstępy od lewej krawędzi */
-  padding-right: 15px; /* Odstępy od prawej krawędzi */
-  background-color: #007bff; /* Kolor tła dla motywu 'primary' */
-  height: 60px; /* Zwiększenie grubości navbara */
+  width: 100vw;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #007bff;
+  height: 60px;
 }
 
-/* Usunięcie marginesów i paddingów */
 .navbar, .container-fluid {
   margin: 0 !important;
   padding: 0 !important;
@@ -65,7 +63,7 @@
 }
 
 .sidebar.collapsed {
-    width: 0; /* Zmniejsz szerokość do 0, aby schować sidebar */
+    width: 0;
 }
 
 .toggle-container {

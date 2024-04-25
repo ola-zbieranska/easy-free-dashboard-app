@@ -9,7 +9,7 @@ app.layout = dbc.Container([
     get_navbar(),
     get_sidebar(),
     home_layout(),
-    # Tutaj możesz dodać więcej layoutów z innych modułów
+    # Tutaj dodać więcej layoutów z innych modułów
 ], fluid=True)
 
 # Uruchomienie serwera Deweloperskiego

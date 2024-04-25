@@ -8,7 +8,7 @@ def get_sidebar():
                 [dbc.Button("→", id="toggle-sidebar-btn", className="toggle-button")],
                 className="toggle-container"
             ),
-            html.H2("Sidebar", className="display-4"),
+            html.H2("Sidebar", className="display-3"),
             html.Hr(),
             html.P("A simple sidebar layout with navigation links", className="lead"),
             dbc.Nav(
