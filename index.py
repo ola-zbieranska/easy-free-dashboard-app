@@ -9,9 +9,9 @@ app.layout = dbc.Container([
     get_navbar(),
     get_sidebar(),
     home_layout(),
-    # Tutaj dodać więcej layoutów z innych modułów
+
 ], fluid=True)
 
-# Uruchomienie serwera Deweloperskiego
+# Uruchomienie
 if __name__ == '__main__':
     app.run_server(debug=True)

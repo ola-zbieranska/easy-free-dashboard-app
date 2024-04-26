@@ -24,7 +24,7 @@ def toggle_sidebar(n_clicks, classname):
     Input('theme-toggle', 'n_clicks')
 )
 def toggle_theme(n):
-    if n % 2 == 0:  # Jeśli liczba kliknięć jest parzysta, ustaw jasny motyw
+    if n % 2 == 0:
         return 'light'
-    else:  # W przeciwnym razie ustaw ciemny motyw
+    else:
         return 'dark'
