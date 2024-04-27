@@ -4,8 +4,6 @@ from dash import dcc
 from dash import html
 from app import app
 
-# Callback to toggle the sidebar
-
 @app.callback(
     Output("sidebar", "className"),
     [Input("toggle-sidebar-btn", "n_clicks")],
@@ -18,10 +16,9 @@ def toggle_sidebar(n_clicks, classname):
         return "sidebar"
     return classname
 
-
 @app.callback(
     Output('body', 'className'),
-    Input('theme-toggle', 'n_clicks')
+    Input('theme-toggle', 'n_clicks'),
 )
 def toggle_theme(n):
     if n % 2 == 0:
