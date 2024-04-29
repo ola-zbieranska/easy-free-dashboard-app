@@ -17,11 +17,13 @@ def toggle_sidebar(n_clicks, classname):
     return classname
 
 @app.callback(
-    Output('body', 'className'),
+    Output('theme-link', 'href'),
     Input('theme-toggle', 'n_clicks'),
+    State('theme-store', 'data')
 )
-def toggle_theme(n):
-    if n % 2 == 0:
-        return 'light'
+def update_theme(n_clicks, data):
+    if n_clicks % 2 == 0:
+        data['theme'] = dbc.themes.FLATLY
     else:
-        return 'dark'
+        data['theme'] = dbc.themes.DARKLY
+    return data['theme']

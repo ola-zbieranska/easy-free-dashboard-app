@@ -1,4 +1,4 @@
-![alt text](images/logo.png)
+ ![alt text](images/logo.png)
 
 # easy-free-dashboard-app
 ## Cel projektu aplikacji Easy Dashboard ##

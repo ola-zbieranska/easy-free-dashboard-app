@@ -1,9 +1,14 @@
 import dash_bootstrap_components as dbc
+from callbacks.callbacks import *
 
 theme_toggle = dbc.Button(
     'Toggle Theme', id='theme-toggle', n_clicks=0, className='me-2', color='secondary')
 
 def get_navbar():
+    theme_switcher = dbc.Button(
+        "Zmień motyw", id="theme-toggle", className="ms-2", n_clicks=0
+    )
+
     navbar = dbc.NavbarSimple(
         children=[
             dbc.NavItem(dbc.NavLink("Strona główna", href="/home", className="nav-link"), className="nav-item"),
@@ -19,6 +24,7 @@ def get_navbar():
                 label="Twoje Konto",
                 className="dropdown-menu"
             ),
+            theme_switcher
         ],
         brand="easy dashboard",
         brand_href="/home",
