@@ -36,7 +36,6 @@ Z aplikacją Easy Dashboard w prosty sposób stworzysz swój pierwszy dashboard,
 - Plotly
 - HTML, CSS
 - SQLite
-- SQLAlchemy
 
 ## Benchmarking, pomysły, inspiracje
 
@@ -86,12 +85,12 @@ Dostępna wkrótce.
     - Zdefiniowanie dokładnych wymagań MVP.
     - Wybór stosu technologicznego i narzędzi.
     - Uczenie się potrzebnych technologii.
-2. **Dni 21-60: Rozwój Podstawowych Funkcjonalności, interfejsu użytkownika i nawigacji**
+2. **Dni 21-80: Rozwój Podstawowych Funkcjonalności, interfejsu użytkownika i nawigacji**
     - Implementacja obsługi plików CSV i Excel (import danych).
     - Rozwój podstawowych typów wykresów (liniowych, słupkowych, kołowych).
     - Projektowanie i implementacja interfejsu użytkownika.
     - Dodanie filtrów do interakcji z danymi na wykresach.
-3. **Dni 61-85: Testowanie i Dokumentacja**
+3. **Dni 81-85: Testowanie i Dokumentacja**
     - Testowanie funkcjonalności i interfejsu użytkownika.
     - Pisanie podstawowej dokumentacji i przewodników użytkownika.
 4. **Dni 86-100: Przygotowanie do Wdrożenia i Finalizacja**
