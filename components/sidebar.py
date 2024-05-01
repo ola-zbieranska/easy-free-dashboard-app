@@ -2,29 +2,23 @@ import dash_bootstrap_components as dbc
 from dash import html
 
 def get_sidebar():
-    sidebar = html.Div(
-        [
-            html.Div(
-                [dbc.Button("→", id="toggle-sidebar-btn", className="toggle-button")],
-                className="toggle-container"
-            ),
-            html.H2("Sidebar", className="display-3"),
-            html.Hr(),
-            html.P("A simple sidebar layout with navigation links", className="lead"),
-            dbc.Nav(
-                [
-                    dbc.NavLink("Home", href="/home", active="exact"),
-                    dbc.NavLink("About", href="/about", active="exact"),
-                    dbc.NavLink("Profile", href="/profile", active="exact"),
-                    dbc.NavLink("Settings", href="/settings", active="exact"),
-                    dbc.NavLink("Logout", href="/logout", active="exact"),
-                ],
-                vertical=True,
-                pills=True,
-                className="flex-column",
-            ),
-        ],
-        id="sidebar",
-        className="sidebar"
+    sidebar = html.Div([
+    dbc.Offcanvas(
+        html.P("Treść Sidebar"),
+        id="offcanvas",
+        is_open=False,
+        title="Sidebar",
+        style={"width": "250px"},
+        placement="start",
+        backdrop=False  # Opcjonalnie, aby zapobiec zamknięciu przy kliknięciu poza sidebar
+    ),
+    html.Div(
+        dbc.Button(
+            "→", id="open-close-button", className="me-2",
+            style={"transform": "rotate(180deg)"},
+        ),
+        id="button-container",
+        style={"position": "absolute", "top": "50%", "left": "250px", "transform": "translateY(-50%)"}
+    )]
     )
     return sidebar

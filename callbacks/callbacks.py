@@ -5,16 +5,18 @@ from dash import html
 from app import app
 
 @app.callback(
-    Output("sidebar", "className"),
-    [Input("toggle-sidebar-btn", "n_clicks")],
-    [State("sidebar", "className")]
+    Output("offcanvas", "is_open"),
+    Output("open-close-button", "style"),
+    Input("open-close-button", "n_clicks"),
+    State("offcanvas", "is_open"),
 )
-def toggle_sidebar(n_clicks, classname):
-    if n_clicks and classname == "sidebar":
-        return "sidebar collapsed"
-    elif n_clicks:
-        return "sidebar"
-    return classname
+def toggle_offcanvas(n, is_open):
+    if n:
+        # Odwróć strzałkę w zależności od stanu
+        button_style = {"transform": "rotate(0deg)"} if not is_open else {"transform": "rotate(180deg)"}
+        return not is_open, button_style
+    # Jeśli przycisk nie został kliknięty, zwróć obecny stan i odpowiedni styl
+    return is_open, {"transform": "rotate(180deg)"} if is_open else {"transform": "rotate(0deg)"}
 
 @app.callback(
     Output('theme-link', 'href'),
