@@ -4,7 +4,7 @@ from dash import html
 def get_sidebar():
     sidebar = html.Div([
     dbc.Offcanvas(
-        html.P("Treść Sidebar"),
+        html.P("easy dashboard"),
         id="offcanvas",
         is_open=False,
         title="Sidebar",
