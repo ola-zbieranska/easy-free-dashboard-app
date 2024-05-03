@@ -10,6 +10,7 @@ app.layout = dbc.Container([
     get_sidebar(),
     home_layout(),
 
+
 ], fluid=True)
 
 # Uruchomienie

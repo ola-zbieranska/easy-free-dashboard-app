@@ -2,6 +2,7 @@ from dash.dependencies import Input, Output, State
 from dash import callback
 from dash import dcc
 from dash import html
+import dash_bootstrap_components as dbc
 from app import app
 
 @app.callback(
@@ -24,8 +25,12 @@ def toggle_offcanvas(n, is_open):
     State('theme-store', 'data')
 )
 def update_theme(n_clicks, data):
-    if n_clicks % 2 == 0:
+    if data is None:
+        data = {'theme': dbc.themes.FLATLY}  # Default theme
+
+    if n_clicks is not None and n_clicks % 2 == 0:
         data['theme'] = dbc.themes.FLATLY
     else:
         data['theme'] = dbc.themes.DARKLY
+
     return data['theme']

@@ -6,6 +6,7 @@ def get_sidebar():
     dbc.Offcanvas(
         html.P("easy dashboard"),
         id="offcanvas",
+        scrollable=True,
         is_open=False,
         title="Sidebar",
         style={"width": "250px"},
