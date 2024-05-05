@@ -36,6 +36,7 @@ Z aplikacją Easy Dashboard w prosty sposób stworzysz swój pierwszy dashboard,
 - Plotly
 - HTML, CSS
 - SQLite
+- SQLAlchemy
 
 ## Benchmarking, pomysły, inspiracje
 
