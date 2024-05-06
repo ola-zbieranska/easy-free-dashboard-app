@@ -83,21 +83,21 @@ Dostępna wkrótce.
 ## Harmonogram Projektu
 
 1. **Dni 1-20: Faza Planowania**
-    - Zdefiniowanie dokładnych wymagań MVP.
-    - Wybór stosu technologicznego i narzędzi.
-    - Uczenie się potrzebnych technologii.
+    - Zdefiniowanie dokładnych wymagań MVP
+    - Wybór stosu technologicznego i narzędzi
+    - Uczenie się potrzebnych technologii
 2. **Dni 21-80: Rozwój Podstawowych Funkcjonalności, interfejsu użytkownika i nawigacji**
-    - Implementacja obsługi plików CSV i Excel (import danych).
-    - Rozwój podstawowych typów wykresów (liniowych, słupkowych, kołowych).
-    - Projektowanie i implementacja interfejsu użytkownika.
-    - Dodanie filtrów do interakcji z danymi na wykresach.
+    - Implementacja obsługi plików CSV i Excel (import danych)
+    - Rozwój podstawowych typów wykresów (liniowych, słupkowych, kołowych)
+    - Projektowanie i implementacja interfejsu użytkownika
+    - Dodanie filtrów do interakcji z danymi na wykresach
 3. **Dni 81-85: Testowanie i Dokumentacja**
-    - Testowanie funkcjonalności i interfejsu użytkownika.
-    - Pisanie podstawowej dokumentacji i przewodników użytkownika.
+    - Testowanie funkcjonalności i interfejsu użytkownika
+    - Pisanie podstawowej dokumentacji i przewodników użytkownika
 4. **Dni 86-100: Przygotowanie do Wdrożenia i Finalizacja**
-    - Optymalizacja i debugowanie aplikacji.
-    - Przygotowanie aplikacji do wdrożenia.
-    - Finalizacja dokumentacji i dopięcie repozytorium GitHub.
+    - Optymalizacja i debugowanie aplikacji
+    - Przygotowanie aplikacji do wdrożenia
+    - Finalizacja dokumentacji i dopięcie repozytorium GitHub
    
 ## **Kontakt**
 
