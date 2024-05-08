@@ -16,7 +16,6 @@ Z aplikacją Easy Dashboard w prosty sposób stworzysz swój pierwszy dashboard,
 **2. Wizualizacja danych:**
 - Bogaty zestaw wykresów, w tym wykresy liniowe, słupkowe, kołowe, punktowe oraz mapy
 - Interaktywne elementy umożliwiające użytkownikom dynamiczne filtrowanie danych i dostosowywanie widoku do potrzeb analizy
-- Możliwość dostosowania stylu wykresów, w tym kolorów i czcionek, dla lepszej prezentacji danych
 
 **3. Intuicyjny interfejs użytkownika i nawigacja:**
 - Czysty i responsywny interfejs użytkownika z przemyślanym układem dla maksymalnej użyteczności na różnych urządzeniach.
