@@ -25,12 +25,7 @@ def toggle_offcanvas(n, is_open):
     State('theme-store', 'data')
 )
 def update_theme(n_clicks, data):
-    if data is None:
-        data = {'theme': dbc.themes.FLATLY}  # Default theme
-
-    if n_clicks is not None and n_clicks % 2 == 0:
-        data['theme'] = dbc.themes.FLATLY
-    else:
-        data['theme'] = dbc.themes.DARKLY
-
+    if n_clicks is not None:
+        # Zmiana tematu między jasnym a ciemnym w zależności od liczby kliknięć
+        data['theme'] = dbc.themes.DARKLY if n_clicks % 2 != 0 else dbc.themes.FLATLY
     return data['theme']
