@@ -43,6 +43,3 @@ def get_layout():
         ])
     ], fluid=True)
     return layout
-
-
-#wprowadzić zmiany w laypucie, dodać dbc.card albo rozbić na główną stronę i dodatkowe pod czynności związane z danymi wybiaralne przez użytkownika
