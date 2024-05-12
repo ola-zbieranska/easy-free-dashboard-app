@@ -79,3 +79,45 @@
 .nav-link {
     color: #333;
 }
+
+.theme-toggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.theme-toggle .toggle-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle .sun {
+    color: yellow;
+    left: 5px;  /* Start on the left side */
+}
+
+.theme-toggle .moon {
+    color: lightgray;
+    right: 5px; /* Start on the right side */
+    transform: translateX(100%); /* Initially hidden to the right */
+}
+
+.theme-toggle.active {
+    background: #333; /* Dark background for dark mode */
+}
+
+.theme-toggle.active .sun {
+    transform: translateX(-100%); /* Hide the sun off to the left */
+}
+
+.theme-toggle.active .moon {
+    transform: translateY(-50%); /* Center the moon */
+}

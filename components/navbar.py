@@ -1,6 +1,5 @@
 import dash_bootstrap_components as dbc
 from callbacks.callbacks import *
-
 def get_navbar():
     theme_toggle = dbc.Button(
         "change theme", id="theme-toggle", n_clicks=0, className='ms-2', color='secondary'
