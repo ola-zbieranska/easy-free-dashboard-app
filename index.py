@@ -1,14 +1,13 @@
 import dash
 import dash_bootstrap_components as dbc
-from dash import html
+from dash import html, dcc
 from components.navbar import get_navbar
 from components.sidebar import get_sidebar
-from layouts.home import get_layout as home_layout
-from layouts.first_page import get_first_page as first_page
 from callbacks.callbacks import *
 
 # Ustawienie głównego układu aplikacji
 app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
     dcc.Store(id='theme-store', data={'theme': dbc.themes.FLATLY}),  # Przechowywanie obecnego tematu
     html.Link(id='theme-link', rel='stylesheet', href=dbc.themes.FLATLY),  # Link do arkusza stylów motywu
     dbc.Container([
