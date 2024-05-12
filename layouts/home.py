@@ -24,7 +24,7 @@ def get_layout():
         ),
         dbc.Row([
             dbc.Col(html.Div([
-                html.P("Treść Kwadratu 1"),
+                html.P("Upload CSV or Excel spreadsheets"),
                 upload_component(),
                 html.Button("Przycisk 1", id='button-1', className="square-button")
             ], className="square"), width=3),

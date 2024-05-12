@@ -31,4 +31,4 @@ def get_navbar():
         className="mb-4 navbar",
         fluid=True
     )
-    navbar
+    return navbar
