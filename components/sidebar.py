@@ -1,25 +1,14 @@
 import dash_bootstrap_components as dbc
 from dash import html
-
 def get_sidebar():
     sidebar = html.Div([
-    dbc.Offcanvas(
-        html.P("easy dashboard"),
-        id="offcanvas",
-        scrollable=True,
-        is_open=False,
-        title="Sidebar",
-        style={"width": "250px"},
-        placement="start",
-        backdrop=False  # Opcjonalnie, aby zapobiec zamknięciu przy kliknięciu poza sidebar
-    ),
-    html.Div(
-        dbc.Button(
-            "→", id="open-close-button", className="me-2",
-            style={"transform": "rotate(180deg)"},
-        ),
-        id="button-container",
-        style={"position": "absolute", "top": "50%", "left": "250px", "transform": "translateY(-50%)"}
-    )]
-    )
+        html.H2("Easy Dashboard", className="display-4"),  # Tytuł sidebar
+        html.Hr(),  # Linia separatora
+        html.P("Navigation:", className="lead"),  # Nagłówek sekcji nawigacyjnej
+        dbc.Nav([
+            dbc.NavLink("Home", href="/home", active="exact"),
+            dbc.NavLink("About", href="/about", active="exact"),
+            dbc.NavLink("Settings", href="/settings", active="exact"),
+        ], vertical=True, pills=True, className="flex-column"),  # Linki nawigacyjne
+    ], style={'position': 'fixed', 'top': 0, 'left': 0, 'bottom': 0, 'width': '16rem', 'padding': '2rem', 'background-color': '#f8f9fa', 'z-index': 1000})
     return sidebar

@@ -55,15 +55,11 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 16rem;
-    padding-top: 2rem;
-    background-color: #f8f9fa;
-    transition: all 0.3s;
-    z-index: 1000;
-}
-
-.sidebar.collapsed {
-    width: 0;
+    width: 16rem;  /* Szerokość sidebar */
+    padding-top: 2rem;  /* Odstęp górny wewnątrz sidebar */
+    background-color: #f8f9fa;  /* Kolor tła sidebar */
+    transition: all 0.3s;  /* Animacja przy zmianie stylów (opcjonalnie) */
+    z-index: 1000;  /* Zapewnia, że sidebar jest nad innymi elementami */
 }
 
 .toggle-container {
