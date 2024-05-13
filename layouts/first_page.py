@@ -6,7 +6,8 @@ def get_first_page():
         dbc.Row(
             dbc.Col(html.Div([
                 html.H1("Create custom charts and dashboard in an easy & free way."),
-                dbc.Button("Create", color="primary", className="me-1")
+                html.P("If you need help learn how to create your first chart step by step."),
+                dbc.Button("Learn more", color="primary", href="/documentation", className="me-1")
             ]))
         )
     ])

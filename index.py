@@ -11,7 +11,7 @@ app.layout = html.Div([
     html.Link(id='theme-link', rel='stylesheet', href=dbc.themes.FLATLY),  # Link do arkusza stylów motywu
     dbc.Container([
         get_navbar(),
-        html.Div(id='page-content')
+        html.Div(id='page-content'),
     ], fluid=True)
 ])
 
