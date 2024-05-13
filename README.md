@@ -75,10 +75,6 @@ https://www.youtube.com/@SophiaYangDS<br>
 
 Instrukcje i dokumentacja dostępne wkrótce.<br>
 
-## Licencja
-
-Dostępna wkrótce.
-
 ## Harmonogram Projektu
 
 1. **Dni 1-20: Faza Planowania**
