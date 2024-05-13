@@ -21,7 +21,7 @@ def update_theme(n_clicks, data):
     [Input('url', 'pathname')]
 )
 def display_pages(pathname):
-    if pathname == '/home':
+    if pathname == '/' or pathname == '/home':
         return home_page()  # Funkcja zwracająca layout strony głównej
     elif pathname == '/first-page':
         return first_page()  # Funkcja zwracająca layout pierwszej strony

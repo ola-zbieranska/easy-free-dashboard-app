@@ -8,7 +8,7 @@ def get_home_page():
                 html.P("Easy Dashboard takes your data from spreadsheets to shareable graphics — no coding necessary. It’s free & no sign-up is required!"),
                 dbc.Button("Create", color="primary", href="/first-page", className="me-1"),
                 html.P("Check out tutorials and tips on how to create custom charts and dashboard."),
-                dbc.Button("Tutorials", color="primary", className="me-2"),
+                dbc.Button("Tutorials", color="primary", href="/documentation", className="me-2"),
             ]))
         )
     ])
