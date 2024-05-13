@@ -4,28 +4,29 @@ def get_navbar():
     theme_toggle = dbc.Button(
         "change theme", id="theme-toggle", n_clicks=0, className='ms-2', color='secondary'
     )
+    dropdown = dbc.DropdownMenu(
+        children=[
+            dbc.DropdownMenuItem("More pages", header=True),
+            dbc.DropdownMenuItem("Main", href="/home"),
+            dbc.DropdownMenuItem("Create", href="/first-page"),
+            dbc.DropdownMenuItem("Blog", href="/blog"),
+            dbc.DropdownMenuItem("Documentation", href="/documentation"),
+        ],
+        nav=True,
+        in_navbar=True,
+        label="More",
+    )
     navbar = dbc.NavbarSimple(
         children=[
-            dbc.NavItem(dbc.NavLink("Main", href="/home", className="nav-link"), className="nav-item"),
-            dbc.NavItem(dbc.NavLink("Start creating", href="/first-page", className="nav-link"), className="nav-item"),
-            dbc.DropdownMenu(
-                children=[
-                    dbc.DropdownMenuItem("Profil", href="/profile", className="dropdown-item"),
-                    dbc.DropdownMenuItem("Ustawienia", href="/settings", className="dropdown-item"),
-                ],
-                nav=True,
-                in_navbar=True,
-                label="Twoje Konto",
-                className="dropdown-menu"
-            ),
-            theme_toggle  # Włączony do navbar
+            dbc.NavItem(dbc.NavLink("Main", href="/home")),
+            dbc.NavItem(dbc.NavLink("Create", href="/first-page")),
+            dropdown,
+            theme_toggle,
         ],
         brand="Easy Dashboard",
         brand_href="/home",
         sticky="top",
         color="primary",
         dark=True,
-        className="mb-4 navbar",
-        fluid=True
     )
     return navbar
