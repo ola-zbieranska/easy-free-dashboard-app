@@ -41,5 +41,5 @@ def get_layout():
                 html.Button("Przycisk 4", id='button-4', className="square-button")
             ], className="square"), width=3),
         ])
-    ], fluid=True)
+    ], fluid=False, style={"marginLeft": "16rem"})
     return layout

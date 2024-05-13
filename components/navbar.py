@@ -6,7 +6,7 @@ def get_navbar():
     )
     navbar = dbc.NavbarSimple(
         children=[
-            dbc.NavItem(dbc.NavLink("Strona główna", href="/home", className="nav-link"), className="nav-item"),
+            dbc.NavItem(dbc.NavLink("Strona główna", href="/first-page", className="nav-link"), className="nav-item"),
             dbc.NavItem(dbc.NavLink("O Aplikacji", href="/about", className="nav-link"), className="nav-item"),
             dbc.DropdownMenu(
                 children=[

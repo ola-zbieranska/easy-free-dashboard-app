@@ -2,7 +2,7 @@ import dash
 import dash_bootstrap_components as dbc
 from dash import html, dcc
 from components.navbar import get_navbar
-from components.sidebar import get_sidebar
+# from components.sidebar import get_sidebar
 from callbacks.callbacks import *
 
 # Ustawienie głównego układu aplikacji
@@ -12,7 +12,7 @@ app.layout = html.Div([
     html.Link(id='theme-link', rel='stylesheet', href=dbc.themes.FLATLY),  # Link do arkusza stylów motywu
     dbc.Container([
         get_navbar(),  # Navbar już zawiera przycisk zmiany motywu
-        get_sidebar(),
+        #get_sidebar(),
         html.Div(id='page-content')
     ], fluid=True)
 ])
