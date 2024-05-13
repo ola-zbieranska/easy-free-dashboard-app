@@ -1,45 +1,15 @@
 import dash_bootstrap_components as dbc
 from dash import html, dcc
-
-# Funkcja importująca komponent uploadu plików
-def upload_component():
-    return html.Div([
-        dcc.Upload(
-            id='upload-data',
-            children=html.Div([
-                'Drag and Drop or ',
-                html.A('Select Files')
-            ]),
-            className='upload-data-container',
-            multiple=True
-        ),
-        html.Div(id='output-data-upload')
-    ])
-
-# Definicja głównego układu dla strony głównej
-def get_layout():
+def get_home_page():
     layout = dbc.Container([
         dbc.Row(
-            dbc.Col(html.Div(), width=12)
-        ),
-        dbc.Row([
             dbc.Col(html.Div([
-                html.P("Upload CSV or Excel spreadsheets"),
-                upload_component(),
-                html.Button("Przycisk 1", id='button-1', className="square-button")
-            ], className="square"), width=3),
-            dbc.Col(html.Div([
-                html.P("Treść Kwadratu 2"),
-                html.Button("Przycisk 2", id='button-2', className="square-button")
-            ], className="square"), width=3),
-            dbc.Col(html.Div([
-                html.P("Treść Kwadratu 3"),
-                html.Button("Przycisk 3", id='button-3', className="square-button")
-            ], className="square"), width=3),
-            dbc.Col(html.Div([
-                html.P("Treść Kwadratu 4"),
-                html.Button("Przycisk 4", id='button-4', className="square-button")
-            ], className="square"), width=3),
-        ])
-    ], fluid=False, style={"marginLeft": "16rem"})
+                html.H1("Create custom charts and dashboard in an easy & free way."),
+                html.P("Easy Dashboard takes your data from spreadsheets to shareable graphics — no coding necessary. It’s free & no sign-up is required!"),
+                dbc.Button("Create", color="primary", className="me-1"),
+                html.P("Check out tutorials and tips on how to create custom charts and dashboard."),
+                dbc.Button("Tutorials", color="primary", className="me-2"),
+            ]))
+        )
+    ])
     return layout

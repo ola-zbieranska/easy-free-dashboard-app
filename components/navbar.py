@@ -6,13 +6,12 @@ def get_navbar():
     )
     navbar = dbc.NavbarSimple(
         children=[
-            dbc.NavItem(dbc.NavLink("Strona główna", href="/first-page", className="nav-link"), className="nav-item"),
-            dbc.NavItem(dbc.NavLink("O Aplikacji", href="/about", className="nav-link"), className="nav-item"),
+            dbc.NavItem(dbc.NavLink("Main", href="/home", className="nav-link"), className="nav-item"),
+            dbc.NavItem(dbc.NavLink("Start creating", href="/first-page", className="nav-link"), className="nav-item"),
             dbc.DropdownMenu(
                 children=[
                     dbc.DropdownMenuItem("Profil", href="/profile", className="dropdown-item"),
                     dbc.DropdownMenuItem("Ustawienia", href="/settings", className="dropdown-item"),
-                    dbc.DropdownMenuItem("Wyloguj", href="/logout", className="dropdown-item"),
                 ],
                 nav=True,
                 in_navbar=True,
@@ -21,7 +20,7 @@ def get_navbar():
             ),
             theme_toggle  # Włączony do navbar
         ],
-        brand="easy dashboard",
+        brand="Easy Dashboard",
         brand_href="/home",
         sticky="top",
         color="primary",

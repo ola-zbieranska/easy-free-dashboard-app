@@ -2,7 +2,7 @@ from dash.dependencies import Input, Output, State
 from dash import html
 import dash_bootstrap_components as dbc
 from app import app
-from layouts.home import get_layout as home_layout
+from layouts.home import get_home_page as home_page
 from layouts.first_page import get_first_page as first_page
 @app.callback(
     Output('theme-link', 'href'),
@@ -21,7 +21,7 @@ def update_theme(n_clicks, data):
 )
 def display_page(pathname):
     if pathname == '/home' or pathname == '/':
-        return home_layout()
+        return home_page()
     elif pathname == '/first-page':
         return first_page()
     else:

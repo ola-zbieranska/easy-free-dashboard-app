@@ -11,7 +11,7 @@ app.layout = html.Div([
     dcc.Store(id='theme-store', data={'theme': dbc.themes.FLATLY}),  # Przechowywanie obecnego tematu
     html.Link(id='theme-link', rel='stylesheet', href=dbc.themes.FLATLY),  # Link do arkusza stylów motywu
     dbc.Container([
-        get_navbar(),  # Navbar już zawiera przycisk zmiany motywu
+        get_navbar(),
         #get_sidebar(),
         html.Div(id='page-content')
     ], fluid=True)
