@@ -1,3 +1,4 @@
+import dash
 from dash.dependencies import Input, Output, State
 from dash import html, dcc
 import dash_bootstrap_components as dbc
@@ -7,16 +8,42 @@ from layouts.first_page import get_first_page as first_page
 from layouts.documentation_page import get_documentation_page as documentation_page
 
 #zmiana motywu
+# @app.callback(
+#     Output('theme-link', 'href'),
+#     Input('theme-toggle', 'n_clicks'),
+#     State('theme-store', 'data')
+# )
+# def update_theme(n_clicks, data):
+#     if n_clicks is not None:
+#         # Zmiana motywu między jasnym a ciemnym w zależności od liczby kliknięć
+#         data['theme'] = dbc.themes.DARKLY if n_clicks % 2 != 0 else dbc.themes.FLATLY
+#     return data['theme']
+
+#DropDownMenu do zmiany motywu
 @app.callback(
-    Output('theme-link', 'href'),
-    Input('theme-toggle', 'n_clicks'),
+    [Output('theme-link', 'href'), Output('page-content', 'className'), Output('theme-dropdown', 'label')],
+    [Input('light-mode', 'n_clicks'), Input('dark-mode', 'n_clicks')],
     State('theme-store', 'data')
 )
-def update_theme(n_clicks, data):
-    if n_clicks is not None:
-        # Zmiana motywu między jasnym a ciemnym w zależności od liczby kliknięć
-        data['theme'] = dbc.themes.DARKLY if n_clicks % 2 != 0 else dbc.themes.FLATLY
-    return data['theme']
+def update_theme(light_clicks, dark_clicks, data):
+    ctx = dash.callback_context
+
+    if not ctx.triggered:
+        button_id = 'light-mode'
+    else:
+        button_id = ctx.triggered[0]['prop_id'].split('.')[0]
+
+    if button_id == 'dark-mode':
+        new_theme = dbc.themes.DARKLY
+        body_class = 'dark-mode'
+        icon = html.I(className="fas fa-moon")
+    else:
+        new_theme = dbc.themes.FLATLY
+        body_class = 'light-mode'
+        icon = html.I(className="fas fa-sun")
+
+    data['theme'] = new_theme
+    return new_theme, body_class, icon
 
 #prawidłowe renderowanie stron
 @app.callback(
@@ -25,15 +52,15 @@ def update_theme(n_clicks, data):
 )
 def display_pages(pathname):
     if pathname == '/' or pathname == '/home':
-        return home_page()  # Funkcja zwracająca layout strony głównej
+        return home_page()
     elif pathname == '/first-page':
-        return first_page()  # Funkcja zwracająca layout pierwszej strony
+        return first_page()
     #elif pathname == '/blog':
-        #return get_blog_page()  # Funkcja zwracająca layout bloga
+        #return get_blog_page()
     elif pathname == '/documentation':
-        return documentation_page()  # Funkcja zwracająca layout dokumentacji
+        return documentation_page()
     else:
-        return '404'  # Strona nie znaleziona
+        return '404'
 
 # sidebar = offcanvas
 @app.callback(

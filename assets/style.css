@@ -1,123 +1,25 @@
-.square {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    margin: 10px;
-    background-color: #f8f9fa;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+/* style dla DropDownMenu przycisk zmiany motywu */
+.theme-switch-container .dropdown-item i {
+    margin-right: 10px;
 }
 
-.square-text {
-    margin: 0 0 10px 0;
-    font-size: 16px;
+.theme-switch-container .fa-sun {
+    color: gray;
 }
 
-.square-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.theme-switch-container .fa-moon {
+    color: blue;
 }
 
-.upload-data-container {
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-    border-width: 1px;
-    border-style: dashed;
-    border-radius: 5px;
-    text-align: center;
-    margin: 10px;
+.theme-switch-container .fa-adjust {
+    color: black;
 }
 
-.navbar {
-  width: 100vw;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-color: #007bff;
-  height: 60px;
-}
-
-.navbar, .container-fluid {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 16rem;  /* Szerokość sidebar */
-    padding-top: 2rem;  /* Odstęp górny wewnątrz sidebar */
-    background-color: #f8f9fa;  /* Kolor tła sidebar */
-    transition: all 0.3s;  /* Animacja przy zmianie stylów (opcjonalnie) */
-    z-index: 1000;  /* Zapewnia, że sidebar jest nad innymi elementami */
-}
-
-.toggle-container {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 100%;
-}
-
-.toggle-button {
-    display: block;
-    border: none;
-    background-color: #007bff;
-    color: white;
-}
-
-.nav-link {
-    color: #333;
-}
-
-.theme-toggle {
-    position: relative;
-    width: 60px;
-    height: 30px;
-    background: #ccc;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.theme-toggle .toggle-icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.theme-toggle .sun {
+/* Stylowanie dla trybu ciemnego */
+body.dark-mode .theme-switch-container .fa-sun {
     color: yellow;
-    left: 5px;  /* Start on the left side */
 }
 
-.theme-toggle .moon {
-    color: lightgray;
-    right: 5px; /* Start on the right side */
-    transform: translateX(100%); /* Initially hidden to the right */
-}
-
-.theme-toggle.active {
-    background: #333; /* Dark background for dark mode */
-}
-
-.theme-toggle.active .sun {
-    transform: translateX(-100%); /* Hide the sun off to the left */
-}
-
-.theme-toggle.active .moon {
-    transform: translateY(-50%); /* Center the moon */
+body.dark-mode .theme-switch-container .fa-moon {
+    color: lightblue;
 }
