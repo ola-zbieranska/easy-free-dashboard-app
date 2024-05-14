@@ -35,7 +35,7 @@ card3 = dbc.Card(
         #dbc.CardHeader("Connect Google Sheet"),
         dbc.CardBody(
             [
-                html.H4("Import data from Google Sheet", className="card-title"),
+                html.H4("Connect Google Sheet", className="card-title"),
                 #html.P("Make sure to enable Link Sharing in the Google Sheet and copy the spreadsheet URL into the text field on the right", className="card-text"),
             ]
         ),
