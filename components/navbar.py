@@ -18,10 +18,10 @@ def get_navbar():
     )
     navbar = dbc.NavbarSimple(
         children=[
+            theme_toggle,
             dbc.NavItem(dbc.NavLink("Main", href="/home")),
             dbc.NavItem(dbc.NavLink("Create", href="/first-page")),
-            dropdown,
-            theme_toggle,
+            dropdown
         ],
         brand="Easy Dashboard",
         brand_href="/home",

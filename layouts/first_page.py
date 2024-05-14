@@ -8,7 +8,7 @@ card1 = dbc.Card(
         dbc.CardBody(
             [
                 html.H4("Copy & paste your data", className="card-title"),
-                html.P("Select your data (including header row/column) in Excel or LibreOffice and paste it in the text field. ", className="card-text"),
+                html.P("Select your data (including header row/column) in Excel or LibreOffice and paste it in the text field.", className="card-text"),
             ]
         ),
         dbc.CardFooter("Footer 1"),
@@ -36,7 +36,7 @@ card3 = dbc.Card(
         dbc.CardBody(
             [
                 html.H4("Import data from Google Sheet", className="card-title"),
-                html.P("Make sure to enable Link Sharing in the Google Sheet and copy the spreadsheet url into the text field on the right.", className="card-text"),
+                html.P("Make sure to enable Link Sharing in the Google Sheet and copy the spreadsheet URL into the text field on the right.", className="card-text"),
             ]
         ),
         dbc.CardFooter("Footer 3"),
@@ -56,11 +56,12 @@ def get_first_page():
             ]))
         ),
         dbc.Row(
-            [
-                dbc.Col(card1, width=4),
-                dbc.Col(card2, width=4),
-                dbc.Col(card3, width=4),
-            ],
+            dbc.Col(
+                dbc.CardGroup(
+                    [card1, card2, card3]
+                ),
+                width=12
+            ),
             className="mt-4"  # Margines górny dla estetyki
         ),
     ])
