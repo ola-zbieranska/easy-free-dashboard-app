@@ -25,8 +25,17 @@ def get_navbar():
         in_navbar=True,
         label="More",
     )
+    github_button = dbc.Button(
+        html.I(className="bi bi-github"),
+        color="link",
+        href="https://github.com/ola-zbieranska/easy-free-dashboard-app",
+        external_link=True,
+        className="me-2",
+        target="_blank"
+    )
     navbar = dbc.NavbarSimple(
         children=[
+            github_button,
             theme_toggle,
             dbc.NavItem(dbc.NavLink("Main", href="/home")),
             dbc.NavItem(dbc.NavLink("Create", href="/first-page")),
