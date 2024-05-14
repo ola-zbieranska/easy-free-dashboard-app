@@ -11,7 +11,7 @@ card1 = dbc.Card(
                 html.P("Select your data (including header row/column) in Excel or LibreOffice and paste it in the text field.", className="card-text"),
             ]
         ),
-        dbc.CardFooter("Footer 1"),
+        dbc.CardFooter(dbc.Button("Copy & Paste", color="primary",href="/copy-paste-data-page")),
     ],
     style={"width": "18rem"},
 )
@@ -25,7 +25,7 @@ card2 = dbc.Card(
                 html.P("Upload a CSV or Excel file from your computer.", className="card-text"),
             ]
         ),
-        dbc.CardFooter("Footer 2"),
+        dbc.CardFooter(dbc.Button("Choose File", color="primary", href="/upload-data-page")),
     ],
     style={"width": "18rem"},
 )
@@ -39,7 +39,7 @@ card3 = dbc.Card(
                 html.P("Make sure to enable Link Sharing in the Google Sheet and copy the spreadsheet URL into the text field on the right.", className="card-text"),
             ]
         ),
-        dbc.CardFooter("Footer 3"),
+        dbc.CardFooter(dbc.Button("Connect Sheet", color="primary", href="/import-data-page")),
     ],
     style={"width": "18rem"},
 )
@@ -62,7 +62,7 @@ def get_first_page():
                 ),
                 width=12
             ),
-            className="mt-4"  # Margines górny dla estetyki
+            className="mt-4"  # margines górny
         ),
     ])
     return first_page

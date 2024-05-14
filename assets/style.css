@@ -1,25 +1,25 @@
-/* style dla DropDownMenu przycisk zmiany motywu */
+/* style dla DropDownMenu przycisk zmiany motywu
 .theme-switch-container .dropdown-item i {
     margin-right: 10px;
 }
 
-.theme-switch-container .fa-sun {
+.theme-switch-container .bi-brightness-high-fill {
     color: gray;
 }
 
-.theme-switch-container .fa-moon {
+.theme-switch-container .bi-moon-fill {
     color: blue;
 }
 
-.theme-switch-container .fa-adjust {
+.theme-switch-container .bi-adjust {
     color: black;
 }
 
-/* Stylowanie dla trybu ciemnego */
-body.dark-mode .theme-switch-container .fa-sun {
+*//* style dla DropDownMenu przycisk zmiany motywu dla trybu ciemnego
+body.dark-mode .theme-switch-container .bi-brightness-high-fill {
     color: yellow;
 }
 
-body.dark-mode .theme-switch-container .fa-moon {
+body.dark-mode .theme-switch-container .bi-moon-fill {
     color: lightblue;
-}
+}*/

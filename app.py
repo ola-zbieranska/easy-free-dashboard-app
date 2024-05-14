@@ -4,8 +4,8 @@ from dash import html, dcc
 
 external_stylesheets = [
     dbc.themes.FLATLY,
-    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css",
-    #"/assets/style.css"  # Ścieżka do pliku CSS w folderze assets
+    "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css",
+    "/assets/style.css"
 ]
 
 # Inicjalizacja aplikacji
