@@ -39,7 +39,7 @@ def get_check_and_describe_page():
                     style_table={'height': '300px', 'overflowY': 'auto'},
                     style_cell={'textAlign': 'left'},
                 ),
-                dbc.Button("Back", id="back-to-input", color="secondary", className="mt-2 me-2"),
+                dbc.Button("Back", id="back-to-input", color="secondary", className="mt-2 me-2", href="/first-page"),
                 dbc.Button("Proceed", id="proceed-to-visualize", color="primary", className="mt-2")
             ]))
         )
