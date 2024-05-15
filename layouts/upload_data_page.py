@@ -26,6 +26,8 @@ def get_upload_data_page():
                     },
                     multiple=False  # Umożliwia wgrywanie tylko jednego pliku na raz
                 ),
+                dbc.Button("Back", id="back-to-input", color="secondary", className="mt-2 me-2"),
+                dbc.Button("Check data", id="proceed-to-check", color="primary", className="mt-2", href="/check-and-describe-page"),
                 html.Div(id='output-data-upload')
             ]))
         )
