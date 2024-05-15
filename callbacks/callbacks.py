@@ -1,3 +1,4 @@
+
 import dash
 from dash import html, Input, Output, State
 import dash_bootstrap_components as dbc
@@ -25,10 +26,10 @@ def update_theme(light_clicks, dark_clicks, data):
 
     if button_id == 'dark-mode':
         new_theme = dbc.themes.DARKLY
-        icon = html.I(className="bi bi-moon")
+        icon = html.I(className="bi bi-moon-fill")
     else:
         new_theme = dbc.themes.FLATLY
-        icon = html.I(className="bi bi-brightness-high")
+        icon = html.I(className="bi bi-brightness-high-fill")
 
     data['theme'] = new_theme
     return new_theme, icon
