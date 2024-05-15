@@ -1,25 +1,11 @@
-/* style dla DropDownMenu przycisk zmiany motywu
-.theme-switch-container .dropdown-item i {
-    margin-right: 10px;
+/* style sidebaru w documentation page */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    overflow-y: auto;
 }
-
-.theme-switch-container .bi-brightness-high-fill {
-    color: gray;
-}
-
-.theme-switch-container .bi-moon-fill {
-    color: blue;
-}
-
-.theme-switch-container .bi-adjust {
-    color: black;
-}
-
-*//* style dla DropDownMenu przycisk zmiany motywu dla trybu ciemnego
-body.dark-mode .theme-switch-container .bi-brightness-high-fill {
-    color: yellow;
-}
-
-body.dark-mode .theme-switch-container .bi-moon-fill {
-    color: lightblue;
-}*/
