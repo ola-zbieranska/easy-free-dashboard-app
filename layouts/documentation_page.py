@@ -21,8 +21,7 @@ def get_documentation_page():
     content = html.Div(
         [
             html.H1("Learn more about creating custom charts and dashboard in an easy & free way."),
-            html.P("Here you can find extensive documentation on how to use the Easy Dashboard and create your charts."),
-            dbc.Button("Learn more", id="open-sidebar", n_clicks=0)
+            html.P("Here you can find extensive documentation on how to use the Easy Dashboard and create your charts.")
         ],
         style={"margin-left": "270px", "padding": "20px"}
     )
