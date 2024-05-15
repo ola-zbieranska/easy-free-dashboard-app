@@ -1,6 +1,7 @@
 import dash_bootstrap_components as dbc
-from dash import html
-
+from dash import html, dcc
+from dash.dependencies import Input, Output
+import dash
 def get_documentation_page():
     sidebar = html.Div(
         [
@@ -13,9 +14,10 @@ def get_documentation_page():
                 ],
                 vertical=True,
                 pills=True,
+                className='sidebar-background'
             ),
         ],
-        className="sidebar"
+        className="sidebar sidebar-background"
     )
 
     content = html.Div(

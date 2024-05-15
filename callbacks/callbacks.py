@@ -1,5 +1,6 @@
 
 import dash
+from dash import callback_context
 from dash import html, Input, Output, State
 import dash_bootstrap_components as dbc
 from app import app
@@ -12,12 +13,12 @@ from layouts.check_describe_page import get_check_and_describe_page as check_and
 
 #DropDownMenu do zmiany motywu
 @app.callback(
-    [Output('theme-link', 'href'), Output('theme-dropdown', 'label')],
+    [Output('theme-link', 'href'), Output('theme-dropdown', 'label'), Output('page-content', 'className')],
     [Input('light-mode', 'n_clicks'), Input('dark-mode', 'n_clicks')],
     State('theme-store', 'data')
 )
 def update_theme(light_clicks, dark_clicks, data):
-    ctx = dash.callback_context
+    ctx = callback_context
 
     if not ctx.triggered:
         button_id = 'light-mode'
@@ -27,12 +28,14 @@ def update_theme(light_clicks, dark_clicks, data):
     if button_id == 'dark-mode':
         new_theme = dbc.themes.DARKLY
         icon = html.I(className="bi bi-moon-fill")
+        class_name = "dark-mode"
     else:
         new_theme = dbc.themes.FLATLY
         icon = html.I(className="bi bi-brightness-high-fill")
+        class_name = "light-mode"
 
     data['theme'] = new_theme
-    return new_theme, icon
+    return new_theme, icon, class_name
 
 #prawidłowe renderowanie stron
 @app.callback(
