@@ -5,6 +5,8 @@ from dash import html, dcc, Input, Output, State
 import dash_bootstrap_components as dbc
 import pandas as pd
 from app import app
+import base64
+import io
 from io import StringIO
 from layouts.home import get_home_page as home_page
 from layouts.first_page import get_first_page as first_page
@@ -62,15 +64,15 @@ def display_pages(pathname):
         return '404'
 
 
-# callback do obsługi dcc.Tabs na first page
-@app.callback(Output('tabs-content-example', 'children'),
+# callback do obsługi dcc.Tabs na first page - do wywalenia po zmianach
+app.callback(Output('tabs-content-example', 'children'),
               [Input('tabs-example', 'value')])
 def render_content(tab):
-    if tab == 'tab-1':
-        return get_copy_paste_data()
-    elif tab == 'tab-2':
-        return get_upload_data()
-    elif tab == 'tab-3':
+    #if tab == 'tab-1':
+        #return get_copy_paste_data()
+    #elif tab == 'tab-2':
+        #return get_upload_data()
+    if tab == 'tab-3':
         return get_import_data()
 
 # callback do obsługi get_copy_paste_data
@@ -100,4 +102,47 @@ def update_output(n_clicks, value):
         return html.Div([
             html.H5("Wystąpił błąd przy przetwarzaniu danych:"),
             html.P(str(e))
+        ])
+
+# callback do obsługi get_upload_data
+
+@app.callback(
+    Output('output-data-upload', 'children'),
+    Input('upload-data', 'contents'),
+    State('upload-data', 'filename'),
+    State('upload-data', 'last_modified')
+)
+def update_output(contents, filename, date):
+    if contents is None:
+        return html.Div([
+            'No file uploaded yet.'
+        ])
+
+    content_type, content_string = contents.split(',')
+
+    decoded = base64.b64decode(content_string)
+    try:
+        if 'csv' in filename:
+            # Zakładamy, że dane są w formacie CSV
+            df = pd.read_csv(io.StringIO(decoded.decode('utf-8')))
+        elif 'xls' in filename:
+            # Zakładamy, że dane są w formacie Excel
+            df = pd.read_excel(io.BytesIO(decoded))
+        else:
+            return html.Div([
+                'Unsupported file format.'
+            ])
+
+        return html.Div([
+            html.H5(filename),
+            dcc.Graph(
+                figure={
+                    'data': [{'x': df.columns, 'y': df.iloc[0], 'type': 'bar'}],
+                    'layout': {'title': 'Podgląd danych'}
+                }
+            )
+        ])
+    except Exception as e:
+        return html.Div([
+            'There was an error processing this file.'
         ])
