@@ -24,6 +24,8 @@ def get_vizualize_page():
                 dcc.Graph(id='graph-output')
             ]), width=8),
         ]),
-        html.Div(id='tabs-content-visualize')
+        html.Div(id='tabs-content-visualize'),
+        dbc.Button("Back", id="back-to-input", color="secondary", className="mt-2 me-2", href="/first-page"),
+        dbc.Button("Proceed", id="proceed-to-visualize", color="primary", className="mt-2", href="")
     ])
     return vizualize_page
