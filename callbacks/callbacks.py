@@ -9,6 +9,7 @@ from layouts.first_page import get_first_page as first_page
 from layouts.first_page import get_copy_paste_data, get_upload_data, get_import_data
 from layouts.documentation_page import get_documentation_page as documentation_page
 from layouts.check_describe_page import get_check_and_describe_page as check_and_describe_page
+from layouts.vizualize_page import get_vizualize_page as vizualize_page
 
 
 #DropDownMenu do zmiany motywu
@@ -53,6 +54,8 @@ def display_pages(pathname):
         return documentation_page()
     elif pathname == '/check-and-describe-page':
         return check_and_describe_page()
+    elif pathname == '/vizualize-page':
+        return vizualize_page()
     else:
         return '404'
 
