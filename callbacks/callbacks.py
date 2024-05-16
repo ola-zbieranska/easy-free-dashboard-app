@@ -1,9 +1,11 @@
 
 import dash
 from dash import callback_context
-from dash import html, Input, Output, State
+from dash import html, dcc, Input, Output, State
 import dash_bootstrap_components as dbc
+import pandas as pd
 from app import app
+from io import StringIO
 from layouts.home import get_home_page as home_page
 from layouts.first_page import get_first_page as first_page
 from layouts.first_page import get_copy_paste_data, get_upload_data, get_import_data
@@ -70,3 +72,32 @@ def render_content(tab):
         return get_upload_data()
     elif tab == 'tab-3':
         return get_import_data()
+
+# callback do obsługi get_copy_paste_data
+
+@app.callback(
+    Output('output-data', 'children'),
+    Input('proceed-to-check', 'n_clicks'),
+    State('data-input', 'value')
+)
+def update_output(n_clicks, value):
+    if n_clicks is None or not value:
+        return ""
+
+    # Przetwarzanie danych
+    try:
+        df = pd.read_csv(StringIO(value))
+        return html.Div([
+            html.H5("Twoje dane:"),
+            dcc.Graph(
+                figure={
+                    'data': [{'x': df.columns, 'y': df.iloc[0], 'type': 'bar'}],
+                    'layout': {'title': 'Podgląd danych'}
+                }
+            )
+        ])
+    except Exception as e:
+        return html.Div([
+            html.H5("Wystąpił błąd przy przetwarzaniu danych:"),
+            html.P(str(e))
+        ])
