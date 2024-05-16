@@ -26,6 +26,6 @@ def get_vizualize_page():
         ]),
         html.Div(id='tabs-content-visualize'),
         dbc.Button("Back", id="back-to-input", color="secondary", className="mt-2 me-2", href="/first-page"),
-        dbc.Button("Proceed", id="proceed-to-visualize", color="primary", className="mt-2", href="")
+        dbc.Button("Next", id="proceed-to-visualize", color="primary", className="mt-2", href="")
     ])
     return vizualize_page

@@ -83,7 +83,6 @@ def get_import_data():
             className='input-background',
             style={'width': '100%', 'margin-top': '10px'}
         ),
-        dbc.Button("Check data", id="proceed-to-check", color="primary", className="mt-2",
-                   href="/check-and-describe-page"),
+        dbc.Button("Check data", id="proceed-to-check", color="primary", className="mt-2", href="/check-and-describe-page"),
         html.Div(id='output-url')
     ])
