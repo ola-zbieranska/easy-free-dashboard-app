@@ -1,13 +1,12 @@
-
 import dash
-from dash import callback_context
-from dash import html, dcc, Input, Output, State
+from dash import callback_context, html, dcc, Input, Output, State
 import dash_bootstrap_components as dbc
 import pandas as pd
-from app import app
 import base64
 import io
+import requests
 from io import StringIO
+from app import app
 from layouts.home import get_home_page as home_page
 from layouts.first_page import get_first_page as first_page
 from layouts.first_page import get_copy_paste_data, get_upload_data, get_import_data
@@ -16,7 +15,7 @@ from layouts.check_describe_page import get_check_and_describe_page as check_and
 from layouts.vizualize_page import get_vizualize_page as vizualize_page
 
 
-#DropDownMenu do zmiany motywu
+# DropDownMenu do zmiany motywu
 @app.callback(
     [Output('theme-link', 'href'), Output('theme-dropdown', 'label'), Output('page-content', 'className')],
     [Input('light-mode', 'n_clicks'), Input('dark-mode', 'n_clicks')],
@@ -42,7 +41,7 @@ def update_theme(light_clicks, dark_clicks, data):
     data['theme'] = new_theme
     return new_theme, icon, class_name
 
-#prawidłowe renderowanie stron
+# prawidłowe renderowanie stron
 @app.callback(
     Output('page-content', 'children'),
     [Input('url', 'pathname')]
@@ -52,8 +51,6 @@ def display_pages(pathname):
         return home_page()
     elif pathname == '/first-page':
         return first_page()
-    #elif pathname == '/blog':
-        #return get_blog_page()
     elif pathname == '/documentation':
         return documentation_page()
     elif pathname == '/check-and-describe-page':
@@ -63,26 +60,13 @@ def display_pages(pathname):
     else:
         return '404'
 
-
-# callback do obsługi dcc.Tabs na first page - do wywalenia po zmianach
-app.callback(Output('tabs-content-example', 'children'),
-              [Input('tabs-example', 'value')])
-def render_content(tab):
-    #if tab == 'tab-1':
-        #return get_copy_paste_data()
-    #elif tab == 'tab-2':
-        #return get_upload_data()
-    if tab == 'tab-3':
-        return get_import_data()
-
 # callback do obsługi get_copy_paste_data
-
 @app.callback(
     Output('output-data', 'children'),
     Input('proceed-to-check', 'n_clicks'),
     State('data-input', 'value')
 )
-def update_output(n_clicks, value):
+def update_output_copy_paste(n_clicks, value):
     if n_clicks is None or not value:
         return ""
 
@@ -105,14 +89,13 @@ def update_output(n_clicks, value):
         ])
 
 # callback do obsługi get_upload_data
-
 @app.callback(
     Output('output-data-upload', 'children'),
     Input('upload-data', 'contents'),
     State('upload-data', 'filename'),
     State('upload-data', 'last_modified')
 )
-def update_output(contents, filename, date):
+def update_output_upload(contents, filename, date):
     if contents is None:
         return html.Div([
             'No file uploaded yet.'
@@ -145,4 +128,42 @@ def update_output(contents, filename, date):
     except Exception as e:
         return html.Div([
             'There was an error processing this file.'
+        ])
+
+@app.callback(
+    Output('output-url', 'children'),
+    Input('check-google-sheet', 'n_clicks'),
+    State('google-sheet-url', 'value')
+)
+def update_output_google_sheet(n_clicks, url):
+    if n_clicks is None or not url:
+        return ""
+
+    # Przetwarzanie URL do pobrania danych
+    try:
+        # Konwersja Google Sheets URL do formatu CSV export
+        if 'docs.google.com/spreadsheets/d/' in url:
+            csv_url = url.replace('/edit#gid=', '/export?format=csv&gid=')
+        else:
+            return html.Div([
+                html.P("Invalid Google Sheet URL. Please provide a valid URL.")
+            ])
+
+        # Pobieranie danych z Google Sheet
+        response = requests.get(csv_url)
+        df = pd.read_csv(io.StringIO(response.text))
+
+        return html.Div([
+            html.H5("Data from Google Sheet:"),
+            dcc.Graph(
+                figure={
+                    'data': [{'x': df.columns, 'y': df.iloc[0], 'type': 'bar'}],
+                    'layout': {'title': 'Podgląd danych'}
+                }
+            )
+        ])
+    except Exception as e:
+        return html.Div([
+            html.H5("Wystąpił błąd przy przetwarzaniu danych:"),
+            html.P(str(e))
         ])

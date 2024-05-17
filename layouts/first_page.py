@@ -18,7 +18,7 @@ def get_first_page():
             dcc.Tabs(id="tabs-example", value='tab-1', children=[
                 dcc.Tab(label='Copy & paste data table', value='tab-1', children=[get_copy_paste_data()], className='tab-background'),
                 dcc.Tab(label='XLS/CSV upload', value='tab-2', children=[get_upload_data()], className='tab-background'),
-                dcc.Tab(label='Connect Google Sheet', value='tab-3', className='tab-background'),
+                dcc.Tab(label='Connect Google Sheet', value='tab-3', children=[get_import_data()], className='tab-background')
             ]),
             className="mt-4"
         ),
@@ -83,6 +83,6 @@ def get_import_data():
             className='input-background',
             style={'width': '100%', 'margin-top': '10px'}
         ),
-        dbc.Button("Check data", id="proceed-to-check", color="primary", className="mt-2", href="/check-and-describe-page"),
+        dbc.Button("Check data", id="check-google-sheet", color="primary", className="mt-2"),
         html.Div(id='output-url')
     ])
