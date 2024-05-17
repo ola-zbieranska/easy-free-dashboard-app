@@ -130,6 +130,7 @@ def update_output_upload(contents, filename, date):
             'There was an error processing this file.'
         ])
 
+# callback do obsługi importowania z Google Sheets
 @app.callback(
     Output('output-url', 'children'),
     Input('check-google-sheet', 'n_clicks'),
