@@ -1,6 +1,5 @@
 import dash_bootstrap_components as dbc
-from dash import html, dcc
-from dash import dash_table
+from dash import html, dcc, dash_table
 def get_check_and_describe_page():
     check_and_describe_page = dbc.Container([
         dbc.Row(
@@ -39,8 +38,8 @@ def get_check_and_describe_page():
                     style_table={'height': '300px', 'overflowY': 'auto'},
                     style_cell={'textAlign': 'left'},
                 ),
-                dbc.Button("Back", id="back-to-input", color="secondary", className="mt-2 me-2", href="/first-page"),
-                dbc.Button("Next", id="proceed-to-visualize", color="primary", className="mt-2", href="/vizualize-page")
+                dbc.Button("Back", id="back-to-input", color="secondary", className="mt-2 me-2"),
+                dbc.Button("Next", id="proceed-to-visualize", color="primary", className="mt-2")
             ]))
         )
     ])

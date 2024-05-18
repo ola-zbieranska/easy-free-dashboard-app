@@ -14,7 +14,6 @@ from layouts.documentation_page import get_documentation_page as documentation_p
 from layouts.check_describe_page import get_check_and_describe_page as check_and_describe_page
 from layouts.vizualize_page import get_vizualize_page as vizualize_page
 
-
 # DropDownMenu do zmiany motywu
 @app.callback(
     [Output('theme-link', 'href'), Output('theme-dropdown', 'label'), Output('page-content', 'className')],
@@ -41,13 +40,15 @@ def update_theme(light_clicks, dark_clicks, data):
     data['theme'] = new_theme
     return new_theme, icon, class_name
 
-# prawidłowe renderowanie stron
+# Połączony callback do renderowania stron i nawigacji
 @app.callback(
     Output('page-content', 'children'),
-    [Input('url', 'pathname')]
+    [Input('url', 'pathname'), Input('proceed-to-visualize', 'n_clicks'), Input('back-to-input', 'n_clicks')]
 )
-def display_pages(pathname):
-    if pathname == '/' or pathname == '/home':
+def display_pages(pathname, next_clicks, back_clicks):
+    ctx = callback_context
+
+    if not ctx.triggered or pathname == '/' or pathname == '/home':
         return home_page()
     elif pathname == '/first-page':
         return first_page()
@@ -58,9 +59,17 @@ def display_pages(pathname):
     elif pathname == '/vizualize-page':
         return vizualize_page()
     else:
-        return '404'
+        button_id = ctx.triggered[0]['prop_id'].split('.')[0]
+        if button_id == 'proceed-to-visualize':
+            return vizualize_page()
+        if button_id == 'proceed-to-check':
+            return check_and_describe_page()
+        elif button_id == 'back-to-input':
+            return first_page()
 
-# callback do obsługi get_copy_paste_data
+    return '404'
+
+# Callback do obsługi get_copy_paste_data
 @app.callback(
     Output('output-data', 'children'),
     Input('proceed-to-check', 'n_clicks'),
@@ -88,7 +97,7 @@ def update_output_copy_paste(n_clicks, value):
             html.P(str(e))
         ])
 
-# callback do obsługi get_upload_data
+# Callback do obsługi get_upload_data
 @app.callback(
     Output('output-data-upload', 'children'),
     Input('upload-data', 'contents'),
@@ -130,7 +139,7 @@ def update_output_upload(contents, filename, date):
             'There was an error processing this file.'
         ])
 
-# callback do obsługi importowania z Google Sheets
+# Callback do obsługi importowania z Google Sheets
 @app.callback(
     Output('output-url', 'children'),
     Input('check-google-sheet', 'n_clicks'),
