@@ -37,7 +37,7 @@ def get_copy_paste_data():
             className='textarea-background',
             style={'width': '100%', 'height': 200},
         ),
-        dbc.Button("Check data", id="proceed-to-check", color="primary", className="mt-2"),
+        dbc.Button("Check data", id=" ", color="primary", className="mt-2"),
         html.Div(id='output-data')
     ])
 
