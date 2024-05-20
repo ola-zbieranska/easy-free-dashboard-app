@@ -5,6 +5,7 @@ import pandas as pd
 import base64
 import io
 import requests
+import plotly.express as px
 from io import StringIO
 from app import app
 from layouts.home import get_home_page as home_page
@@ -177,3 +178,33 @@ def update_output_google_sheet(n_clicks, url):
             html.H5("Wystąpił błąd przy przetwarzaniu danych:"),
             html.P(str(e))
         ])
+
+# Callback do renderowania wykresu na podstawie wybranego przycisku
+@app.callback(
+    Output('graph-output', 'figure'),
+    [Input('bar-chart', 'n_clicks'),
+     Input('stacked-bars', 'n_clicks'),
+     Input('grouped-bars', 'n_clicks'),
+     Input('pie-chart', 'n_clicks')]
+)
+def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks):
+    ctx = dash.callback_context
+    if not ctx.triggered:
+        return {}
+    button_id = ctx.triggered[0]['prop_id'].split('.')[0]
+
+    # Przykładowe dane do wykresów
+    df = px.data.iris()
+
+    if button_id == 'bar-chart':
+        fig = px.bar(df, x='sepal_width', y='sepal_length')
+    elif button_id == 'stacked-bars':
+        fig = px.bar(df, x='sepal_width', y='sepal_length', barmode='stack')
+    elif button_id == 'grouped-bars':
+        fig = px.bar(df, x='sepal_width', y='sepal_length', barmode='group')
+    elif button_id == 'pie-chart':
+        fig = px.pie(df, names='species', values='sepal_length')
+    else:
+        fig = {}
+
+    return fig

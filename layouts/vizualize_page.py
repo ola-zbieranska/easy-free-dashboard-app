@@ -4,6 +4,13 @@ from dash.dependencies import Input, Output
 import dash
 import plotly.express as px
 def get_vizualize_page():
+    chart_buttons = [
+        dbc.Button([html.I(className="bi bi-bar-chart-fill"), " Bar Chart"], id="bar-chart", className="m-2"),
+        dbc.Button([html.I(className="bi bi-bar-chart-steps"), " Stacked Bars"], id="stacked-bars", className="m-2"),
+        dbc.Button([html.I(className="bi bi-bar-chart"), " Grouped Bars"], id="grouped-bars", className="m-2"),
+        dbc.Button([html.I(className="bi bi-pie-chart-fill"), " Pie Chart"], id="pie-chart", className="m-2"),
+        # dodać później więcej przycisków dla innych typów wykresów
+    ]
     vizualize_page = dbc.Container([
         dbc.Row(
             dbc.Col(html.Div([
