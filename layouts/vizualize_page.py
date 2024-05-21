@@ -5,10 +5,14 @@ import dash
 import plotly.express as px
 def get_vizualize_page():
     chart_buttons = [
-        dbc.Button([html.I(className="bi bi-bar-chart-fill"), " Bar Chart"], id="bar-chart", className="m-2"),
-        dbc.Button([html.I(className="bi bi-bar-chart-steps"), " Stacked Bars"], id="stacked-bars", className="m-2"),
-        dbc.Button([html.I(className="bi bi-bar-chart"), " Grouped Bars"], id="grouped-bars", className="m-2"),
-        dbc.Button([html.I(className="bi bi-pie-chart-fill"), " Pie Chart"], id="pie-chart", className="m-2"),
+        dbc.Button([html.I(className="bi bi-bar-chart-fill me-2"), "Bar Chart"], id="bar-chart",
+                   className="chart-button m-2"),
+        dbc.Button([html.I(className="bi bi-bar-chart-steps me-2"), "Stacked Bars"], id="stacked-bars",
+                   className="chart-button m-2"),
+        dbc.Button([html.I(className="bi bi-bar-chart me-2"), "Grouped Bars"], id="grouped-bars",
+                   className="chart-button m-2"),
+        dbc.Button([html.I(className="bi bi-pie-chart-fill me-2"), "Pie Chart"], id="pie-chart",
+                   className="chart-button m-2"),
         # dodać później więcej przycisków dla innych typów wykresów
     ]
     vizualize_page = dbc.Container([
@@ -21,7 +25,7 @@ def get_vizualize_page():
         dbc.Row([
             dbc.Col(html.Div([
                 dcc.Tabs(id="tabs-visualize-menu", value='tab-1', children=[
-                    dcc.Tab(label='Chart', value='tab-1'),
+                    dcc.Tab(label='Chart', value='tab-1', children=chart_buttons),
                     dcc.Tab(label='Refine', value='tab-2'),
                     dcc.Tab(label='Annotate', value='tab-3'),
                     dcc.Tab(label='Layout', value='tab-4')

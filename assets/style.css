@@ -58,3 +58,18 @@
 .input-background::placeholder {
     color: white !important;
 }
+
+/* Style dla przycisków na stronie wizualizacji */
+
+.chart-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+}
+
+.chart-button i {
+    margin-right: 5px;
+}
