@@ -13,6 +13,14 @@ def get_vizualize_page():
                    className="chart-button m-2"),
         dbc.Button([html.I(className="bi bi-pie-chart-fill me-2"), "Pie Chart"], id="pie-chart",
                    className="chart-button m-2"),
+        dbc.Button([html.I(className="bi bi-graph-up me-2"), "Line Chart"], id="line-chart",
+                   className="chart-button m-2"),
+        dbc.Button([html.I(className="bi bi-dot me-2"), "Scatter Plot"], id="scatter-plot",
+                   className="chart-button m-2"),
+        dbc.Button([html.I(className="bi bi-bar-chart-fill me-2"), "Area Chart"], id="area-chart",
+                   className="chart-button m-2"),
+        dbc.Button([html.I(className="bi bi-bar-chart-fill me-2"), "Column Chart"], id="column-chart",
+                   className="chart-button m-2"),
         # dodać później więcej przycisków dla innych typów wykresów
     ]
     vizualize_page = dbc.Container([

@@ -185,9 +185,13 @@ def update_output_google_sheet(n_clicks, url):
     [Input('bar-chart', 'n_clicks'),
      Input('stacked-bars', 'n_clicks'),
      Input('grouped-bars', 'n_clicks'),
-     Input('pie-chart', 'n_clicks')]
+     Input('pie-chart', 'n_clicks'),
+     Input('line-chart', 'n_clicks'),
+     Input('scatter-plot', 'n_clicks'),
+     Input('area-chart', 'n_clicks'),
+     Input('column-chart', 'n_clicks')]
 )
-def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks):
+def render_chart(*args):
     ctx = dash.callback_context
     if not ctx.triggered:
         return {}
@@ -197,13 +201,21 @@ def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks):
     df = px.data.iris()
 
     if button_id == 'bar-chart':
-        fig = px.bar(df, x='sepal_width', y='sepal_length')
+        fig = px.bar(df, x='sepal_width', y='sepal_length', title='Bar Chart')
     elif button_id == 'stacked-bars':
-        fig = px.bar(df, x='sepal_width', y='sepal_length', barmode='stack')
+        fig = px.bar(df, x='sepal_width', y='sepal_length', barmode='stack', title='Stacked Bars')
     elif button_id == 'grouped-bars':
-        fig = px.bar(df, x='sepal_width', y='sepal_length', barmode='group')
+        fig = px.bar(df, x='sepal_width', y='sepal_length', barmode='group', title='Grouped Bars')
     elif button_id == 'pie-chart':
-        fig = px.pie(df, names='species', values='sepal_length')
+        fig = px.pie(df, names='species', values='sepal_length', title='Pie Chart')
+    elif button_id == 'line-chart':
+        fig = px.line(df, x='sepal_width', y='sepal_length', title='Line Chart')
+    elif button_id == 'scatter-plot':
+        fig = px.scatter(df, x='sepal_width', y='sepal_length', title='Scatter Plot')
+    elif button_id == 'area-chart':
+        fig = px.area(df, x='sepal_width', y='sepal_length', title='Area Chart')
+    elif button_id == 'column-chart':
+        fig = px.bar(df, x='sepal_width', y='sepal_length', title='Column Chart')  # Możesz dostosować dane do kolumn
     else:
         fig = {}
 
