@@ -181,7 +181,8 @@ def update_output_google_sheet(n_clicks, url):
 
 # Callback do renderowania wykresu na podstawie wybranego przycisku
 @app.callback(
-    Output('graph-output', 'figure'),
+    [Output('graph-output', 'figure'), Output('graph-output', 'style'),
+     Output('table-output', 'data'), Output('table-output', 'columns'), Output('table-output', 'style_table')],
     [Input('bar-chart', 'n_clicks'),
      Input('stacked-bars', 'n_clicks'),
      Input('grouped-bars', 'n_clicks'),
@@ -189,12 +190,14 @@ def update_output_google_sheet(n_clicks, url):
      Input('line-chart', 'n_clicks'),
      Input('scatter-plot', 'n_clicks'),
      Input('area-chart', 'n_clicks'),
-     Input('column-chart', 'n_clicks')]
+     Input('column-chart', 'n_clicks'),
+     Input('table', 'n_clicks')]
 )
-def render_chart(*args):
+def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks, line_clicks, scatter_clicks, area_clicks, column_clicks, table_clicks):
     ctx = dash.callback_context
     if not ctx.triggered:
-        return {}
+        return {}, {'display': 'block'}, [], [], {'display': 'none'}
+
     button_id = ctx.triggered[0]['prop_id'].split('.')[0]
 
     # Przykładowe dane do wykresów
@@ -202,21 +205,31 @@ def render_chart(*args):
 
     if button_id == 'bar-chart':
         fig = px.bar(df, x='sepal_width', y='sepal_length', title='Bar Chart')
+        return fig, {'display': 'block'}, [], [], {'display': 'none'}
     elif button_id == 'stacked-bars':
         fig = px.bar(df, x='sepal_width', y='sepal_length', barmode='stack', title='Stacked Bars')
+        return fig, {'display': 'block'}, [], [], {'display': 'none'}
     elif button_id == 'grouped-bars':
         fig = px.bar(df, x='sepal_width', y='sepal_length', barmode='group', title='Grouped Bars')
+        return fig, {'display': 'block'}, [], [], {'display': 'none'}
     elif button_id == 'pie-chart':
         fig = px.pie(df, names='species', values='sepal_length', title='Pie Chart')
+        return fig, {'display': 'block'}, [], [], {'display': 'none'}
     elif button_id == 'line-chart':
         fig = px.line(df, x='sepal_width', y='sepal_length', title='Line Chart')
+        return fig, {'display': 'block'}, [], [], {'display': 'none'}
     elif button_id == 'scatter-plot':
         fig = px.scatter(df, x='sepal_width', y='sepal_length', title='Scatter Plot')
+        return fig, {'display': 'block'}, [], [], {'display': 'none'}
     elif button_id == 'area-chart':
         fig = px.area(df, x='sepal_width', y='sepal_length', title='Area Chart')
+        return fig, {'display': 'block'}, [], [], {'display': 'none'}
     elif button_id == 'column-chart':
         fig = px.bar(df, x='sepal_width', y='sepal_length', title='Column Chart')  # Możesz dostosować dane do kolumn
+        return fig, {'display': 'block'}, [], [], {'display': 'none'}
+    elif button_id == 'table':
+        columns = [{"name": col, "id": col} for col in df.columns]
+        data = df.to_dict('records')
+        return {}, {'display': 'none'}, data, columns, {'display': 'block'}
     else:
-        fig = {}
-
-    return fig
+        return {}, {'display': 'block'}, [], [], {'display': 'none'}

@@ -1,5 +1,6 @@
 import dash_bootstrap_components as dbc
 from dash import html, dcc
+from dash import dash_table
 from dash.dependencies import Input, Output
 import dash
 import plotly.express as px
@@ -21,6 +22,7 @@ def get_vizualize_page():
                    className="chart-button m-2"),
         dbc.Button([html.I(className="bi bi-bar-chart-fill me-2"), "Column Chart"], id="column-chart",
                    className="chart-button m-2"),
+        dbc.Button([html.I(className="bi bi-table me-2"), "Table"], id="table", className="chart-button m-2"),
         # dodać później więcej przycisków dla innych typów wykresów
     ]
     vizualize_page = dbc.Container([
@@ -40,7 +42,8 @@ def get_vizualize_page():
                 ])
             ]), width=4),
             dbc.Col(html.Div([
-                dcc.Graph(id='graph-output')
+                dcc.Graph(id='graph-output'),
+                dash_table.DataTable(id='table-output', style_table={'display': 'none'})
             ]), width=8),
         ]),
         html.Div(id='tabs-content-visualize'),
