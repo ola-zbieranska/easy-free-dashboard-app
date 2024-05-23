@@ -17,7 +17,7 @@ def get_navbar():
         children=[
             dbc.DropdownMenuItem("More pages", header=True),
             dbc.DropdownMenuItem("Main", href="/home"),
-            dbc.DropdownMenuItem("Profile", href="/home"),
+            dbc.DropdownMenuItem("Profile", href="/"),
             dbc.DropdownMenuItem("Create", href="/first-page"),
             dbc.DropdownMenuItem("Blog", href="/blog"),
             dbc.DropdownMenuItem("Documentation", href="/documentation"),
