@@ -205,12 +205,16 @@ def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks, line_cl
     else:
         return {}, {'display': 'block'}, [], [], {'display': 'none'}
 
-    # Nawigacja oparta na pathname
-    @app.callback(
-        Output('page-content', 'children'),
-        [Input('url', 'pathname')]
-    )
-    def display_pages(pathname):
+@app.callback(
+    Output('page-content', 'children', allow_duplicate=True),
+    [Input('url', 'pathname'),
+     Input('proceed-to-visualize', 'n_clicks'),
+     Input('back-to-input', 'n_clicks')],
+    prevent_initial_call=True
+)
+def display_pages(pathname, next_clicks, back_clicks):
+    ctx = callback_context
+    if not ctx.triggered:
         if pathname == '/' or pathname == '/home':
             return home_page()
         elif pathname == '/first-page':
@@ -223,23 +227,24 @@ def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks, line_cl
             return vizualize_page()
         else:
             return '404'
-
-    # Nawigacja oparta na przyciskach w check_and_describe_page
-    @app.callback(
-        Output('page-content', 'children'),
-        [Input('proceed-to-visualize', 'n_clicks')]
-    )
-    def navigate_to_vizualize_page(next_clicks):
-        if next_clicks:
+    else:
+        button_id = ctx.triggered[0]['prop_id'].split('.')[0]
+        if button_id == 'proceed-to-visualize':
             return vizualize_page()
-        return check_and_describe_page()
-
-    # Nawigacja oparta na przyciskach w vizualize_page
-    @app.callback(
-        Output('page-content', 'children'),
-        [Input('back-to-input', 'n_clicks')]
-    )
-    def navigate_back_to_input(back_clicks):
-        if back_clicks:
+        elif button_id == 'back-to-input':
             return first_page()
-        return vizualize_page()
+        elif button_id == 'url':
+            if pathname == '/' or pathname == '/home':
+                return home_page()
+            elif pathname == '/first-page':
+                return first_page()
+            elif pathname == '/documentation':
+                return documentation_page()
+            elif pathname == '/check-and-describe-page':
+                return check_and_describe_page()
+            elif pathname == '/vizualize-page':
+                return vizualize_page()
+            else:
+                return '404'
+
+        return '404'

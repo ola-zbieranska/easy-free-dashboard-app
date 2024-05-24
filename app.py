@@ -14,4 +14,3 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
 
 # Dodane dla wdrożeń, np. na Heroku
 server = app.server
-

@@ -1,7 +1,7 @@
 import dash_bootstrap_components as dbc
 from dash import html, dcc
-def get_home_page():
-    home_page = dbc.Container([
+def get_publish_page():
+    publish_page = dbc.Container([
         dbc.Row(
             dbc.Col(html.Div([
                 html.H1("Welcome to Easy Dashboard!"),
@@ -16,4 +16,4 @@ def get_home_page():
             ]))
         )
     ])
-    return home_page
+    return publish_page
