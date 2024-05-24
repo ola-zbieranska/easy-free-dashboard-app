@@ -14,6 +14,7 @@ from layouts.first_page import get_copy_paste_data, get_upload_data, get_import_
 from layouts.documentation_page import get_documentation_page as documentation_page
 from layouts.check_describe_page import get_check_and_describe_page as check_and_describe_page
 from layouts.vizualize_page import get_vizualize_page as vizualize_page
+from layouts.publish_page import get_publish_page as publish_page
 
 # DropDownMenu do zmiany motywu
 @app.callback(
@@ -225,6 +226,8 @@ def display_pages(pathname, next_clicks, back_clicks):
             return check_and_describe_page()
         elif pathname == '/vizualize-page':
             return vizualize_page()
+        elif pathname == '/publish-page':
+            return publish_page()
         else:
             return '404'
     else:
