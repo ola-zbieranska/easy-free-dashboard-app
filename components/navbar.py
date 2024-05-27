@@ -23,7 +23,7 @@ def get_navbar():
             dbc.DropdownMenuItem("Documentation", href="/documentation"),
             dbc.DropdownMenuItem("Check data", href="/check-and-describe-page"),
             dbc.DropdownMenuItem("Vizualize data", href="/vizualize-page"),
-            dbc.DropdownMenuItem("Publish", href="/publish-page")
+            dbc.DropdownMenuItem("Publish chart", href="/publish-page")
         ],
         nav=True,
         in_navbar=True,
