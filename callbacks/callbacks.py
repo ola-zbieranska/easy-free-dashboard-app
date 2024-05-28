@@ -247,6 +247,8 @@ def display_pages(pathname, next_clicks, back_clicks):
                 return check_and_describe_page()
             elif pathname == '/vizualize-page':
                 return vizualize_page()
+            elif pathname == '/publish-page':
+                return publish_page()
             else:
                 return '404'
 
