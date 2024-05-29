@@ -1,6 +1,6 @@
 import dash
-from dash import callback_context, html, dcc, Input, Output, State
 import dash_bootstrap_components as dbc
+from dash import html, dcc, Input, Output, State, callback_context
 import pandas as pd
 import base64
 import io
@@ -8,15 +8,16 @@ import requests
 import plotly.express as px
 from io import StringIO
 from app import app
+from components.navbar import get_navbar as navbar
+from callbacks.callbacks import *
 from layouts.home import get_home_page as home_page
 from layouts.first_page import get_first_page as first_page
-from layouts.first_page import get_copy_paste_data, get_upload_data, get_import_data
 from layouts.documentation_page import get_documentation_page as documentation_page
 from layouts.check_describe_page import get_check_and_describe_page as check_and_describe_page
 from layouts.vizualize_page import get_vizualize_page as vizualize_page
 from layouts.publish_page import get_publish_page as publish_page
 
-# DropDownMenu do zmiany motywu
+# Callback do zmiany motywu
 @app.callback(
     [Output('theme-link', 'href'), Output('theme-dropdown', 'label'), Output('page-content', 'className')],
     [Input('light-mode', 'n_clicks'), Input('dark-mode', 'n_clicks')],
@@ -52,7 +53,6 @@ def update_output_copy_paste(n_clicks, value):
     if n_clicks is None or not value:
         return ""
 
-    # Przetwarzanie danych
     try:
         df = pd.read_csv(StringIO(value))
         return html.Div([
@@ -79,24 +79,18 @@ def update_output_copy_paste(n_clicks, value):
 )
 def update_output_upload(contents, filename, date):
     if contents is None:
-        return html.Div([
-            'No file uploaded yet.'
-        ])
+        return html.Div(['No file uploaded yet.'])
 
     content_type, content_string = contents.split(',')
 
     decoded = base64.b64decode(content_string)
     try:
         if 'csv' in filename:
-            # Zakładamy, że dane są w formacie CSV
             df = pd.read_csv(io.StringIO(decoded.decode('utf-8')))
         elif 'xls' in filename:
-            # Zakładamy, że dane są w formacie Excel
             df = pd.read_excel(io.BytesIO(decoded))
         else:
-            return html.Div([
-                'Unsupported file format.'
-            ])
+            return html.Div(['Unsupported file format.'])
 
         return html.Div([
             html.H5(filename),
@@ -108,9 +102,7 @@ def update_output_upload(contents, filename, date):
             )
         ])
     except Exception as e:
-        return html.Div([
-            'There was an error processing this file.'
-        ])
+        return html.Div(['There was an error processing this file.'])
 
 # Callback do obsługi importowania z Google Sheets
 @app.callback(
@@ -122,17 +114,12 @@ def update_output_google_sheet(n_clicks, url):
     if n_clicks is None or not url:
         return ""
 
-    # Przetwarzanie URL do pobrania danych
     try:
-        # Konwersja Google Sheets URL do formatu CSV export
         if 'docs.google.com/spreadsheets/d/' in url:
             csv_url = url.replace('/edit#gid=', '/export?format=csv&gid=')
         else:
-            return html.Div([
-                html.P("Invalid Google Sheet URL. Please provide a valid URL.")
-            ])
+            return html.Div([html.P("Invalid Google Sheet URL. Please provide a valid URL.")])
 
-        # Pobieranie danych z Google Sheet
         response = requests.get(csv_url)
         df = pd.read_csv(io.StringIO(response.text))
 
@@ -172,7 +159,6 @@ def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks, line_cl
 
     button_id = ctx.triggered[0]['prop_id'].split('.')[0]
 
-    # Przykładowe dane do wykresów
     df = px.data.iris()
 
     if button_id == 'bar-chart':
@@ -197,7 +183,7 @@ def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks, line_cl
         fig = px.area(df, x='sepal_width', y='sepal_length', title='Area Chart')
         return fig, {'display': 'block'}, [], [], {'display': 'none'}
     elif button_id == 'column-chart':
-        fig = px.bar(df, x='sepal_width', y='sepal_length', title='Column Chart')  # Możesz dostosować dane do kolumn
+        fig = px.bar(df, x='sepal_width', y='sepal_length', title='Column Chart')
         return fig, {'display': 'block'}, [], [], {'display': 'none'}
     elif button_id == 'table':
         columns = [{"name": col, "id": col} for col in df.columns]
@@ -206,8 +192,9 @@ def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks, line_cl
     else:
         return {}, {'display': 'block'}, [], [], {'display': 'none'}
 
+# Callback do wyświetlania stron na podstawie ścieżki URL
 @app.callback(
-    Output('page-content', 'children', allow_duplicate=True),
+    Output('page-content', 'children'),
     [Input('url', 'pathname'),
      Input('proceed-to-visualize', 'n_clicks'),
      Input('back-to-input', 'n_clicks')],
@@ -229,7 +216,7 @@ def display_pages(pathname, next_clicks, back_clicks):
         elif pathname == '/publish-page':
             return publish_page()
         else:
-            return '404'
+            return html.H1('404 - Page not found')
     else:
         button_id = ctx.triggered[0]['prop_id'].split('.')[0]
         if button_id == 'proceed-to-visualize':
@@ -250,6 +237,6 @@ def display_pages(pathname, next_clicks, back_clicks):
             elif pathname == '/publish-page':
                 return publish_page()
             else:
-                return '404'
+                return html.H1('404 - Page not found')
 
-        return '404'
+        return html.H1('404 - Page not found')

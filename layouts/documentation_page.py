@@ -2,19 +2,20 @@ import dash_bootstrap_components as dbc
 from dash import html, dcc
 from dash.dependencies import Input, Output
 import dash
+
 def get_documentation_page():
     sidebar = html.Div(
         [
             html.P("Useful links for documentation:", className="lead"),
             dbc.Nav(
                 [
-                    dbc.NavLink("Introduction", href="/documentation#introduction", active="exact"),
-                    dbc.NavLink("Setup", href="/documentation#setup", active="exact"),
-                    dbc.NavLink("Advanced Topics", href="/documentation#advanced", active="exact"),
+                    dbc.NavLink("Introduction", href="/documentation#introduction", active="exact", className="sidebar-link"),
+                    dbc.NavLink("Setup", href="/documentation#setup", active="exact", className="sidebar-link"),
+                    dbc.NavLink("Advanced Topics", href="/documentation#advanced", active="exact", className="sidebar-link"),
                 ],
                 vertical=True,
                 pills=True,
-                className='sidebar-background'
+                className='sidebar-nav'
             ),
         ],
         className="sidebar sidebar-background"
@@ -23,9 +24,11 @@ def get_documentation_page():
     content = html.Div(
         [
             html.H1("Learn more about creating custom charts and dashboard in an easy & free way."),
-            html.P("Here you can find extensive documentation on how to use the Easy Dashboard and create your charts.")
+            html.P("Here you can find extensive documentation on how to use the Easy Dashboard and create your charts."),
+            html.Hr(className="my-4"),
+            html.Div(id="content-section")
         ],
-        style={"margin-left": "270px", "padding": "20px"}
+        className="content"
     )
 
     documentation_page = html.Div([sidebar, content])

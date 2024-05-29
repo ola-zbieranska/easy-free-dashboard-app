@@ -1,17 +1,61 @@
-
-/* style sidebaru w documentation page */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 250px;
-    padding: 10px;
-    background-color: #f8f9fa;
-    overflow-y: auto;
+/* Ogólne style dla wszystkich stron */
+body {
+    font-family: 'Open Sans', sans-serif;
 }
 
-/* Darkly theme styles */
+.display-4 {
+    font-size: 2.5rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+}
+
+.my-4 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Style dla przycisków */
+.me-2 {
+    margin-right: 0.5rem !important;
+}
+
+.mt-2 {
+    margin-top: 0.5rem !important;
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+/* Style dla kart */
+.card {
+    margin-bottom: 2rem;
+}
+
+/* Dark mode specific styles */
+.dark-mode .navbar, .dark-mode .dropdown-menu {
+    background-color: #343a40 !important;
+}
+
+.dark-mode .card {
+    background-color: #343a40 !important;
+    color: white !important;
+}
+
 .dark-mode .tab-background {
     background-color: #375a7f !important;
     color: white !important;
@@ -32,7 +76,16 @@
     color: white !important;
 }
 
-/* Flatly theme styles */
+/* Light mode specific styles */
+.light-mode .navbar, .light-mode .dropdown-menu {
+    background-color: #f8f9fa !important;
+}
+
+.light-mode .card {
+    background-color: #ffffff !important;
+    color: black !important;
+}
+
 .light-mode .tab-background {
     background-color: #2c3e50 !important;
     color: white !important;
@@ -53,6 +106,22 @@
     color: white !important;
 }
 
+.textarea-background {
+    background-color: #476481 !important;
+    color: white !important;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.input-background {
+    background-color: #476481 !important;
+    color: white !important;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
 /* Placeholder styles */
 .textarea-background::placeholder,
 .input-background::placeholder {
@@ -60,7 +129,6 @@
 }
 
 /* Style dla przycisków na stronie wizualizacji */
-
 .chart-button {
     display: inline-flex;
     align-items: center;
@@ -72,4 +140,40 @@
 
 .chart-button i {
     margin-right: 5px;
+}
+
+/* style sidebaru w documentation page */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+}
+
+.sidebar-background {
+    background-color: #476481 !important;
+    color: white !important;
+}
+
+.sidebar a {
+    color: #ffffff !important;
+}
+
+.sidebar a.active {
+    background-color: #343a40 !important;
+    color: white !important;
+}
+
+.sidebar .nav-link {
+    margin: 5px 0;
+}
+
+/* Content style */
+.content {
+    margin-left: 270px;
+    padding: 20px;
 }

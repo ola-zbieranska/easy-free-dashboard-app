@@ -10,8 +10,8 @@ app.layout = html.Div([
     navbar(),
     dcc.Store(id='theme-store', data={"theme": dbc.themes.FLATLY}),
     html.Link(id='theme-link', rel='stylesheet', href=dbc.themes.FLATLY),
-    html.Div(id='page-content', className="light-mode"), # klasa 'light-mode' na początku
-    html.Div(id='proceed-to-visualize', style={'display': 'none'}), # placeholdery dla przycisków nawigacyjnych
+    html.Div(id='page-content', className="light-mode"),  # klasa 'light-mode' na początku
+    html.Div(id='proceed-to-visualize', style={'display': 'none'}),  # placeholdery dla przycisków nawigacyjnych
     html.Div(id='back-to-input', style={'display': 'none'})
 ])
 

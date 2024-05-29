@@ -1,6 +1,7 @@
 import dash
 import dash_bootstrap_components as dbc
-from callbacks.callbacks import *
+from dash import html, dcc
+
 def get_navbar():
     theme_toggle = dbc.DropdownMenu(
         label=html.I(className="bi bi-brightness-high-fill"),
@@ -13,22 +14,23 @@ def get_navbar():
         className="theme-switch-container",
         id="theme-dropdown"
     )
+
     dropdown = dbc.DropdownMenu(
         children=[
             dbc.DropdownMenuItem("More pages", header=True),
             dbc.DropdownMenuItem("Main", href="/home"),
-            dbc.DropdownMenuItem("Profile", href="/"),
             dbc.DropdownMenuItem("Create", href="/first-page"),
             dbc.DropdownMenuItem("Blog", href="/blog"),
             dbc.DropdownMenuItem("Documentation", href="/documentation"),
             dbc.DropdownMenuItem("Check data", href="/check-and-describe-page"),
-            dbc.DropdownMenuItem("Vizualize data", href="/vizualize-page"),
+            dbc.DropdownMenuItem("Visualize data", href="/visualize-page"),
             dbc.DropdownMenuItem("Publish chart", href="/publish-page")
         ],
         nav=True,
         in_navbar=True,
         label="More",
     )
+
     github_button = dbc.Button(
         html.I(className="bi bi-github"),
         color="link",
@@ -37,6 +39,7 @@ def get_navbar():
         className="me-2",
         target="_blank"
     )
+
     navbar = dbc.NavbarSimple(
         children=[
             github_button,
