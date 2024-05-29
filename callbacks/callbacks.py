@@ -17,6 +17,9 @@ from layouts.check_describe_page import get_check_and_describe_page as check_and
 from layouts.vizualize_page import get_vizualize_page as vizualize_page
 from layouts.publish_page import get_publish_page as publish_page
 
+
+
+
 # Callback do zmiany motywu
 @app.callback(
     [Output('theme-link', 'href'), Output('theme-dropdown', 'label'), Output('page-content', 'className')],

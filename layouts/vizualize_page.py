@@ -1,9 +1,7 @@
 import dash_bootstrap_components as dbc
-from dash import html, dcc
-from dash import dash_table
-from dash.dependencies import Input, Output
-import dash
-import plotly.express as px
+from dash import html, dcc, dash_table
+
+
 def get_vizualize_page():
     chart_buttons = [
         dbc.Button([html.I(className="bi bi-bar-chart-fill me-2"), "Bar Chart"], id="bar-chart",
@@ -23,8 +21,8 @@ def get_vizualize_page():
         dbc.Button([html.I(className="bi bi-bar-chart-fill me-2"), "Column Chart"], id="column-chart",
                    className="chart-button m-2"),
         dbc.Button([html.I(className="bi bi-table me-2"), "Table"], id="table", className="chart-button m-2"),
-        # dodać później więcej przycisków dla innych typów wykresów
     ]
+
     vizualize_page = dbc.Container([
         dbc.Row(
             dbc.Col(html.Div([
@@ -50,4 +48,5 @@ def get_vizualize_page():
         dbc.Button("Back", id="back-to-input", color="secondary", className="mt-2 me-2"),
         dbc.Button("Next", id="proceed-to-visualize", color="primary", className="mt-2")
     ])
+
     return vizualize_page
