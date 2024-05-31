@@ -6,7 +6,6 @@ import base64
 import io
 import requests
 import plotly.express as px
-import logging
 from io import StringIO
 from app import app
 from components.navbar import get_navbar as navbar
@@ -16,9 +15,6 @@ from layouts.documentation_page import get_documentation_page as documentation_p
 from layouts.check_describe_page import get_check_and_describe_page as check_and_describe_page
 from layouts.publish_page import get_publish_page as publish_page
 from layouts.vizualize_page import get_vizualize_page as vizualize_page
-
-logging.basicConfig(level=logging.DEBUG)
-
 
 # Callback do zmiany motywu
 @app.callback(
@@ -195,99 +191,24 @@ def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks, line_cl
     else:
         return {}, {'display': 'block'}, [], [], {'display': 'none'}
 
+
 # Callback do wyświetlania stron na podstawie ścieżki URL
 @app.callback(
     Output('page-content', 'children'),
-    [Input('url', 'pathname'),
-     Input('proceed-to-visualize', 'n_clicks'),
-     Input('back-to-input', 'n_clicks')],
-    prevent_initial_call=True
+    [Input('url', 'pathname')]
 )
-def display_pages(pathname, next_clicks, back_clicks):
-    ctx = callback_context
-    if not ctx.triggered:
-        if pathname == '/' or pathname == '/home':
-            return home_page()
-        elif pathname == '/first-page':
-            return first_page()
-        elif pathname == '/documentation':
-            return documentation_page()
-        elif pathname == '/check-and-describe-page':
-            return check_and_describe_page()
-        elif pathname == '/vizualize-page':
-            return vizualize_page()
-        elif pathname == '/publish-page':
-            return publish_page()
-        else:
-            return html.H1('404 - Page not found')
+def display_pages(pathname):
+    if pathname == '/' or pathname == '/home':
+        return home_page()
+    elif pathname == '/first-page':
+        return first_page()
+    elif pathname == '/documentation':
+        return documentation_page()
+    elif pathname == '/check-and-describe-page':
+        return check_and_describe_page()
+    elif pathname == '/vizualize-page':
+        return vizualize_page()
+    elif pathname == '/publish-page':
+        return publish_page()
     else:
-        button_id = ctx.triggered[0]['prop_id'].split('.')[0]
-        if button_id == 'proceed-to-visualize':
-            return vizualize_page()
-        elif button_id == 'back-to-input':
-            return first_page()
-        elif button_id == 'url':
-            if pathname == '/' or pathname == '/home':
-                return home_page()
-            elif pathname == '/first-page':
-                return first_page()
-            elif pathname == '/documentation':
-                return documentation_page()
-            elif pathname == '/check-and-describe-page':
-                return check_and_describe_page()
-            elif pathname == '/publish-page':
-                return publish_page()
-            elif pathname == '/vizualize-page':
-                return vizualize_page()
-            else:
-                return html.H1('404 - Page not found')
-
-#logowanie wewnątrz funkcji display_pages, aby śledzić ścieżki URL i ID przycisków
-@app.callback(
-    Output('page-content', 'children'),
-    [Input('url', 'pathname'),
-     Input('proceed-to-visualize', 'n_clicks'),
-     Input('back-to-input', 'n_clicks')],
-    prevent_initial_call=True
-)
-def display_pages(pathname, next_clicks, back_clicks):
-    ctx = callback_context
-    logging.debug(f'Pathname: {pathname}, Triggered: {ctx.triggered}')
-
-    if not ctx.triggered:
-        if pathname == '/' or pathname == '/home':
-            return home_page()
-        elif pathname == '/first-page':
-            return first_page()
-        elif pathname == '/documentation':
-            return documentation_page()
-        elif pathname == '/check-and-describe-page':
-            return check_and_describe_page()
-        elif pathname == '/vizualize-page':
-            return vizualize_page()
-        elif pathname == '/publish-page':
-            return publish_page()
-        else:
-            return html.H1('404 - Page not found')
-    else:
-        button_id = ctx.triggered[0]['prop_id'].split('.')[0]
-        logging.debug(f'Button ID: {button_id}')
-        if button_id == 'proceed-to-visualize':
-            return vizualize_page()
-        elif button_id == 'back-to-input':
-            return first_page()
-        elif button_id == 'url':
-            if pathname == '/' or pathname == '/home':
-                return home_page()
-            elif pathname == '/first-page':
-                return first_page()
-            elif pathname == '/documentation':
-                return documentation_page()
-            elif pathname == '/check-and-describe-page':
-                return check_and_describe_page()
-            elif pathname == '/publish-page':
-                return publish_page()
-            elif pathname == '/vizualize-page':
-                return vizualize_page()
-            else:
-                return html.H1('404 - Page not found')
+        return html.H1('404 - Page not found')

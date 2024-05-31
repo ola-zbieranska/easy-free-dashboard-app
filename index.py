@@ -11,10 +11,7 @@ app.layout = html.Div([
     navbar(),
     dcc.Store(id='theme-store', data={"theme": dbc.themes.FLATLY}),
     html.Link(id='theme-link', rel='stylesheet', href=dbc.themes.FLATLY),
-    html.Div(id='page-content', className="light-mode"),
-    html.Div(id='proceed-to-visualize', style={'display': 'none'}),
-    html.Div(id='back-to-input', style={'display': 'none'})
+    html.Div(id='page-content', className="light-mode")
 ])
-
 if __name__ == '__main__':
     app.run_server(debug=True)
