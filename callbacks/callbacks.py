@@ -191,7 +191,6 @@ def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks, line_cl
     else:
         return {}, {'display': 'block'}, [], [], {'display': 'none'}
 
-
 # Callback do wyświetlania stron na podstawie ścieżki URL
 @app.callback(
     Output('page-content', 'children'),

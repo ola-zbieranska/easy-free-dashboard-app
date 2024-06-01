@@ -22,7 +22,7 @@ def get_navbar():
             dbc.DropdownMenuItem("Create", href="/first-page"),
             dbc.DropdownMenuItem("Blog", href="/blog"),
             dbc.DropdownMenuItem("Documentation", href="/documentation"),
-            dbc.DropdownMenuItem("Visualize data", href="/visualize-page"),
+            dbc.DropdownMenuItem("Visualize data", href="/vizualize-page"),
             dbc.DropdownMenuItem("Check data", href="/check-and-describe-page"),
             dbc.DropdownMenuItem("Publish chart", href="/publish-page")
         ],
