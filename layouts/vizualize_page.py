@@ -34,8 +34,27 @@ def get_vizualize_page():
             dbc.Col(html.Div([
                 dcc.Tabs(id="tabs-visualize-menu", value='tab-1', children=[
                     dcc.Tab(label='Chart', value='tab-1', children=chart_buttons),
-                    dcc.Tab(label='Refine', value='tab-2'),
-                    dcc.Tab(label='Annotate', value='tab-3'),
+                    dcc.Tab(label='Refine', value='tab-2', children=[
+                        html.Div([
+                            html.Label("Bar Color:"),
+                            html.Br(),
+                            dcc.Input(id="bar-color", type="text", value="blue"),
+                            html.Br(),
+                            html.Label("Bar Width:"),
+                            html.Br(),
+                            dcc.Slider(id="bar-width", min=0.1, max=1.0, step=0.1, value=0.5),
+                        ])
+                    ]),
+                    dcc.Tab(label='Annotate', value='tab-3', children=[
+                        html.Div([
+                            html.Label("Chart Title: "),
+                            dcc.Input(id="chart-title", type="text", value=""),
+                            html.Br(),
+                            html.Label("Show Legend"),
+                            dcc.Checklist(id="show-legend", options=[{"label": "", "value": "show"}], value=["show"]),
+                            html.Br()
+                        ])
+                    ]),
                     dcc.Tab(label='Layout', value='tab-4')
                 ])
             ]), width=4),
