@@ -177,3 +177,41 @@ body {
     margin-left: 270px;
     padding: 20px;
 }
+
+/* Taby customizacja */
+.custom-tab .tab {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 15px !important;
+}
+
+.custom-tab .tab .tab-label {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+    text-align: center !important;
+}
+
+/* Dark mode specific styles for tabs */
+.dark-mode .custom-tab .tab {
+    background-color: #343a40 !important;
+    color: white !important;
+    border: 1px solid #495057 !important;
+}
+
+.dark-mode .custom-tab .tab-label {
+    color: white !important;
+}
+
+/* Light mode specific styles for tabs */
+.light-mode .custom-tab .tab {
+    background-color: #f8f9fa !important;
+    color: black !important;
+    border: 1px solid #dee2e6 !important;
+}
+
+.light-mode .custom-tab .tab-label {
+    color: black !important;
+}

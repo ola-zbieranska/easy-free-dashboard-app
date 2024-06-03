@@ -1,7 +1,6 @@
 import dash_bootstrap_components as dbc
 from dash import html, dcc, dash_table
 
-
 def get_vizualize_page():
     chart_buttons = [
         dbc.Button([html.I(className="bi bi-bar-chart-fill me-2"), "Bar Chart"], id="bar-chart",
@@ -33,28 +32,23 @@ def get_vizualize_page():
         dbc.Row([
             dbc.Col(html.Div([
                 dcc.Tabs(id="tabs-visualize-menu", value='tab-1', children=[
-                    dcc.Tab(label='Chart type', value='tab-1', children=chart_buttons),
-                    dcc.Tab(label='Annotate', value='tab-2', children=[
+                    dcc.Tab(label='Chart', value='tab-1', children=chart_buttons, className="custom-tab"),
+                    dcc.Tab(label='Description', value='tab-2', children=[
                         html.Div([
-                            html.Label("Chart Title: "),
-                            dcc.Input(id="chart-title", type="text", value=""),
-                            html.Br(),
-                            html.Label("Show Legend"),
-                            dcc.Checklist(id="show-legend", options=[{"label": "", "value": "show"}], value=["show"]),
-                            html.Br()
+                            html.Label("available soon - work in progress")
                         ])
-                    ]),
-                    dcc.Tab(label='Refine', value='tab-3', children=[
+                    ], className="custom-tab"),
+                    dcc.Tab(label='Customize', value='tab-3', children=[
                         html.Div([
                             html.P("available soon - work in progress")
                         ])
-                    ]),
+                    ], className="custom-tab"),
                     dcc.Tab(label='Layout', value='tab-4', children=[
                         html.Div([
                             html.P("available soon - work in progress")
                         ])
-                    ])
-                ])
+                    ], className="custom-tab")
+                ], className="custom-tab")
             ]), width=4),
             dbc.Col(html.Div([
                 dcc.Graph(id='graph-output'),
