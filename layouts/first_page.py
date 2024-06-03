@@ -1,5 +1,6 @@
 import dash_bootstrap_components as dbc
 from dash import html, dcc
+from dash import dash_table
 from dash.dependencies import Input, Output
 import dash
 
@@ -23,7 +24,14 @@ def get_first_page():
                 ]), width=12
             ), className="mt-4"
         ),
-        html.Div(id='tabs-content-example')
+        html.Div(id='tabs-content-example'),
+        dcc.Graph(id='graph-output-bar', style={'display': 'none'}),
+        dcc.Graph(id='graph-output-pie', style={'display': 'none'}),
+        dcc.Graph(id='graph-output-line', style={'display': 'none'}),
+        dcc.Graph(id='graph-output-scatter', style={'display': 'none'}),
+        dcc.Graph(id='graph-output-area', style={'display': 'none'}),
+        dcc.Graph(id='graph-output', style={'display': 'none'}),
+        dash_table.DataTable(id='table-output', style_table={'display': 'none'})
     ], className="mt-4")
     return first_page
 

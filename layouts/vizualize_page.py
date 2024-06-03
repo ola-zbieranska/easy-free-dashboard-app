@@ -58,7 +58,10 @@ def get_vizualize_page():
             ]), width=4),
             dbc.Col(html.Div([
                 dcc.Graph(id='graph-output'),
-                dash_table.DataTable(id='table-output', style_table={'display': 'none'})
+                dash_table.DataTable(id='table-output', style_table={'display': 'none'}),
+                dcc.Textarea(id='data-input', style={'display': 'none'}),  # Dodajemy ukryty element `data-input`
+                dcc.Upload(id='upload-data', style={'display': 'none'}),  # Dodajemy ukryty element `upload-data`
+                dcc.Input(id='google-sheet-url', type='url', style={'display': 'none'})  # Dodajemy ukryty element `google-sheet-url`
             ]), width=8),
         ]),
         html.Div(id='tabs-content-visualize'),
