@@ -6,10 +6,6 @@ def get_vizualize_page():
     chart_buttons = [
         dbc.Button([html.I(className="bi bi-bar-chart-fill me-2"), "Bar Chart"], id="bar-chart",
                    className="chart-button m-2"),
-        dbc.Button([html.I(className="bi bi-bar-chart-steps me-2"), "Stacked Bars"], id="stacked-bars",
-                   className="chart-button m-2"),
-        dbc.Button([html.I(className="bi bi-bar-chart me-2"), "Grouped Bars"], id="grouped-bars",
-                   className="chart-button m-2"),
         dbc.Button([html.I(className="bi bi-pie-chart-fill me-2"), "Pie Chart"], id="pie-chart",
                    className="chart-button m-2"),
         dbc.Button([html.I(className="bi bi-graph-up me-2"), "Line Chart"], id="line-chart",
@@ -18,9 +14,13 @@ def get_vizualize_page():
                    className="chart-button m-2"),
         dbc.Button([html.I(className="bi bi-bar-chart-fill me-2"), "Area Chart"], id="area-chart",
                    className="chart-button m-2"),
-        dbc.Button([html.I(className="bi bi-bar-chart-fill me-2"), "Column Chart"], id="column-chart",
-                   className="chart-button m-2"),
         dbc.Button([html.I(className="bi bi-table me-2"), "Table"], id="table", className="chart-button m-2"),
+        dbc.Button([html.I(className="bi bi-globe2 me-2"), "Scatter Map"], id="scatter-map",
+                   className="chart-button m-2"),
+        dbc.Button([html.I(className="bi bi-globe2 me-2"), "Heatmap"], id="heatmap",
+                   className="chart-button m-2"),
+        dbc.Button([html.I(className="bi bi-globe2 me-2"), "Bubble Map"], id="bubble-map",
+                   className="chart-button m-2"),
     ]
 
     vizualize_page = dbc.Container([
@@ -33,19 +33,8 @@ def get_vizualize_page():
         dbc.Row([
             dbc.Col(html.Div([
                 dcc.Tabs(id="tabs-visualize-menu", value='tab-1', children=[
-                    dcc.Tab(label='Chart', value='tab-1', children=chart_buttons),
-                    dcc.Tab(label='Refine', value='tab-2', children=[
-                        html.Div([
-                            html.Label("Bar Color:"),
-                            html.Br(),
-                            dcc.Input(id="bar-color", type="text", value="blue"),
-                            html.Br(),
-                            html.Label("Bar Width:"),
-                            html.Br(),
-                            dcc.Slider(id="bar-width", min=0.1, max=1.0, step=0.1, value=0.5),
-                        ])
-                    ]),
-                    dcc.Tab(label='Annotate', value='tab-3', children=[
+                    dcc.Tab(label='Chart type', value='tab-1', children=chart_buttons),
+                    dcc.Tab(label='Annotate', value='tab-2', children=[
                         html.Div([
                             html.Label("Chart Title: "),
                             dcc.Input(id="chart-title", type="text", value=""),
@@ -55,7 +44,16 @@ def get_vizualize_page():
                             html.Br()
                         ])
                     ]),
-                    dcc.Tab(label='Layout', value='tab-4')
+                    dcc.Tab(label='Refine', value='tab-3', children=[
+                        html.Div([
+                            html.P("available soon - work in progress")
+                        ])
+                    ]),
+                    dcc.Tab(label='Layout', value='tab-4', children=[
+                        html.Div([
+                            html.P("available soon - work in progress")
+                        ])
+                    ])
                 ])
             ]), width=4),
             dbc.Col(html.Div([

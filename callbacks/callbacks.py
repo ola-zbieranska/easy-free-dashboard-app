@@ -142,16 +142,13 @@ def update_output_google_sheet(n_clicks, url):
     [Output('graph-output', 'figure'), Output('graph-output', 'style'),
      Output('table-output', 'data'), Output('table-output', 'columns'), Output('table-output', 'style_table')],
     [Input('bar-chart', 'n_clicks'),
-     Input('stacked-bars', 'n_clicks'),
-     Input('grouped-bars', 'n_clicks'),
      Input('pie-chart', 'n_clicks'),
      Input('line-chart', 'n_clicks'),
      Input('scatter-plot', 'n_clicks'),
      Input('area-chart', 'n_clicks'),
-     Input('column-chart', 'n_clicks'),
      Input('table', 'n_clicks')]
 )
-def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks, line_clicks, scatter_clicks, area_clicks, column_clicks, table_clicks):
+def render_chart(bar_clicks, pie_clicks, line_clicks, scatter_clicks, area_clicks, table_clicks):
     ctx = dash.callback_context
     if not ctx.triggered:
         return {}, {'display': 'block'}, [], [], {'display': 'none'}
@@ -162,12 +159,6 @@ def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks, line_cl
 
     if button_id == 'bar-chart':
         fig = px.bar(df, x='sepal_width', y='sepal_length', title='Bar Chart')
-        return fig, {'display': 'block'}, [], [], {'display': 'none'}
-    elif button_id == 'stacked-bars':
-        fig = px.bar(df, x='sepal_width', y='sepal_length', barmode='stack', title='Stacked Bars')
-        return fig, {'display': 'block'}, [], [], {'display': 'none'}
-    elif button_id == 'grouped-bars':
-        fig = px.bar(df, x='sepal_width', y='sepal_length', barmode='group', title='Grouped Bars')
         return fig, {'display': 'block'}, [], [], {'display': 'none'}
     elif button_id == 'pie-chart':
         fig = px.pie(df, names='species', values='sepal_length', title='Pie Chart')
@@ -180,9 +171,6 @@ def render_chart(bar_clicks, stacked_clicks, grouped_clicks, pie_clicks, line_cl
         return fig, {'display': 'block'}, [], [], {'display': 'none'}
     elif button_id == 'area-chart':
         fig = px.area(df, x='sepal_width', y='sepal_length', title='Area Chart')
-        return fig, {'display': 'block'}, [], [], {'display': 'none'}
-    elif button_id == 'column-chart':
-        fig = px.bar(df, x='sepal_width', y='sepal_length', title='Column Chart')
         return fig, {'display': 'block'}, [], [], {'display': 'none'}
     elif button_id == 'table':
         columns = [{"name": col, "id": col} for col in df.columns]
