@@ -31,24 +31,37 @@ def get_vizualize_page():
         ),
         dbc.Row([
             dbc.Col(html.Div([
-                dcc.Tabs(id="tabs-visualize-menu", value='tab-1', children=[
-                    dcc.Tab(label='Chart', value='tab-1', children=chart_buttons, className="custom-tab"),
+                dcc.Tabs(id="tabs-visualize-menu", value='tab-1', className='custom-tab', children=[
+                    dcc.Tab(label='Chart', value='tab-1', children=chart_buttons, className='tab'),
                     dcc.Tab(label='Description', value='tab-2', children=[
                         html.Div([
                             html.Label("available soon - work in progress")
                         ])
-                    ], className="custom-tab"),
+                    ], className='tab'),
                     dcc.Tab(label='Customize', value='tab-3', children=[
                         html.Div([
                             html.P("available soon - work in progress")
                         ])
-                    ], className="custom-tab"),
+                    ], className='tab'),
                     dcc.Tab(label='Layout', value='tab-4', children=[
                         html.Div([
-                            html.P("available soon - work in progress")
+                            html.P("available soon - work in progress"),
+                            html.Label("Select Plotly Template:"),
+                            dcc.Dropdown(
+                                id='template-dropdown',
+                                options=[
+                                    {'label': 'Plotly White', 'value': 'plotly_white'},
+                                    {'label': 'Plotly Dark', 'value': 'plotly_dark'},
+                                    {'label': 'Seaborn', 'value': 'seaborn'},
+                                    {'label': 'Simple White', 'value': 'simple_white'},
+                                    {'label': 'GGPlot2', 'value': 'ggplot2'}
+                                ],
+                                value='plotly_dark',  # default value based on dark mode
+                                clearable=False
+                            )
                         ])
-                    ], className="custom-tab")
-                ], className="custom-tab")
+                    ], className='tab')
+                ])
             ]), width=4),
             dbc.Col(html.Div([
                 dcc.Graph(id='graph-output'),

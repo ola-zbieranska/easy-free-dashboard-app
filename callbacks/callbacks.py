@@ -16,9 +16,9 @@ from layouts.publish_page import get_publish_page as publish_page
 from layouts.vizualize_page import get_vizualize_page as vizualize_page
 
 def register_callbacks(app):
+    from .maps import register_map_callbacks
     register_map_callbacks(app)
 
-    # Callback do zmiany motywu
     @app.callback(
         [Output('theme-link', 'href'), Output('theme-dropdown', 'label'), Output('page-content', 'className')],
         [Input('light-mode', 'n_clicks'), Input('dark-mode', 'n_clicks')],
@@ -26,7 +26,6 @@ def register_callbacks(app):
     )
     def update_theme(light_clicks, dark_clicks, data):
         ctx = callback_context
-
         if not ctx.triggered:
             button_id = 'light-mode'
         else:
@@ -44,7 +43,6 @@ def register_callbacks(app):
         data['theme'] = new_theme
         return new_theme, icon, class_name
 
-    # Callback do obsługi get_copy_paste_data
     @app.callback(
         Output('output-data', 'children'),
         Input('check-data', 'n_clicks'),
@@ -71,7 +69,6 @@ def register_callbacks(app):
                 html.P(str(e))
             ])
 
-    # Callback do obsługi get_upload_data
     @app.callback(
         Output('output-data-upload', 'children'),
         Input('proceed-to-check', 'n_clicks'),
@@ -106,7 +103,6 @@ def register_callbacks(app):
         except Exception as e:
             return html.Div(['There was an error processing this file.'])
 
-    # Callback do obsługi importowania z Google Sheets
     @app.callback(
         Output('output-url', 'children'),
         Input('check-google-sheet', 'n_clicks'),
@@ -140,85 +136,83 @@ def register_callbacks(app):
                 html.P(str(e))
             ])
 
-    # Callback do renderowania wykresu na podstawie wybranego przycisku
     @app.callback(
-        [Output('graph-output-bar', 'figure'),
-         Output('graph-output-bar', 'style')],
-        [Input('bar-chart', 'n_clicks')],
-        State('data-input', 'value')
+        Output('graph-output-bar', 'figure'),
+        Input('bar-chart', 'n_clicks'),
+        State('data-input', 'value'),
+        State('template-dropdown', 'value')
     )
-    def render_bar_chart(bar_clicks, data_value):
-        if not bar_clicks or not data_value:
-            return {}, {'display': 'none'}
+    def render_bar_chart(bar_clicks, data_value, template):
+        if not bar_clicks:
+            return {}
 
         df = pd.read_csv(StringIO(data_value))
-        fig = px.bar(df, x='sepal_width', y='sepal_length', title='Bar Chart')
-        return fig, {'display': 'block'}
+        fig = px.bar(df, x='sepal_width', y='sepal_length', title='Bar Chart', template=template)
+        return fig
 
     @app.callback(
-        [Output('graph-output-pie', 'figure'),
-         Output('graph-output-pie', 'style')],
-        [Input('pie-chart', 'n_clicks')],
-        State('data-input', 'value')
+        Output('graph-output-pie', 'figure'),
+        Input('pie-chart', 'n_clicks'),
+        State('data-input', 'value'),
+        State('template-dropdown', 'value')
     )
-    def render_pie_chart(pie_clicks, data_value):
-        if not pie_clicks or not data_value:
-            return {}, {'display': 'none'}
+    def render_pie_chart(pie_clicks, data_value, template):
+        if not pie_clicks:
+            return {}
 
         df = pd.read_csv(StringIO(data_value))
-        fig = px.pie(df, names='species', values='sepal_length', title='Pie Chart')
-        return fig, {'display': 'block'}
+        fig = px.pie(df, names='species', values='sepal_length', title='Pie Chart', template=template)
+        return fig
 
     @app.callback(
-        [Output('graph-output-line', 'figure'),
-         Output('graph-output-line', 'style')],
-        [Input('line-chart', 'n_clicks')],
-        State('data-input', 'value')
+        Output('graph-output-line', 'figure'),
+        Input('line-chart', 'n_clicks'),
+        State('data-input', 'value'),
+        State('template-dropdown', 'value')
     )
-    def render_line_chart(line_clicks, data_value):
-        if not line_clicks or not data_value:
-            return {}, {'display': 'none'}
+    def render_line_chart(line_clicks, data_value, template):
+        if not line_clicks:
+            return {}
 
         df = pd.read_csv(StringIO(data_value))
-        fig = px.line(df, x='sepal_width', y='sepal_length', title='Line Chart')
-        return fig, {'display': 'block'}
+        fig = px.line(df, x='sepal_width', y='sepal_length', title='Line Chart', template=template)
+        return fig
 
     @app.callback(
-        [Output('graph-output-scatter', 'figure'),
-         Output('graph-output-scatter', 'style')],
-        [Input('scatter-plot', 'n_clicks')],
-        State('data-input', 'value')
+        Output('graph-output-scatter', 'figure'),
+        Input('scatter-plot', 'n_clicks'),
+        State('data-input', 'value'),
+        State('template-dropdown', 'value')
     )
-    def render_scatter_plot(scatter_clicks, data_value):
-        if not scatter_clicks or not data_value:
-            return {}, {'display': 'none'}
+    def render_scatter_plot(scatter_clicks, data_value, template):
+        if not scatter_clicks:
+            return {}
 
         df = pd.read_csv(StringIO(data_value))
-        fig = px.scatter(df, x='sepal_width', y='sepal_length', title='Scatter Plot')
-        return fig, {'display': 'block'}
+        fig = px.scatter(df, x='sepal_width', y='sepal_length', title='Scatter Plot', template=template)
+        return fig
 
     @app.callback(
-        [Output('graph-output-area', 'figure'),
-         Output('graph-output-area', 'style')],
-        [Input('area-chart', 'n_clicks')],
-        State('data-input', 'value')
+        Output('graph-output-area', 'figure'),
+        Input('area-chart', 'n_clicks'),
+        State('data-input', 'value'),
+        State('template-dropdown', 'value')
     )
-    def render_area_chart(area_clicks, data_value):
-        if not area_clicks or not data_value:
-            return {}, {'display': 'none'}
+    def render_area_chart(area_clicks, data_value, template):
+        if not area_clicks:
+            return {}
 
         df = pd.read_csv(StringIO(data_value))
-        fig = px.area(df, x='sepal_width', y='sepal_length', title='Area Chart')
-        return fig, {'display': 'block'}
+        fig = px.area(df, x='sepal_width', y='sepal_length', title='Area Chart', template=template)
+        return fig
 
-    # Callback do renderowania tabeli
     @app.callback(
         [Output('table-output', 'data'), Output('table-output', 'columns'), Output('table-output', 'style_table')],
         Input('table', 'n_clicks'),
         State('data-input', 'value')
     )
     def render_table(table_clicks, data_value):
-        if table_clicks is None or not data_value:
+        if table_clicks is None:
             return [], [], {'display': 'none'}
 
         df = pd.read_csv(StringIO(data_value))
@@ -226,12 +220,11 @@ def register_callbacks(app):
         data = df.to_dict('records')
         return data, columns, {'display': 'block'}
 
-    # Callback do wyświetlania stron na podstawie ścieżki URL
     @app.callback(
         Output('page-content', 'children'),
         [Input('url', 'pathname')]
     )
-    def display_page(pathname):
+    def display_pages(pathname):
         if pathname == '/' or pathname == '/home':
             return home_page()
         elif pathname == '/first-page':

@@ -13,7 +13,6 @@ def map_country_names_to_iso_alpha3(df, location_col):
     df['ISO_alpha_3'] = df[location_col].map(country_to_iso)
     return df
 
-
 def add_lat_lon(df, location_col, type_col):
     geolocator = Nominatim(user_agent="geoapiExercises")
     latitudes = []
@@ -39,36 +38,33 @@ def add_lat_lon(df, location_col, type_col):
     df['Longitude'] = longitudes
     return df
 
-
-def generate_scatter_map(df):
+def generate_scatter_map(df, template):
     return px.scatter_geo(df, lat='Latitude', lon='Longitude', color="Location",
-                          hover_name="Location", projection="natural earth", title='Scatter Map')
+                          hover_name="Location", projection="natural earth", title='Scatter Map', template=template)
 
-
-def generate_heatmap(df):
+def generate_heatmap(df, template):
     fig = go.Figure(go.Densitymapbox(lat=df.Latitude, lon=df.Longitude, z=[1] * len(df), radius=10))
     fig.update_layout(mapbox_style="stamen-terrain", mapbox_center_lon=0, mapbox_center_lat=0,
-                      mapbox_zoom=1, title='Heatmap')
+                      mapbox_zoom=1, title='Heatmap', template=template)
     return fig
 
-
-def generate_bubble_map(df, size_col):
+def generate_bubble_map(df, size_col, template):
     return px.scatter_geo(df, lat='Latitude', lon='Longitude', size=size_col,
                           color="Location", hover_name="Location",
-                          projection="natural earth", title='Bubble Map')
-
+                          projection="natural earth", title='Bubble Map', template=template)
 
 def register_map_callbacks(app):
     @app.callback(
-        Output('graph-output', 'figure'),
+        Output('graph-output-map', 'figure'),
         [Input('scatter-map', 'n_clicks'),
          Input('heatmap', 'n_clicks'),
          Input('bubble-map', 'n_clicks')],
         [State('upload-data', 'contents'),
          State('upload-data', 'filename'),
-         State('data-input', 'value')]
+         State('data-input', 'value'),
+         State('template-dropdown', 'value')]
     )
-    def update_map(scatter_clicks, heatmap_clicks, bubble_clicks, contents, filename, data_value):
+    def update_map(scatter_clicks, heatmap_clicks, bubble_clicks, contents, filename, data_value, template):
         ctx = dash.callback_context
         if not ctx.triggered or contents is None:
             return {}
@@ -91,14 +87,15 @@ def register_map_callbacks(app):
                 return html.Div(['The file must contain "Location" and "Type" columns.'])
 
             if button_id == 'scatter-map':
-                return generate_scatter_map(df)
+                return generate_scatter_map(df, template)
             elif button_id == 'heatmap':
-                return generate_heatmap(df)
+                return generate_heatmap(df, template)
             elif button_id == 'bubble-map':
                 size_col = df.columns[2]
                 if size_col not in ['Latitude', 'Longitude']:
-                    return generate_bubble_map(df, size_col)
+                    return generate_bubble_map(df, size_col, template)
                 else:
                     return html.Div(['The file must contain a data column for Bubble Map.'])
         except Exception as e:
             return html.Div(['There was an error processing this file.'])
+
