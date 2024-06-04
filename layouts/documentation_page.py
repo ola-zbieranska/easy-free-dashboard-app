@@ -23,8 +23,7 @@ def get_documentation_page():
 
     content = html.Div(
         [
-            html.H1("Learn more about creating custom charts and dashboard in an easy & free way."),
-            html.P("Here you can find extensive documentation on how to use the Easy Dashboard and create your charts."),
+            html.P("Here you can find extensive documentation on how to use the Easy Dashboard and create your charts.", className="lead"),
             html.Hr(className="my-4"),
             html.Div(id="content-section")
         ],

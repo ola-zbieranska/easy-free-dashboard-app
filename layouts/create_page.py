@@ -8,12 +8,11 @@ def get_create_page():
     create_page = dbc.Container([
         dbc.Row(
             dbc.Col(html.Div([
-                html.H1("Create custom charts and dashboard in an easy & free way.", className="display-4"),
-                html.P("If you need help learn how to create your first chart step by step click below to check out tutorials and documentation.", className="lead"),
+                html.P("If you need help learn how to create your first chart step by step check out documentation.", className="lead"),
                 dbc.Button("Learn more", color="primary", href="/documentation", className="me-1"),
                 html.Hr(className="my-4"),
-                html.H3("First Step: How do you want to upload your data?", className="mt-4")
-            ]), width=8), justify="center"
+                html.H3("Choose way to upload your data.", className="lead")
+            ]), width=8)
         ),
         dbc.Row(
             dbc.Col(
@@ -33,7 +32,8 @@ def get_create_page():
 def get_copy_paste_data():
     return html.Div([
         html.H2("Copy & paste your data", className="mt-4"),
-        html.P("Select your data (including header row/column) in Excel or LibreOffice and paste it in the text field. You can also upload a CSV or Excel file from your computer."),
+        html.P("Select your data (including header row/column) in Excel or LibreOffice and paste it in the text field."),
+        html.P("You can also upload a CSV or Excel file from your computer."),
         html.P("If you just want to try Easy Dashboard, here‘s a list of some example datasets you can use:"),
         dcc.Textarea(
             id='data-input',
