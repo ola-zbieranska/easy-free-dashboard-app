@@ -1,14 +1,11 @@
 import dash_bootstrap_components as dbc
 from dash import html, dcc
 from dash import dash_table
-from dash.dependencies import Input, Output
-import dash
-
 def get_create_page():
     create_page = dbc.Container([
         dbc.Row(
             dbc.Col(html.Div([
-                html.P("If you need help learn how to create your first chart step by step check out documentation.", className="lead"),
+                html.P("Check documentation to learn how to create your first chart step by step.", className="lead"),
                 dbc.Button("Learn more", color="primary", href="/documentation", className="me-1"),
                 html.Hr(className="my-4"),
                 html.H3("Choose way to upload your data.", className="lead")
@@ -31,7 +28,7 @@ def get_create_page():
 
 def get_copy_paste_data():
     return html.Div([
-        html.H2("Copy & paste your data", className="mt-4"),
+        html.H2("Copy & paste your data", className="lead"),
         html.P("Select your data (including header row/column) in Excel or LibreOffice and paste it in the text field."),
         html.P("You can also upload a CSV or Excel file from your computer."),
         html.P("If you just want to try Easy Dashboard, here‘s a list of some example datasets you can use:"),
@@ -46,7 +43,7 @@ def get_copy_paste_data():
 
 def get_upload_data():
     return html.Div([
-        html.H2("Upload CSV or Excel spreadsheets.", className="mt-4"),
+        html.H2("Upload CSV or Excel spreadsheets.", className="lead"),
         html.P("In the pop-up window, select the Excel/CSV file from your computer or drag and drop the file in the window below."),
         html.P("If you just want to try Easy Dashboard, here‘s a list of some example datasets you can use:"),
         dcc.Upload(
@@ -72,7 +69,7 @@ def get_upload_data():
 
 def get_import_data():
     return html.Div([
-        html.H2("Import data from Google Sheet.", className="mt-4"),
+        html.H2("Import data from Google Sheet.", className="lead"),
         html.P([
             "Make sure to enable ",
             html.A("Link Sharing", href="https://support.google.com/drive/answer/2494822?visit_id=1-636596603923192043-2988837136&p=link_sharing_on&hl=en&rd=1#link_sharing&zippy=%2Callow-general-access-to-the-file", target="_blank"),

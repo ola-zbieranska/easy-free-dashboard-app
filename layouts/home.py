@@ -11,7 +11,7 @@ def get_home_page():
                 html.H5("Easy Dashboard takes your data from spreadsheets to shareable graphics — no coding necessary."),
                 html.H5("It’s free & no sign-up is required!"),
                 html.Ul([
-                    html.Li("Create stunning charts & maps"),
+                    html.Li("Create charts & maps quickly and easily"),
                     html.Li("Upload data from three different ways"),
                     html.Li("No software to install")
                 ], className="lead"),
