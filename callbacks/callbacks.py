@@ -14,6 +14,7 @@ from layouts.documentation_page import get_documentation_page as documentation_p
 from layouts.check_describe_page import get_check_and_describe_page as check_and_describe_page
 from layouts.publish_page import get_publish_page as publish_page
 from layouts.vizualize_page import get_vizualize_page as vizualize_page
+from layouts.first_page import get_copy_paste_data, get_upload_data, get_import_data
 
 def register_callbacks(app):
     from .maps import register_map_callbacks

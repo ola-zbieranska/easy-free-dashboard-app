@@ -17,10 +17,10 @@ def get_first_page():
         ),
         dbc.Row(
             dbc.Col(
-                dcc.Tabs(id="tabs-example", value='tab-1', children=[
-                    dcc.Tab(label='Copy & paste data table', value='tab-1', children=[get_copy_paste_data()], className='tab-background'),
-                    dcc.Tab(label='XLS/CSV upload', value='tab-2', children=[get_upload_data()], className='tab-background'),
-                    dcc.Tab(label='Connect Google Sheet', value='tab-3', children=[get_import_data()], className='tab-background')
+                dcc.Tabs(id="tabs-example", value='tab-1', className='custom-tab', children=[
+                    dcc.Tab(label='Copy & paste data table', value='tab-1', children=[get_copy_paste_data()], className='tab'),
+                    dcc.Tab(label='XLS/CSV upload', value='tab-2', children=[get_upload_data()], className='tab'),
+                    dcc.Tab(label='Connect Google Sheet', value='tab-3', children=[get_import_data()], className='tab')
                 ]), width=12
             ), className="mt-4"
         ),

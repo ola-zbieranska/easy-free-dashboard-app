@@ -1,6 +1,35 @@
-/* Ogólne style dla wszystkich stron */
+:root {
+    --primary-color: #375a7f;
+    --secondary-color: #4f7fb2;
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --tab-bg: #f8f9fa !important;
+    --tab-text: black !important;
+    --tab-active-bg: #2c3e50 !important;
+    --tab-active-text: white !important;
+    --tab-border: #dee2e6 !important;
+    --sidebar-bg: #f8f9fa;
+    --sidebar-text: black;
+    --sidebar-active-bg: #343a40;
+    --sidebar-active-text: white;
+    --placeholder-color: black;
+}
+
+.dark-mode {
+    --background-color: #212529;
+    --text-color: #ffffff;
+    --tab-bg: #343a40 !important;
+    --tab-text: white !important;
+    --tab-border: #495057 !important;
+    --sidebar-bg: #343a40;
+    --sidebar-text: white;
+}
+
+/* Ogólne style */
 body {
     font-family: 'Open Sans', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .display-4 {
@@ -17,115 +46,41 @@ body {
 }
 
 /* Style dla przycisków */
-.me-2 {
-    margin-right: 0.5rem !important;
+.me-2 { margin-right: 0.5rem !important; }
+.mt-2 { margin-top: 0.5rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+
+/* Style zakładek */
+.custom-tab .tab {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 15px !important;
+    background-color: var(--tab-bg) !important;
+    color: var(--tab-text) !important;
+    border: 1px solid var(--tab-border);
 }
 
-.mt-2 {
-    margin-top: 0.5rem !important;
+.custom-tab .tab--selected {
+    background-color: var(--tab-active-bg) !important;
+    color: var(--tab-active-text) !important;
 }
 
-.mt-3 {
-    margin-top: 1rem !important;
-}
-
-.mt-4 {
-    margin-top: 1.5rem !important;
-}
-
-.mb-2 {
-    margin-bottom: 0.5rem !important;
-}
-
-.mb-4 {
-    margin-bottom: 1.5rem !important;
-}
-
-/* Style dla kart */
-.card {
-    margin-bottom: 2rem;
-}
-
-/* Dark mode specific styles */
-.dark-mode .navbar, .dark-mode .dropdown-menu {
-    background-color: #343a40 !important;
-}
-
-.dark-mode .card {
-    background-color: #343a40 !important;
-    color: white !important;
-}
-
-.dark-mode .tab-background {
-    background-color: #375a7f !important;
-    color: white !important;
-}
-
-.dark-mode .textarea-background {
-    background-color: #4f7fb2 !important;
-    color: white !important;
-}
-
-.dark-mode .input-background {
-    background-color: #4f7fb2 !important;
-    color: white !important;
-}
-
-.dark-mode .sidebar-background {
-    background-color: #4f7fb2 !important;
-    color: white !important;
-}
-
-/* Light mode specific styles */
-.light-mode .navbar, .light-mode .dropdown-menu {
-    background-color: #f8f9fa !important;
-}
-
-.light-mode .card {
-    background-color: #ffffff !important;
-    color: black !important;
-}
-
-.light-mode .tab-background {
-    background-color: #2c3e50 !important;
-    color: white !important;
-}
-
-.light-mode .textarea-background {
-    background-color: #476481 !important;
-    color: white !important;
-}
-
-.light-mode .input-background {
-    background-color: #476481 !important;
-    color: white !important;
-}
-
-.light-mode .sidebar-background {
-    background-color: #476481 !important;
-    color: white !important;
-}
-
-.textarea-background {
-    background-color: #476481 !important;
-    color: white !important;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-.input-background {
-    background-color: #476481 !important;
-    color: white !important;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
+.custom-tab .tab .tab-label {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+    text-align: center !important;
 }
 
 /* Placeholder styles */
 .textarea-background::placeholder,
 .input-background::placeholder {
-    color: white !important;
+    color: var(--placeholder-color);
 }
 
 /* Style dla przycisków na stronie wizualizacji */
@@ -142,7 +97,7 @@ body {
     margin-right: 5px;
 }
 
-/* style sidebaru w documentation page */
+/* Style sidebaru */
 .sidebar {
     position: fixed;
     top: 0;
@@ -150,22 +105,18 @@ body {
     bottom: 0;
     width: 250px;
     padding: 10px;
-    background-color: #f8f9fa;
     overflow-y: auto;
-}
-
-.sidebar-background {
-    background-color: #476481 !important;
-    color: white !important;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text); /* Dodano kolor tekstu */
 }
 
 .sidebar a {
-    color: #ffffff !important;
+    color: var(--sidebar-text);
 }
 
 .sidebar a.active {
-    background-color: #343a40 !important;
-    color: white !important;
+    background-color: var(--sidebar-active-bg);
+    color: var(--sidebar-active-text);
 }
 
 .sidebar .nav-link {
@@ -176,42 +127,4 @@ body {
 .content {
     margin-left: 270px;
     padding: 20px;
-}
-
-/* Taby customizacja */
-.custom-tab .tab {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    font-size: 15px !important;
-}
-
-.custom-tab .tab .tab-label {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    height: 100% !important;
-    text-align: center !important;
-}
-
-/* Dark mode specific styles for tabs */
-.dark-mode .custom-tab .tab {
-    background-color: #343a40 !important;
-    color: white !important;
-    border: 1px solid #495057 !important;
-}
-
-.dark-mode .custom-tab .tab-label {
-    color: white !important;
-}
-
-/* Light mode specific styles for tabs */
-.light-mode .custom-tab .tab {
-    background-color: #f8f9fa !important;
-    color: black !important;
-    border: 1px solid #dee2e6 !important;
-}
-
-.light-mode .custom-tab .tab-label {
-    color: black !important;
 }
