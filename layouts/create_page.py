@@ -4,8 +4,8 @@ from dash import dash_table
 from dash.dependencies import Input, Output
 import dash
 
-def get_first_page():
-    first_page = dbc.Container([
+def get_create_page():
+    create_page = dbc.Container([
         dbc.Row(
             dbc.Col(html.Div([
                 html.H1("Create custom charts and dashboard in an easy & free way.", className="display-4"),
@@ -25,15 +25,10 @@ def get_first_page():
             ), className="mt-4"
         ),
         html.Div(id='tabs-content-example'),
-        dcc.Graph(id='graph-output-bar', style={'display': 'none'}),
-        dcc.Graph(id='graph-output-pie', style={'display': 'none'}),
-        dcc.Graph(id='graph-output-line', style={'display': 'none'}),
-        dcc.Graph(id='graph-output-scatter', style={'display': 'none'}),
-        dcc.Graph(id='graph-output-area', style={'display': 'none'}),
-        dcc.Graph(id='graph-output', style={'display': 'none'}),
-        dash_table.DataTable(id='table-output', style_table={'display': 'none'})
+        dash_table.DataTable(id='table-output', style_table={'display': 'none'}),
+        dbc.Button("Next", id="next-page", color="primary", className="mt-2", href="/vizualize-page")
     ], className="mt-4")
-    return first_page
+    return create_page
 
 def get_copy_paste_data():
     return html.Div([
@@ -46,7 +41,6 @@ def get_copy_paste_data():
             className='textarea-background',
             style={'width': '100%', 'height': 200},
         ),
-        dbc.Button("Check data", id="check-data", color="primary", className="mt-2"),
         html.Div(id='output-data')
     ])
 
@@ -73,7 +67,6 @@ def get_upload_data():
             },
             multiple=False  # Umożliwia wgrywanie tylko jednego pliku na raz
         ),
-        dbc.Button("Check data", id="proceed-to-check", color="primary", className="mt-2"),
         html.Div(id='output-data-upload')
     ])
 
@@ -92,6 +85,5 @@ def get_import_data():
             className='input-background',
             style={'width': '100%', 'margin-top': '10px'}
         ),
-        dbc.Button("Check data", id="check-google-sheet", color="primary", className="mt-2"),
         html.Div(id='output-url')
     ])

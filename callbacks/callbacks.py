@@ -6,15 +6,16 @@ import base64
 import io
 import requests
 import plotly.express as px
+from dash import dash_table
 from io import StringIO
 from .maps import register_map_callbacks
 from layouts.home import get_home_page as home_page
-from layouts.first_page import get_first_page as first_page
+from layouts.create_page import get_create_page as create_page
 from layouts.documentation_page import get_documentation_page as documentation_page
 from layouts.check_describe_page import get_check_and_describe_page as check_and_describe_page
 from layouts.publish_page import get_publish_page as publish_page
 from layouts.vizualize_page import get_vizualize_page as vizualize_page
-from layouts.first_page import get_copy_paste_data, get_upload_data, get_import_data
+from layouts.create_page import get_copy_paste_data, get_upload_data, get_import_data
 
 def register_callbacks(app):
     from .maps import register_map_callbacks
@@ -46,24 +47,19 @@ def register_callbacks(app):
 
     @app.callback(
         Output('output-data', 'children'),
-        Input('check-data', 'n_clicks'),
-        State('data-input', 'value')
+        Input('data-input', 'value')
     )
-    def update_output_copy_paste(n_clicks, value):
-        if n_clicks is None or not value:
+    def update_output_copy_paste(value):
+        if not value:
             return ""
 
         try:
             df = pd.read_csv(StringIO(value))
-            return html.Div([
-                html.H5("Twoje dane:"),
-                dcc.Graph(
-                    figure={
-                        'data': [{'x': df.columns, 'y': df.iloc[0], 'type': 'bar'}],
-                        'layout': {'title': 'Podgląd danych'}
-                    }
-                )
-            ])
+            return dash_table.DataTable(
+                data=df.to_dict('records'),
+                columns=[{'name': i, 'id': i} for i in df.columns],
+                style_table={'display': 'block'}
+            )
         except Exception as e:
             return html.Div([
                 html.H5("Wystąpił błąd przy przetwarzaniu danych:"),
@@ -72,13 +68,11 @@ def register_callbacks(app):
 
     @app.callback(
         Output('output-data-upload', 'children'),
-        Input('proceed-to-check', 'n_clicks'),
-        State('upload-data', 'contents'),
-        State('upload-data', 'filename'),
-        State('upload-data', 'last_modified')
+        Input('upload-data', 'contents'),
+        State('upload-data', 'filename')
     )
-    def update_output_upload(n_clicks, contents, filename, date):
-        if n_clicks is None or contents is None:
+    def update_output_upload(contents, filename):
+        if contents is None:
             return html.Div(['No file uploaded yet.'])
 
         content_type, content_string = contents.split(',')
@@ -92,25 +86,20 @@ def register_callbacks(app):
             else:
                 return html.Div(['Unsupported file format.'])
 
-            return html.Div([
-                html.H5(filename),
-                dcc.Graph(
-                    figure={
-                        'data': [{'x': df.columns, 'y': df.iloc[0], 'type': 'bar'}],
-                        'layout': {'title': 'Podgląd danych'}
-                    }
-                )
-            ])
+            return dash_table.DataTable(
+                data=df.to_dict('records'),
+                columns=[{'name': i, 'id': i} for i in df.columns],
+                style_table={'display': 'block'}
+            )
         except Exception as e:
             return html.Div(['There was an error processing this file.'])
 
     @app.callback(
         Output('output-url', 'children'),
-        Input('check-google-sheet', 'n_clicks'),
-        State('google-sheet-url', 'value')
+        Input('google-sheet-url', 'value')
     )
-    def update_output_google_sheet(n_clicks, url):
-        if n_clicks is None or not url:
+    def update_output_google_sheet(url):
+        if not url:
             return ""
 
         try:
@@ -122,21 +111,16 @@ def register_callbacks(app):
             response = requests.get(csv_url)
             df = pd.read_csv(io.StringIO(response.text))
 
-            return html.Div([
-                html.H5("Data from Google Sheet:"),
-                dcc.Graph(
-                    figure={
-                        'data': [{'x': df.columns, 'y': df.iloc[0], 'type': 'bar'}],
-                        'layout': {'title': 'Podgląd danych'}
-                    }
-                )
-            ])
+            return dash_table.DataTable(
+                data=df.to_dict('records'),
+                columns=[{'name': i, 'id': i} for i in df.columns],
+                style_table={'display': 'block'}
+            )
         except Exception as e:
             return html.Div([
                 html.H5("Wystąpił błąd przy przetwarzaniu danych:"),
                 html.P(str(e))
             ])
-
     @app.callback(
         Output('graph-output-bar', 'figure'),
         Input('bar-chart', 'n_clicks'),
@@ -228,8 +212,8 @@ def register_callbacks(app):
     def display_pages(pathname):
         if pathname == '/' or pathname == '/home':
             return home_page()
-        elif pathname == '/first-page':
-            return first_page()
+        elif pathname == '/create-page':
+            return create_page()
         elif pathname == '/documentation':
             return documentation_page()
         elif pathname == '/check-and-describe-page':

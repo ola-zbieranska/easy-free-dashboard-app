@@ -72,7 +72,7 @@ def get_vizualize_page():
             ]), width=8),
         ]),
         html.Div(id='tabs-content-visualize'),
-        dbc.Button("Back", color="secondary", href="/check-and-describe-page", className="mt-2 me-2"),
+        dbc.Button("Back", color="secondary", href="/create-page", className="mt-2 me-2"),
         dbc.Button("Next", color="primary", href="/publish-page", className="mt-2")
     ])
 

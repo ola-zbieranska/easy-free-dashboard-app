@@ -19,11 +19,11 @@ def get_navbar():
         children=[
             dbc.DropdownMenuItem("More pages", header=True),
             dbc.DropdownMenuItem("Main", href="/home"),
-            dbc.DropdownMenuItem("Create", href="/first-page"),
+            dbc.DropdownMenuItem("Create", href="/create-page"),
             dbc.DropdownMenuItem("Blog", href="/blog"),
             dbc.DropdownMenuItem("Documentation", href="/documentation"),
             dbc.DropdownMenuItem("Visualize data", href="/vizualize-page"),
-            dbc.DropdownMenuItem("Check data", href="/check-and-describe-page"),
+            #dbc.DropdownMenuItem("Check data", href="/check-and-describe-page"),
             dbc.DropdownMenuItem("Publish chart", href="/publish-page")
         ],
         nav=True,
@@ -45,7 +45,7 @@ def get_navbar():
             github_button,
             theme_toggle,
             dbc.NavItem(dbc.NavLink("Main", href="/home")),
-            dbc.NavItem(dbc.NavLink("Create", href="/first-page")),
+            dbc.NavItem(dbc.NavLink("Create", href="/create-page")),
             dropdown
         ],
         brand="Easy Dashboard",

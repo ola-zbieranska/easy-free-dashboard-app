@@ -15,7 +15,7 @@ def get_home_page():
                     html.Li("Upload data from three different ways"),
                     html.Li("No software to install")
                 ], className="lead"),
-                dbc.Button("Create", color="primary", href="/first-page", className="me-2"),
+                dbc.Button("Create", color="primary", href="/create-page", className="me-2"),
                 html.Br(),
                 html.Br(),
                 dbc.Button("Tutorials", color="secondary", href="/documentation", className="me-2"),
