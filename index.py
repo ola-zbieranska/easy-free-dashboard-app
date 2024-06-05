@@ -3,7 +3,7 @@ import dash_bootstrap_components as dbc
 from dash import html, dcc
 from app import app
 from components.navbar import get_navbar as navbar
-from callbacks import register_callbacks  # Importujemy funkcje rejestrujące callbacki
+from callbacks.app_callbacks import register_callbacks
 
 # Ustawienie głównego układu aplikacji
 app.layout = html.Div([

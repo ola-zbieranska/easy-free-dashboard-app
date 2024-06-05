@@ -1,1 +1,1 @@
-from .callbacks import register_callbacks
+from callbacks.app_callbacks import register_callbacks

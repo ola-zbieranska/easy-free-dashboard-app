@@ -71,6 +71,7 @@ def get_vizualize_page():
                 dcc.Input(id='google-sheet-url', type='url', style={'display': 'none'})  # Dodajemy ukryty element `google-sheet-url`
             ]), width=8),
         ]),
+        dcc.Store(id='stored-data'),  # Dodajemy tutaj komponent `dcc.Store`
         html.Div(id='tabs-content-visualize'),
         dbc.Button("Back", color="secondary", href="/create-page", className="mt-2 me-2"),
         dbc.Button("Next", color="primary", href="/check-data-page", className="mt-2")

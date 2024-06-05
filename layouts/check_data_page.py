@@ -58,10 +58,11 @@ def get_check_data_page():
         dbc.Row(
             dbc.Col(
                 html.Div([
-                    dbc.Button("Back", color="secondary", href="/first-page", className="mt-2 me-2"),
+                    dbc.Button("Back", color="secondary", href="/create-page", className="mt-2 me-2"),
                     dbc.Button("Next", color="primary", href="/vizualize-page", className="mt-2")
                 ])
             )
-        )
+        ),
+        dcc.Store(id='stored-data'),  # Dodaj tutaj komponent dcc.Store
     ])
     return check_data_page
