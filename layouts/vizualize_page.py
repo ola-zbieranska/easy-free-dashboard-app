@@ -43,7 +43,7 @@ def get_vizualize_page():
                             html.P("available soon - work in progress")
                         ])
                     ], className='tab'),
-                    dcc.Tab(label='Layout', value='tab-4', children=[
+                    dcc.Tab(label='Layout', value='tab-4', children=[git
                         html.Div([
                             html.P("available soon - work in progress"),
                             html.Label("Select Plotly Template:"),
@@ -73,7 +73,7 @@ def get_vizualize_page():
         ]),
         html.Div(id='tabs-content-visualize'),
         dbc.Button("Back", color="secondary", href="/create-page", className="mt-2 me-2"),
-        dbc.Button("Next", color="primary", href="/publish-page", className="mt-2")
+        dbc.Button("Next", color="primary", href="/check-data-page", className="mt-2")
     ])
 
     return vizualize_page

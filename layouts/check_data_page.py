@@ -1,8 +1,8 @@
 import dash_bootstrap_components as dbc
 from dash import html, dcc, dash_table
 
-def get_check_and_describe_page():
-    check_and_describe_page = dbc.Container([
+def get_check_data_page():
+    check_data_page = dbc.Container([
         dbc.Row(
             dbc.Col(
                 html.Div([
@@ -64,4 +64,4 @@ def get_check_and_describe_page():
             )
         )
     ])
-    return check_and_describe_page
+    return check_data_page

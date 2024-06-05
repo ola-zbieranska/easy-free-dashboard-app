@@ -12,7 +12,7 @@ from .maps import register_map_callbacks
 from layouts.home import get_home_page as home_page
 from layouts.create_page import get_create_page as create_page
 from layouts.documentation_page import get_documentation_page as documentation_page
-from layouts.check_describe_page import get_check_and_describe_page as check_and_describe_page
+from layouts.check_data_page import get_check_data_page as check_data_page
 from layouts.publish_page import get_publish_page as publish_page
 from layouts.vizualize_page import get_vizualize_page as vizualize_page
 from layouts.create_page import get_copy_paste_data, get_upload_data, get_import_data
@@ -226,8 +226,8 @@ def register_callbacks(app):
             return create_page()
         elif pathname == '/documentation':
             return documentation_page()
-        elif pathname == '/check-and-describe-page':
-            return check_and_describe_page()
+        elif pathname == '/check-data-page':
+            return check_data_page()
         elif pathname == '/vizualize-page':
             return vizualize_page()
         elif pathname == '/publish-page':
