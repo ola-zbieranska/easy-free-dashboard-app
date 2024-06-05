@@ -35,7 +35,6 @@ def get_create_page():
                             ])
                             ], className='tab'),
                             dcc.Tab(label='Connect Google Sheet', value='tab-3', children =[html.Div([
-                                html.H2("Import data from Google Sheet.", className="lead"),
                                 html.P(["Make sure to enable ",
                                         html.A("Link Sharing",
                                                href="https://support.google.com/drive/answer/2494822?visit_id=1-636596603923192043-2988837136&p=link_sharing_on&hl=en&rd=1#link_sharing&zippy=%2Callow-general-access-to-the-file",
