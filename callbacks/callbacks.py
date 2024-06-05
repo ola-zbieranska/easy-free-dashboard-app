@@ -45,6 +45,16 @@ def register_callbacks(app):
         data['theme'] = new_theme
         return new_theme, icon, class_name
 
+    @app.callback(Output('tabs-content-example', 'children'),
+                  Input('tabs-example', 'value'))
+    def render_content(tab):
+        if tab == 'tab-1':
+            return get_copy_paste_data()
+        elif tab == 'tab-2':
+            return get_upload_data()
+        elif tab == 'tab-3':
+            return get_import_data()
+
     @app.callback(
         Output('output-data', 'children'),
         Input('data-input', 'value')

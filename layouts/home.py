@@ -9,7 +9,7 @@ def get_home_page():
                 html.H4("Create custom charts and dashboard in an easy & free way.", className="lead"),
                 html.Hr(className="my-4"),
                 html.H5("Easy Dashboard takes your data from spreadsheets to shareable graphics — no coding necessary."),
-                html.H5("It’s free & no sign-up is required!"),
+                html.H5("It’s free & no sign-up is required."),
                 html.Ul([
                     html.Li("Create charts & maps quickly and easily"),
                     html.Li("Upload data from three different ways"),

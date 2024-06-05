@@ -35,7 +35,7 @@ def get_vizualize_page():
                     dcc.Tab(label='Chart', value='tab-1', children=chart_buttons, className='tab'),
                     dcc.Tab(label='Description', value='tab-2', children=[
                         html.Div([
-                            html.Label("available soon - work in progress")
+                            html.P("available soon - work in progress")
                         ])
                     ], className='tab'),
                     dcc.Tab(label='Customize', value='tab-3', children=[
