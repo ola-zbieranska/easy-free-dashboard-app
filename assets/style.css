@@ -128,3 +128,49 @@ body {
     margin-left: 270px;
     padding: 20px;
 }
+
+/* Custom dropdown style for dark mode */
+.dark-mode .Select-menu-outer {
+    background-color: #343a40 !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .Select-option {
+    background-color: #343a40 !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .Select-option.is-focused {
+    background-color: #495057 !important;
+}
+
+.dark-mode .Select-control {
+    background-color: #343a40 !important;
+    color: #ffffff !important;
+    border-color: #495057 !important;
+}
+
+.dark-mode .Select--single .Select-control .Select-value {
+    color: #ffffff !important;
+}
+
+.dark-mode .Select-placeholder {
+    color: #ffffff !important;
+}
+
+.dark-mode .Select-arrow-zone .Select-arrow {
+    border-top-color: #ffffff !important;
+}
+
+/* Additional styles for better visibility */
+.dark-mode .Select-value-label {
+    color: #ffffff !important;
+}
+
+.dark-mode .Select-control .Select-clear-zone:hover {
+    color: #ffffff !important;
+}
+
+.dark-mode .Select-control .Select-loading-zone {
+    color: #ffffff !important;
+}

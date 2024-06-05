@@ -55,7 +55,7 @@ def generate_bubble_map(df, size_col, template):
 
 def register_map_callbacks(app):
     @app.callback(
-        Output('graph-output-map', 'figure'),
+        Output('graph-output', 'figure'),
         [Input('scatter-map', 'n_clicks'),
          Input('heatmap', 'n_clicks'),
          Input('bubble-map', 'n_clicks')],
