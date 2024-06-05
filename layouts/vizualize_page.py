@@ -43,7 +43,7 @@ def get_vizualize_page():
                             html.P("available soon - work in progress")
                         ])
                     ], className='tab'),
-                    dcc.Tab(label='Layout', value='tab-4', children=[git
+                    dcc.Tab(label='Layout', value='tab-4', children=[
                         html.Div([
                             html.P("available soon - work in progress"),
                             html.Label("Select Plotly Template:"),
