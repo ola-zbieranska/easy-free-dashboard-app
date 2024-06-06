@@ -1,1 +1,3 @@
-from callbacks.app_callbacks import register_callbacks
+from callbacks.app_callbacks import register_app_callbacks
+from callbacks.data_callbacks import register_data_callbacks
+from callbacks.visualization_callbacks import register_visualization_callbacks

@@ -45,14 +45,7 @@ def get_check_data_page():
                         style_table={'height': '300px', 'overflowY': 'auto'},
                         style_cell={'textAlign': 'left'},
                     )
-                ]), width=4
-            )
-        ),
-        dbc.Row(
-            dbc.Col(
-                html.Div([
-                    dash_table.DataTable(id='table-check-data', style_table={'display': 'none'})
-                ]), width=8
+                ]), width=12
             )
         ),
         dbc.Row(
