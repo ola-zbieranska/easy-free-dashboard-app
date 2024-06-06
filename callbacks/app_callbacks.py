@@ -20,51 +20,29 @@ from callbacks.map_helpers import map_country_names_to_iso_alpha3, add_lat_lon, 
 #from layouts.create_page import get_import_data, get_upload_data, get_copy_paste_data
 
 def register_callbacks(app):
-
     @app.callback(
-        Output('theme-link', 'href'),
-        Output('page-content', 'className'),
+        [Output('theme-link', 'href'), Output('theme-dropdown', 'label'), Output('page-content', 'className')],
         [Input('light-mode', 'n_clicks'), Input('dark-mode', 'n_clicks')],
         State('theme-store', 'data')
     )
     def update_theme(light_clicks, dark_clicks, data):
         ctx = dash.callback_context
         if not ctx.triggered:
-            return data['theme'], 'light-mode'
-
-        button_id = ctx.triggered[0]['prop_id'].split('.')[0]
+            button_id = 'light-mode'
+        else:
+            button_id = ctx.triggered[0]['prop_id'].split('.')[0]
 
         if button_id == 'dark-mode':
             new_theme = dbc.themes.DARKLY
-            class_name = 'dark-mode'
+            icon = html.I(className="bi bi-moon-fill")
+            class_name = "dark-mode"
         else:
             new_theme = dbc.themes.FLATLY
-            class_name = 'light-mode'
+            icon = html.I(className="bi bi-brightness-high-fill")
+            class_name = "light-mode"
 
         data['theme'] = new_theme
-        return new_theme, class_name
-
-    @app.callback(
-        Output('tabs-content-example', 'children'),
-        Input('tabs-example', 'value')
-    )
-    def render_content(tab):
-        if tab == 'tab-1':
-            return dcc.Textarea(id='data-input', style={'width': '100%', 'height': 200})
-        elif tab == 'tab-2':
-            return dcc.Upload(id='upload-data', children=html.Div(['Drag and Drop or ', html.A('Select Files')]),
-                              style={
-                                  'width': '100%',
-                                  'height': '60px',
-                                  'lineHeight': '60px',
-                                  'borderWidth': '1px',
-                                  'borderStyle': 'dashed',
-                                  'borderRadius': '5px',
-                                  'textAlign': 'center',
-                                  'margin': '10px 0'
-                              }, multiple=False)
-        elif tab == 'tab-3':
-            return dcc.Input(id='google-sheet-url', type='url', placeholder='Enter Google Sheet URL', style={'width': '100%'})
+        return new_theme, icon, class_name
 
     @app.callback(
         Output('output-data', 'children'),
@@ -83,7 +61,7 @@ def register_callbacks(app):
             )
         except Exception as e:
             return html.Div([
-                html.H5("Error processing data:"),
+                html.H5("Wystąpił błąd przy przetwarzaniu danych:"),
                 html.P(str(e))
             ])
 
@@ -139,7 +117,7 @@ def register_callbacks(app):
             )
         except Exception as e:
             return html.Div([
-                html.H5("Error processing data:"),
+                html.H5("Wystąpił błąd przy przetwarzaniu danych:"),
                 html.P(str(e))
             ])
 
@@ -183,7 +161,8 @@ def register_callbacks(app):
         return []
 
     @app.callback(
-        [Output('data-table', 'data'), Output('data-table', 'columns')],
+        Output('data-table', 'data'),
+        Output('data-table', 'columns'),
         Input('url', 'pathname'),
         State('stored-data', 'data')
     )
@@ -207,7 +186,7 @@ def register_callbacks(app):
         [State('template-dropdown', 'value'),
          State('stored-data', 'data')]
     )
-    def render_charts_and_maps(bar_clicks, pie_clicks, line_clicks, scatter_clicks, area_clicks, scatter_map_clicks, heatmap_clicks, bubble_map_clicks, template, data):
+    def render_charts(bar_clicks, pie_clicks, line_clicks, scatter_clicks, area_clicks, scatter_map_clicks, heatmap_clicks, bubble_map_clicks, template, data):
         ctx = dash.callback_context
         if not ctx.triggered or not data:
             return {}
@@ -226,22 +205,22 @@ def register_callbacks(app):
         elif button_id == 'area-chart':
             fig = px.area(df, x=df.columns[0], y=df.columns[1], title='Area Chart', template=template)
         elif button_id == 'scatter-map':
-            fig = generate_scatter_map(df, template)
+            fig = px.scatter_geo(df, lat='Latitude', lon='Longitude', title='Scatter Map', template=template)
         elif button_id == 'heatmap':
-            fig = generate_heatmap(df, template)
+            fig = go.Figure(go.Densitymapbox(lat=df['Latitude'], lon=df['Longitude'], z=[1]*len(df), radius=10))
+            fig.update_layout(mapbox_style="stamen-terrain", mapbox_center_lon=0, mapbox_center_lat=0,
+                              mapbox_zoom=1, title='Heatmap', template=template)
         elif button_id == 'bubble-map':
-            size_col = df.columns[2]
-            if size_col not in ['Latitude', 'Longitude']:
-                fig = generate_bubble_map(df, size_col, template)
-            else:
-                fig = {}
+            fig = px.scatter_geo(df, lat='Latitude', lon='Longitude', size=df.columns[2], title='Bubble Map', template=template)
         else:
             fig = {}
 
         return fig
 
     @app.callback(
-        [Output('table-output', 'data'), Output('table-output', 'columns'), Output('table-output', 'style_table')],
+        Output('table-output', 'data'),
+        Output('table-output', 'columns'),
+        Output('table-output', 'style_table'),
         Input('table', 'n_clicks'),
         State('stored-data', 'data')
     )
