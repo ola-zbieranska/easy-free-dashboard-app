@@ -3,7 +3,17 @@ from dash import html, dcc
 from dash import dash_table
 
 def get_create_page():
+    """
+       Tworzy i zwraca stronę do przesyłania danych.
+       Creates and returns the page for data upload.
+
+       Returns:
+           dbc.Container: Strona do przesyłania danych.
+                          Data upload page.
+       """
     return dbc.Container([
+        # Nagłówek i przycisk do dokumentacji
+        # Header and button to documentation
         dbc.Row(
             dbc.Col(html.Div([
                 html.P("Check documentation to learn how to create your first chart step by step.", className="lead"),
@@ -13,6 +23,8 @@ def get_create_page():
             ]), width={"size": 12})
         ),
         dbc.Row([
+            # Zakładki do różnych metod przesyłania danych
+            # Tabs for different data upload methods
             dbc.Col(
                 width=5,
                 children=[
@@ -28,6 +40,8 @@ def get_create_page():
                     )
                 ]
             ),
+            # Obszar wyświetlania zawartości wybranej zakładki oraz elementy do przechowywania i wyświetlania danych
+            # Area to display the content of the selected tab and elements for storing and displaying data
             dbc.Col(
                 width=7,
                 children=[

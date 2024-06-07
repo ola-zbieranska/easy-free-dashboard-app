@@ -2,6 +2,17 @@ import dash_bootstrap_components as dbc
 from dash import html, dcc, dash_table
 
 def get_check_data_page():
+    """
+    Tworzy i zwraca stronę do sprawdzania przesłanych danych przed wizualizacją.
+    Strona w trakcie prac.
+
+    Creates and returns the data checking page before visualization.
+    Work in progres.
+
+    Returns:
+        dbc.Container: Strona do sprawdzania danych.
+                       Data checking page.
+    """
     check_data_page = dbc.Container([
         dbc.Row(
             dbc.Col(
@@ -32,6 +43,8 @@ def get_check_data_page():
                 ])
             )
         ),
+        # Tabela danych z możliwością edycji
+        # Editable data table
         dbc.Row(
             dbc.Col(
                 html.Div([
@@ -56,6 +69,6 @@ def get_check_data_page():
                 ])
             )
         ),
-        dcc.Store(id='stored-data'),  # Dodaj tutaj komponent dcc.Store
+        dcc.Store(id='stored-data'),
     ])
     return check_data_page

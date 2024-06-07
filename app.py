@@ -1,15 +1,16 @@
 import dash
 import dash_bootstrap_components as dbc
 
+# External stylesheets
 external_stylesheets = [
     dbc.themes.FLATLY,
     "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css",
     "/assets/style.css"
 ]
 
-# Inicjalizacja aplikacji
+# Initialize Dash application
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
     suppress_callback_exceptions=True)
 
-# Dodane dla wdrożeń, np. na Heroku
+# Added for deployments, e.g., on Herok
 server = app.server

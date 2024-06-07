@@ -3,6 +3,16 @@ import dash_bootstrap_components as dbc
 from dash import html, dcc
 
 def get_navbar():
+    """
+       Tworzy i zwraca nawigację aplikacji.
+       Creates and returns the navigation bar.
+
+       Returns:
+           dbc.NavbarSimple: Nawigacja.
+                             Navigation bar.
+       """
+    # Menu przełączania motywu (jasny/ciemny)
+    # Theme toggle menu (light/dark)
     theme_toggle = dbc.DropdownMenu(
         label=html.I(className="bi bi-brightness-high-fill"),
         children=[
@@ -14,7 +24,8 @@ def get_navbar():
         className="theme-switch-container",
         id="theme-dropdown"
     )
-
+    # Menu rozwijane z dodatkowymi stronami
+    # Dropdown menu with additional pages
     dropdown = dbc.DropdownMenu(
         children=[
             dbc.DropdownMenuItem("More pages", header=True),
@@ -30,7 +41,8 @@ def get_navbar():
         in_navbar=True,
         label="More",
     )
-
+    # Przycisk do repozytorium GitHub
+    # Button to the GitHub repository
     github_button = dbc.Button(
         html.I(className="bi bi-github"),
         color="link",
@@ -39,7 +51,8 @@ def get_navbar():
         className="me-2",
         target="_blank"
     )
-
+    # Definicja głównej nawigacji aplikacji
+    # Definition of the main navigation bar of the application
     navbar = dbc.NavbarSimple(
         children=[
             github_button,

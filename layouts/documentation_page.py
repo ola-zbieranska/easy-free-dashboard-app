@@ -4,6 +4,17 @@ from dash.dependencies import Input, Output
 import dash
 
 def get_documentation_page():
+    """
+       Tworzy i zwraca stronę dokumentacji.
+       W trakcie prac.
+       Creates and returns the documentation page.
+       Work i n progres.
+       Returns:
+           html.Div: Strona dokumentacji.
+                     Documentation page.
+       """
+    # Pasek boczny z linkami do sekcji dokumentacji
+    # Sidebar with links to documentation sections
     sidebar = html.Div(
         [
             html.P("Useful links for documentation:", className="lead"),
@@ -20,7 +31,8 @@ def get_documentation_page():
         ],
         className="sidebar sidebar-background"
     )
-
+    # Główna zawartość strony dokumentacji
+    # Main content of the documentation page
     content = html.Div(
         [
             html.P("Here you can find extensive documentation on how to use the Easy Dashboard and create your charts.", className="lead"),
@@ -29,7 +41,6 @@ def get_documentation_page():
         ],
         className="content"
     )
-
     documentation_page = html.Div([sidebar, content])
 
     return documentation_page

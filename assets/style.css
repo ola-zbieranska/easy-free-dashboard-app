@@ -25,7 +25,7 @@
     --sidebar-text: white;
 }
 
-/* Ogólne style */
+/* General styles */
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: var(--background-color);
@@ -45,7 +45,7 @@ body {
     margin-bottom: 1.5rem !important;
 }
 
-/* Style dla przycisków */
+/* Styles for buttons */
 .me-2 { margin-right: 0.5rem !important; }
 .mt-2 { margin-top: 0.5rem !important; }
 .mt-3 { margin-top: 1rem !important; }
@@ -53,7 +53,7 @@ body {
 .mb-2 { margin-bottom: 0.5rem !important; }
 .mb-4 { margin-bottom: 1.5rem !important; }
 
-/* Style zakładek */
+/* Tab styles */
 .custom-tab .tab {
     display: flex !important;
     justify-content: center !important;
@@ -83,7 +83,7 @@ body {
     color: var(--placeholder-color);
 }
 
-/* Style dla przycisków na stronie wizualizacji */
+/* Styles for buttons on vizualize_page.py */
 .chart-button {
     display: inline-flex;
     align-items: center;
@@ -97,7 +97,7 @@ body {
     margin-right: 5px;
 }
 
-/* Style sidebaru */
+/* Sidebar styles */
 .sidebar {
     position: fixed;
     top: 0;
@@ -107,7 +107,7 @@ body {
     padding: 10px;
     overflow-y: auto;
     background-color: var(--sidebar-bg);
-    color: var(--sidebar-text); /* Dodano kolor tekstu */
+    color: var(--sidebar-text);
 }
 
 .sidebar a {

@@ -1,6 +1,16 @@
 import dash_bootstrap_components as dbc
 from dash import html, dcc
 def get_publish_page():
+    """
+        Tworzy i zwraca stronę publikacji wizualizacji.
+        W trakcie prac.
+        Creates and returns the publish visualization page.
+        Work i n progres.
+
+        Returns:
+            dbc.Container: Strona publikacji wizualizacji.
+                           Publish visualization page.
+        """
     publish_page = dbc.Container([
         dbc.Row(
             dbc.Col(html.Div([

@@ -2,6 +2,14 @@ import dash_bootstrap_components as dbc
 from dash import html, dcc
 
 def get_home_page():
+    """
+      Tworzy i zwraca stronę główną.
+      Creates and returns the home page.
+
+      Returns:
+          dbc.Container: Strona główna.
+                         Home page.
+      """
     home_page = dbc.Container([
         dbc.Row(
             dbc.Col(html.Div([

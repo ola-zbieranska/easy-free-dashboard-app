@@ -7,7 +7,7 @@ from callbacks.app_callbacks import register_app_callbacks
 from callbacks.data_callbacks import register_data_callbacks
 from callbacks.visualization_callbacks import register_visualization_callbacks
 
-# Ustawienie głównego układu aplikacji
+# Setting the main application layout
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     navbar(),
@@ -17,10 +17,10 @@ app.layout = html.Div([
     html.Div(id='page-content', className='light-mode')
 ])
 
-
+# Registration of all callbacks
 register_app_callbacks(app)
 register_data_callbacks(app)
-register_visualization_callbacks(app)  # Rejestrujemy wszystkie callbacki
+register_visualization_callbacks(app)
 
 if __name__ == '__main__':
     app.run_server(debug=True)

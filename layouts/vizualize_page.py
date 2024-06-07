@@ -33,19 +33,8 @@ def get_vizualize_page():
             dbc.Col(html.Div([
                 dcc.Tabs(id="tabs-visualize-menu", value='tab-1', className='custom-tab', children=[
                     dcc.Tab(label='Chart', value='tab-1', children=chart_buttons, className='tab'),
-                    dcc.Tab(label='Description', value='tab-2', children=[
-                        html.Div([
-                            html.P("available soon - work in progress")
-                        ])
-                    ], className='tab'),
-                    dcc.Tab(label='Customize', value='tab-3', children=[
-                        html.Div([
-                            html.P("available soon - work in progress")
-                        ])
-                    ], className='tab'),
                     dcc.Tab(label='Layout', value='tab-4', children=[
                         html.Div([
-                            html.P("available soon - work in progress"),
                             html.Label("Select Plotly Template:"),
                             dcc.Dropdown(
                                 id='template-dropdown',
@@ -56,22 +45,32 @@ def get_vizualize_page():
                                     {'label': 'Simple White', 'value': 'simple_white'},
                                     {'label': 'GGPlot2', 'value': 'ggplot2'}
                                 ],
-                                value='plotly_dark',  # default value based on dark mode
+                                value='plotly_dark',
                                 clearable=False
                             )
                         ])
-                    ], className='tab')
+                    ], className='tab'),
+                    dcc.Tab(label='Description', value='tab-2', children=[
+                        html.Div([
+                            html.P("available soon - work in progress")
+                        ])
+                    ], className='tab'),
+                    dcc.Tab(label='Customize', value='tab-3', children=[
+                        html.Div([
+                            html.P("available soon - work in progress")
+                        ])
+                    ], className='tab'),
                 ])
             ]), width=4),
             dbc.Col(html.Div([
                 dcc.Graph(id='graph-output'),
                 dash_table.DataTable(id='table-output', style_table={'display': 'none'}),
-                dcc.Textarea(id='data-input', style={'display': 'none'}),  # Dodajemy ukryty element `data-input`
-                dcc.Upload(id='upload-data', style={'display': 'none'}),  # Dodajemy ukryty element `upload-data`
-                dcc.Input(id='google-sheet-url', type='url', style={'display': 'none'})  # Dodajemy ukryty element `google-sheet-url`
+                dcc.Textarea(id='data-input', style={'display': 'none'}),
+                dcc.Upload(id='upload-data', style={'display': 'none'}),
+                dcc.Input(id='google-sheet-url', type='url', style={'display': 'none'})
             ]), width=8),
         ]),
-        dcc.Store(id='stored-data'),  # Dodajemy tutaj komponent `dcc.Store`
+        dcc.Store(id='stored-data'),
         html.Div(id='tabs-content-visualize'),
         dbc.Button("Back", color="secondary", href="/create-page", className="mt-2 me-2"),
         dbc.Button("Next", color="primary", href="/check-data-page", className="mt-2")
