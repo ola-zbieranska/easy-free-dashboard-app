@@ -9,9 +9,6 @@ def get_documentation_page():
        W trakcie prac.
        Creates and returns the documentation page.
        Work i n progres.
-       Returns:
-           html.Div: Strona dokumentacji.
-                     Documentation page.
        """
     # Pasek boczny z linkami do sekcji dokumentacji
     # Sidebar with links to documentation sections

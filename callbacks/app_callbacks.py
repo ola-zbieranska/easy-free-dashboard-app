@@ -17,6 +17,18 @@ def register_app_callbacks(app):
         Input('tabs-example', 'value')
     )
     def render_content(tab):
+        """
+                Renderuje zawartość na podstawie wybranej karty.
+                Renders content based on the selected tab.
+
+                Args:
+                    tab (str): Wartość wybranej karty.
+                               The value of the selected tab.
+
+                Returns:
+                    tuple: Styl dla pola tekstowego, styl dla przesyłania danych oraz styl dla URL arkusza Google.
+                           Styles for the text area, data upload, and Google Sheet URL.
+                """
         style_hide = {'display': 'none'}
         style_show = {'display': 'block', 'width': '100%', 'height': '200px'}
 
@@ -38,6 +50,22 @@ def register_app_callbacks(app):
         State('theme-store', 'data')
     )
     def update_theme(light_clicks, dark_clicks, data):
+        """
+                Aktualizuje motyw aplikacji na podstawie kliknięć użytkownika.
+                Updates the application theme based on user clicks.
+
+                Args:
+                    light_clicks (int): Liczba kliknięć przycisku jasnego motywu.
+                                        Number of clicks on the light mode button.
+                    dark_clicks (int): Liczba kliknięć przycisku ciemnego motywu.
+                                       Number of clicks on the dark mode button.
+                    data (dict): Dane przechowywane w theme-store.
+                                 Data stored in theme-store.
+
+                Returns:
+                    tuple: Nowy motyw, ikona i klasa CSS.
+                           New theme, icon, and CSS class.
+                """
         ctx = dash.callback_context
         if not ctx.triggered:
             button_id = 'light-mode'
@@ -61,6 +89,18 @@ def register_app_callbacks(app):
         [Input('url', 'pathname')]
     )
     def display_pages(pathname):
+        """
+                Wyświetla odpowiednią stronę na podstawie ścieżki URL.
+                Displays the appropriate page based on the URL path.
+
+                Args:
+                    pathname (str): Aktualna ścieżka URL.
+                                    Current URL path.
+
+                Returns:
+                    dash.development.base_component.Component: Zawartość strony.
+                                                              Page content.
+                """
         if pathname == '/' or pathname == '/home':
             return home_page()
         elif pathname == '/create-page':

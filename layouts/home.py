@@ -5,10 +5,6 @@ def get_home_page():
     """
       Tworzy i zwraca stronę główną.
       Creates and returns the home page.
-
-      Returns:
-          dbc.Container: Strona główna.
-                         Home page.
       """
     home_page = dbc.Container([
         dbc.Row(

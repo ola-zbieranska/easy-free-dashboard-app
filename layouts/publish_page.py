@@ -6,10 +6,6 @@ def get_publish_page():
         W trakcie prac.
         Creates and returns the publish visualization page.
         Work i n progres.
-
-        Returns:
-            dbc.Container: Strona publikacji wizualizacji.
-                           Publish visualization page.
         """
     publish_page = dbc.Container([
         dbc.Row(

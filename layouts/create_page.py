@@ -3,6 +3,10 @@ from dash import html, dcc
 from dash import dash_table
 
 def get_create_page():
+    """
+       Zwraca stronę do przesyłania danych w aplikacji.
+       Returns a data   page in the application.
+       """
     return dbc.Container([
         dbc.Row(
             dbc.Col(html.Div([

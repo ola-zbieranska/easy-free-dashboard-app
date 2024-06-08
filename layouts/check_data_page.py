@@ -3,6 +3,10 @@ from dash import html, dcc, dash_table
 
 
 def get_check_data_page():
+    """
+       Zwraca stronę do sprawdzania poprawności załadowanych danych i ich edycji.
+       Returns a page for validating the upload data and editing it.
+       """
     check_data_page = dbc.Container([
         dbc.Row(
             dbc.Col(
