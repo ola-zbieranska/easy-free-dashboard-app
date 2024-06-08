@@ -11,6 +11,3 @@ external_stylesheets = [
 # Initialize Dash application
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
     suppress_callback_exceptions=True)
-
-# Added for deployments, e.g., on Heroku
-server = app.server
