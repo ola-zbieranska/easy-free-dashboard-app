@@ -4,9 +4,10 @@
 
 # Easy Dashboard
 
-Easy Dashboard is an application for creating data visualizations using Dash and Plotly. The goal is to provide a simple, free tool for creating online visualizations.
+Easy Dashboard is an application for creating data visualizations using Dash and Plotly.<br> The goal is to provide a simple, free tool for creating online visualizations.
 
-The application was created as part of the 100 commits challenge organized by DevMentors, which started on March 1, 2024.
+
+The application was created as part of the 100 commits challenge organized by DevMentors, which started on March 1, 2024.<br>
 https://100commitow.pl
 
 ## Basic features in progress, summary as of June 8, 2024 - the last day of the challenge
@@ -29,7 +30,7 @@ These features still require further refinement.
 
 ## Application preview
 
-The application is available online on Heroku. 
+The application is available online on Heroku.<br> 
 You can view it by clicking [here](https://easy-dashboard-decc90fbd66e.herokuapp.com/home).
 
 ## Local installation
@@ -62,7 +63,7 @@ To run the application locally, follow these steps:
 
 ## Contributions
 
-If you would like to contribute to the development of the project, please contact us.
+If you would like to contribute to the development of the project, please contact me.
 email: aleksandra.zbieranska.apps@gmail.com
 
 ## License
