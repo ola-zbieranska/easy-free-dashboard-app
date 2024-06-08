@@ -16,6 +16,7 @@ https://100commitow.pl
 - Choice of chart types (bar chart, pie chart, line chart, scatter plot, area chart, table)
 - Choice of map types (scatter map, heatmap, bubble map)
 - Options for customizing the appearance of charts (built-in Plotly Templates)
+- Dark/Light mode
 
 These features still require further refinement.
 
