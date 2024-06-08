@@ -2,59 +2,69 @@
 
 # easy-free-dashboard-app
 
-## Cel projektu aplikacji Easy Dashboard ##
+# Easy Dashboard
 
-Darmowa aplikacja webowa Easy Dashboard to proste narzędzie analityczne, które umożliwi użytkownikom szybkie tworzenie interaktywnych dashboardów do wizualizacji i analizy danych.<br>
-Aplikacja, zainspirowana funkcjonalnością i prostotą takich rozwiązań jak Datawrapper, pozwoli na przekształcenie surowych danych w przejrzyste, funkcjonalne i estetycznie atrakcyjne wykresy oraz grafiki.<br> 
-Z aplikacją Easy Dashboard w prosty sposób stworzysz swój pierwszy dashboard, idealny do portfolio Data Analyst lub do publikacji online.
+Easy Dashboard is an application for creating data visualizations using Dash and Plotly. The goal is to provide a simple, free tool for creating online visualizations.
 
+The application was created as part of the 100 commits challenge organized by DevMentors, which started on March 1, 2024.
+https://100commitow.pl
 
-## Funkcjonalności 
-**1. Łatwa integracja źródeł danych:**
-- Przesyłanie danych na 3 sposoby: wklejenie skopiowanych danych, import danych z plików CSV, Excel, oraz integracja z Google Sheets.
-- Możliwość przeprowadzania podstawowych operacji na danych takich jak sortowanie, filtracja i grupowanie przed ich wizualizacją.
+## Basic features in progress, summary as of June 8, 2024 - the last day of the challenge
 
-**2. Wizualizacja danych:**
-- Wykresy liniowe, słupkowe, kołowe oraz punktowe.
-- Filtrowanie i sprawdzanie danych przed wizualizacją.
+- Choice of data input methods (copy/paste, file upload, Google Sheets)
+- Choice of chart types (bar chart, pie chart, line chart, scatter plot, area chart, table)
+- Choice of map types (scatter map, heatmap, bubble map)
+- Options for customizing the appearance of charts (built-in Plotly Templates)
 
-**3. Dokumentacja:**
-- Dokumentacja i artykuły na blogu.
-- Seria filmów wideo z poradami i instrukcjami, jak najefektywniej wykorzystać dostępne narzędzia.
+These features still require further refinement.
 
-## Technologie, narzędzia 
+## Future functionalities planned to be implemented by the end of September 2024
 
-- Python
-- Dash
-- Pandas
-- Plotly
-- HTML, CSS
-- SQLite
+- Fixing and refining basic functionalities
+- Adding the option to export charts to graphic files
+- Adding advanced options for customizing and describing charts
+- Adding the option to create simple, aesthetic dashboards from selected charts/maps
+- Adding the ability to create a user profile and save multiple projects
+- Adding the option to share projects online
 
-## Jak Uruchomić, dokumentacja projektu
+## Application preview
 
-Instrukcje i dokumentacja dostępne wkrótce.<br>
+The application is available online on Heroku. 
+You can view it by clicking [here](https://easy-dashboard-decc90fbd66e.herokuapp.com/home).
 
-## Harmonogram Projektu
+## Local installation
 
-1. **Dni 1-20: Faza Planowania**
-    - Zdefiniowanie dokładnych wymagań MVP
-    - Wybór stosu technologicznego i narzędzi
-    - Uczenie się potrzebnych technologii
-2. **Dni 21-80: Rozwój Podstawowych Funkcjonalności, interfejsu użytkownika i nawigacji**
-    - Implementacja obsługi plików CSV i Excel (import danych)
-    - Rozwój podstawowych typów wykresów (liniowych, słupkowych, kołowych)
-    - Projektowanie i implementacja interfejsu użytkownika
-    - Dodanie filtrów do interakcji z danymi na wykresach
-3. **Dni 81-85: Testowanie i Dokumentacja**
-    - Testowanie funkcjonalności i interfejsu użytkownika
-    - Pisanie podstawowej dokumentacji i przewodników użytkownika
-4. **Dni 86-100: Przygotowanie do Wdrożenia i Finalizacja**
-    - Optymalizacja i debugowanie aplikacji
-    - Przygotowanie aplikacji do wdrożenia
-    - Finalizacja dokumentacji i dopięcie repozytorium GitHub
-   
-## **Kontakt**
+To run the application locally, follow these steps:
 
-Jeśli masz pomysł na rozwój projektu lub uwagi daj koniecznie znać!
-mail: aleksandra.zbieranska@gmail.com
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/ola-zbieranska/easy-free-dashboard-app.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd easy-free-dashboard-app
+    ```
+
+3. Install the required packages:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Run the application:
+
+    ```bash
+    python index.py
+    ```
+
+## Contributions
+
+If you would like to contribute to the development of the project, please contact us.
+email: aleksandra.zbieranska.apps@gmail.com
+
+## License
+
+This project is licensed under the terms of the MIT license.
