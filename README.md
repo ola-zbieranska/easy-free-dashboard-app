@@ -18,7 +18,10 @@ https://100commitow.pl
 - Options for customizing the appearance of charts (built-in Plotly Templates)
 - Dark/Light mode
 
+Functionalities related to data downloading and visualization require repair.
 These features still require further refinement.
+
+## 
 
 ## Future functionalities planned to be implemented by the end of September 2024
 
