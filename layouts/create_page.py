@@ -25,9 +25,20 @@ def get_create_page():
                         value='tab-1',
                         className='custom-tab',
                         children=[
-                            dcc.Tab(label='Copy & paste data table', value='tab-1', className='tab'),
-                            dcc.Tab(label='XLS/CSV upload', value='tab-2', className='tab'),
-                            dcc.Tab(label='Connect Google Sheet', value='tab-3', className='tab')
+                            dcc.Tab(label='Copy & paste data table', value='tab-1', className='tab', children=[
+                                html.P("Select your data (including header row/column) in Excel or LibreOffice and paste it in the text field.")
+                            ]),
+                            dcc.Tab(label='XLS/CSV upload', value='tab-2', className='tab', children=[
+                                html.P("Upload your XLS or CSV file using the upload component.")
+                            ]),
+                            dcc.Tab(label='Connect Google Sheet', value='tab-3', className='tab', children=[
+                                html.P([
+                                    "Make sure to enable ",
+                                    html.A("Link Sharing", href="https://support.google.com/drive/answer/2494822?visit_id=1-636596603923192043-2988837136&p=link_sharing_on&hl=en&rd=1#link_sharing&zippy=%2Callow-general-access-to-the-file",
+                                           target="_blank"),
+                                    " in the Google Sheet and copy the spreadsheet URL into the text field on the right."
+                                ])
+                            ])
                         ]
                     )
                 ]

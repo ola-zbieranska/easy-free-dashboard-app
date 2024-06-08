@@ -18,8 +18,6 @@ def get_documentation_page():
             dbc.Nav(
                 [
                     dbc.NavLink("Introduction", href="/documentation#introduction", active="exact", className="sidebar-link"),
-                    dbc.NavLink("Setup", href="/documentation#setup", active="exact", className="sidebar-link"),
-                    dbc.NavLink("Advanced Topics", href="/documentation#advanced", active="exact", className="sidebar-link"),
                 ],
                 vertical=True,
                 pills=True,
