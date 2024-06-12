@@ -64,6 +64,13 @@ To run the application locally, follow these steps:
     ```bash
     python index.py
     ```
+## Screenshots
+Below are some screenshots from the application:
+
+ ![alt text](images/main_light.png)
+ ![alt text](images/main_dark.png)
+ ![alt text](images/create_page.png)
+ ![alt text](images/vizualize_page.png)
 
 ## Contributions
 
