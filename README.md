@@ -23,7 +23,7 @@ These features still require further refinement.
 
 ## 
 
-## Future functionalities planned to be implemented by the end of 2024
+## Future functionalities planned to be implemented by the end of 2025
 
 - Fixing and refining basic functionalities
 - Adding the option to export charts to graphic files
